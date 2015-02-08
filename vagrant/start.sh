@@ -5,4 +5,5 @@ sudo apt-get install -y nodejs sqlite3 libsqlite3-dev
 
 cd /vagrant
 rvm use 2.1.5
+bundle install
 rails s -b 0.0.0.0 -d
