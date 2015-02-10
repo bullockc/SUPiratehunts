@@ -18,3 +18,5 @@ rvm use 2.1.5
 # Install bundler gem if not found
 type bundle >/dev/null 2>&1
 [ "$?" != "0" ] && gem install bundler
+
+exit 0
