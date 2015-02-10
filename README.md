@@ -1,6 +1,8 @@
 Capstone2015
 ============
 
+Hello!
+
 ### Setting up with Vagrant
 
 To setup a virtual development environment, make sure you
