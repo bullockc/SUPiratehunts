@@ -26,5 +26,3 @@ Other relevant vagrant commands:
 
 [Vagrant]:https://www.vagrantup.com/
 [VirtualBox]:https://www.virtualbox.org/
-
-kstuck!
