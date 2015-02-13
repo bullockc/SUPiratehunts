@@ -1,6 +1,8 @@
 Capstone2015
 ============
 
+Hello!
+
 ### Setting up with Vagrant
 
 To setup a virtual development environment, make sure you
@@ -13,6 +15,8 @@ This will download and setup a virtual machine, which may
 take some time. When it's done, the rails development server
 should be started at localhost:3000 which can be opened in
 a web browser.
+
+#Christian Commited stuff
 
 To stop a the vagrant machine, use the command `vagrant halt`. The machine can then be started again with `vagrant up`.
 
