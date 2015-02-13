@@ -31,11 +31,6 @@ Other relevant vagrant commands:
 [Vagrant]:https://www.vagrantup.com/
 [VirtualBox]:https://www.virtualbox.org/
 
-<<<<<<< HEAD
-
-Jordan 
-kstuck!
-
 Rebecca:
 git checkout Engine (moves to Engine branch from master)
 git pull origin master  (updates the files in local copy of engine branch to whatever is in the master)
