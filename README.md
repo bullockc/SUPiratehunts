@@ -16,6 +16,8 @@ take some time. When it's done, the rails development server
 should be started at localhost:3000 which can be opened in
 a web browser.
 
+#Christian Commited stuff
+
 To stop a the vagrant machine, use the command `vagrant halt`. The machine can then be started again with `vagrant up`.
 
 In order to run rails or rake commands through the console, you will need to ssh into the virtual box. This can by done by running `vagrant ssh` in the command line after starting the virtual machine. You can exit your ssh session by running `exit` or pressing Ctrl-D.   
