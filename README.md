@@ -31,21 +31,14 @@ Other relevant vagrant commands:
 [Vagrant]:https://www.vagrantup.com/
 [VirtualBox]:https://www.virtualbox.org/
 
-<<<<<<< HEAD
+
 kstuck!
 
-<<<<<<< HEAD
+
 see you later alligator -anna
-=======
-=======
->>>>>>> a9ad162cbdcb30c6acbbf14f0f4e9ef6afe3cb5b
+
 Rebecca:
 git checkout Engine (moves to Engine branch from master)
 git pull origin master  (updates the files in local copy of engine branch to whatever is in the master)
 git push origin Engine (pushes changes that we just pulled to our local copy to the whole branch everywhere all the time)
 
-<<<<<<< HEAD
->>>>>>> 82078b1b049e94796329a4acbe93cb70524855ff
-=======
-
->>>>>>> a9ad162cbdcb30c6acbbf14f0f4e9ef6afe3cb5b
