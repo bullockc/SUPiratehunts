@@ -29,4 +29,12 @@ Other relevant vagrant commands:
 
 kstuck!
 
+<<<<<<< HEAD
 see you later alligator -anna
+=======
+Rebecca:
+git checkout Engine (moves to Engine branch from master)
+git pull origin master  (updates the files in local copy of engine branch to whatever is in the master)
+git push origin Engine (pushes changes that we just pulled to our local copy to the whole branch everywhere all the time)
+
+>>>>>>> 82078b1b049e94796329a4acbe93cb70524855ff
