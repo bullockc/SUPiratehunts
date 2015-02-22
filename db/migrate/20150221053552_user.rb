@@ -5,6 +5,8 @@ class User < ActiveRecord::Migration
 		t.string :name
 		t.array :hunts_created
 		t.array :hunts_joined
+
+
 		t.array :user_hunt_task
 
 		t.timestamps null: false
