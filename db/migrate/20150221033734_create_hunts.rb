@@ -5,7 +5,7 @@ class CreateHunts < ActiveRecord::Migration
 	t.string :ID
 	t.string :hunt_name
 	t.string :owner
-	t.array :tasks
+	t.index :tasks
 	t.integer :status
 	t.boolean :availability
 	t.datetime :start_date
