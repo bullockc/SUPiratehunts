@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'hunts/new'
+
+  get 'hunts/create'
+
+  get 'hunts/index'
+
+  get 'hunts/show'
+
+  get 'hunts/edit'
+
+  get 'hunts/update'
+
+  get 'hunts/delete'
+
+  get 'hunts/destroy'
+
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
