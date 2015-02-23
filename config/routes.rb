@@ -1,35 +1,7 @@
 Rails.application.routes.draw do
-  get 'tasks/new'
-
-  get 'tasks/create'
-
-  get 'tasks/index'
-
-  get 'tasks/show'
-
-  get 'tasks/edit'
-
-  get 'tasks/update'
-
-  get 'tasks/delete'
-
-  get 'tasks/destroy'
-
-  get 'hunts/new'
-
-  get 'hunts/create'
-
-  get 'hunts/index'
-
-  get 'hunts/show'
-
-  get 'hunts/edit'
-
-  get 'hunts/update'
-
-  get 'hunts/delete'
-
-  get 'hunts/destroy'
+  # Default routes for hunts/tasks
+  resources :hunts
+  resources :tasks
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
