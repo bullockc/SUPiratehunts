@@ -8,7 +8,8 @@ class Task < ActiveRecord::Migration
 		t.string :owner
 		t.string :user
 		t.string :clue
-		
+
+		t.timestamps null: false 
 
 	end
   end

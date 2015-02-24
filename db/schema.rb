@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223234414) do
+ActiveRecord::Schema.define(version: 20150224001735) do
 
   create_table "hunts", force: :cascade do |t|
     t.string   "huntID"
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 20150223234414) do
     t.string  "owner"
     t.string  "user"
     t.string  "clue"
+  end
+
+  create_table "user_hunt_task", force: :cascade do |t|
+    t.integer  "hunt_id"
+    t.integer  "task_id"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
