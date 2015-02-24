@@ -2,9 +2,8 @@
 <html>
 <head>
   <title>Capstone2015</title>
-  
-	<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
-	<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css">
+
+	
   
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -23,6 +22,7 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 
+<testathing>
 <div class="container">
 
 	<% if notice %>
@@ -34,6 +34,7 @@
 
   <%= yield %>
 </div>
-
+<testathing>
 </body>
+
 </html>
