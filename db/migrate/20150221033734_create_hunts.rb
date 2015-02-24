@@ -2,15 +2,14 @@ class CreateHunts < ActiveRecord::Migration
   def change
     create_table :hunts do |t|
 
-	t.string :huntID
 	t.string :huntname
 	t.string :owner
-	t.string :tasks
+	t.belongs_to :task
 	t.integer :status
 	t.boolean :availability
-	t.datetime :startdate
-	t.datetime :enddate
-	t.string :startlocation
+	t.datetime :start_date
+	t.datetime :end_date
+	t.string :start_location
 	t.text :description
 
 
