@@ -1,6 +1,6 @@
 class CreateHunts < ActiveRecord::Migration
   def change
-    create_table :hunts do |t|
+    create_table :hunt do |t|
 
 	t.string :huntname
 	t.string :owner
