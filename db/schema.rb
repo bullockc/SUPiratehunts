@@ -11,7 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208033501) do
+ActiveRecord::Schema.define(version: 20150224001735) do
+
+  create_table "hunt", force: :cascade do |t|
+    t.string   "huntname"
+    t.string   "owner"
+    t.integer  "task_id"
+    t.integer  "status"
+    t.boolean  "availability"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "start_location"
+    t.text     "description"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "pirate", force: :cascade do |t|
+    t.string   "name"
+    t.text     "hunts_created"
+    t.integer  "hunts_joined_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "user", force: :cascade do |t|
+    t.integer  "hunt_id"
+    t.integer  "type"
+    t.integer  "points"
+    t.string   "owner"
+    t.string   "user"
+    t.string   "clue"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_hunt_task", force: :cascade do |t|
+    t.integer  "hunt_id"
+    t.integer  "task_id"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
