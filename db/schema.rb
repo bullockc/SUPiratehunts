@@ -13,19 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20150224001735) do
 
-  create_table "hunts", force: :cascade do |t|
-    t.string   "huntID"
+  create_table "hunt", force: :cascade do |t|
     t.string   "huntname"
     t.string   "owner"
-    t.string   "tasks"
+    t.integer  "task_id"
     t.integer  "status"
     t.boolean  "availability"
-    t.datetime "startdate"
-    t.datetime "enddate"
-    t.string   "startlocation"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "start_location"
     t.text     "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "pirate", force: :cascade do |t|
@@ -37,12 +36,14 @@ ActiveRecord::Schema.define(version: 20150224001735) do
   end
 
   create_table "user", force: :cascade do |t|
-    t.integer "hunt_id"
-    t.integer "type"
-    t.integer "points"
-    t.string  "owner"
-    t.string  "user"
-    t.string  "clue"
+    t.integer  "hunt_id"
+    t.integer  "type"
+    t.integer  "points"
+    t.string   "owner"
+    t.string   "user"
+    t.string   "clue"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_hunt_task", force: :cascade do |t|
