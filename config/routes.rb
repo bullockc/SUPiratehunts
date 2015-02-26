@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # Default routes for hunts/tasks
+  resources :hunts
+  resources :tasks
+
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
