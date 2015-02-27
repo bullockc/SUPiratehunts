@@ -20,36 +20,26 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.datetime "updated_at",  null: false
   end
 
-<<<<<<< HEAD
-  create_table "hunt", force: :cascade do |t|
-    t.string   "huntname"
-    t.string   "owner"
-    t.integer  "task_id"
-    t.integer  "status"
-    t.boolean  "availability"
-=======
+
   create_table "hunts", force: :cascade do |t|
     t.string   "title"
     t.string   "author"
     t.boolean  "active"
     t.boolean  "published"
     t.boolean  "public"
->>>>>>> Team_Database
+
     t.datetime "start_date"
     t.datetime "end_date"
     t.string   "start_location"
     t.text     "description"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-<<<<<<< HEAD
-=======
   end
 
   create_table "photos", force: :cascade do |t|
     t.string   "prompt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> Team_Database
   end
 
   create_table "pirates", force: :cascade do |t|
@@ -60,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.datetime "updated_at",   null: false
   end
 
-<<<<<<< HEAD
+
   create_table "user", force: :cascade do |t|
     t.integer  "hunt_id"
     t.integer  "type"
@@ -70,14 +60,13 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.string   "clue"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-=======
+
   create_table "questions", force: :cascade do |t|
     t.string   "question"
     t.string   "right_answer"
     t.string   "submitted_answer"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
->>>>>>> Team_Database
   end
 
   create_table "tasks", force: :cascade do |t|
