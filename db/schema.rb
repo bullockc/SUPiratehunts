@@ -14,7 +14,10 @@
 ActiveRecord::Schema.define(version: 20150227054322) do
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Team_Database
   create_table "gps", force: :cascade do |t|
     t.string   "directions"
     t.string   "coordinates"
@@ -23,6 +26,9 @@ ActiveRecord::Schema.define(version: 20150227054322) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Team_Database
+=======
 >>>>>>> Team_Database
   create_table "hunt", force: :cascade do |t|
     t.string   "huntname"
@@ -31,7 +37,10 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.integer  "status"
     t.boolean  "availability"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Team_Database
 =======
   create_table "hunts", force: :cascade do |t|
     t.string   "title"
@@ -40,6 +49,9 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.boolean  "published"
     t.boolean  "public"
 >>>>>>> Team_Database
+<<<<<<< HEAD
+>>>>>>> Team_Database
+=======
 >>>>>>> Team_Database
     t.datetime "start_date"
     t.datetime "end_date"
@@ -50,6 +62,9 @@ ActiveRecord::Schema.define(version: 20150227054322) do
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Team_Database
 =======
 >>>>>>> Team_Database
   end
@@ -62,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150227054322) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   create_table "user", force: :cascade do |t|
     t.integer  "hunt_id"
     t.integer  "type"
@@ -72,12 +88,17 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
 =======
+=======
+>>>>>>> Team_Database
   create_table "pirates", force: :cascade do |t|
     t.string   "email"
     t.string   "password"
     t.string   "display_name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+<<<<<<< HEAD
+>>>>>>> Team_Database
+=======
 >>>>>>> Team_Database
   end
 
