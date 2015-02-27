@@ -11,30 +11,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224001735) do
+ActiveRecord::Schema.define(version: 20150227054322) do
 
+<<<<<<< HEAD
+=======
+  create_table "gps", force: :cascade do |t|
+    t.string   "directions"
+    t.string   "coordinates"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+<<<<<<< HEAD
+>>>>>>> Team_Database
   create_table "hunt", force: :cascade do |t|
     t.string   "huntname"
     t.string   "owner"
     t.integer  "task_id"
     t.integer  "status"
     t.boolean  "availability"
+<<<<<<< HEAD
+=======
+=======
+  create_table "hunts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.boolean  "public"
+>>>>>>> Team_Database
+>>>>>>> Team_Database
     t.datetime "start_date"
     t.datetime "end_date"
     t.string   "start_location"
     t.text     "description"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Team_Database
   end
 
-  create_table "pirate", force: :cascade do |t|
-    t.string   "name"
-    t.text     "hunts_created"
-    t.integer  "hunts_joined_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+  create_table "photos", force: :cascade do |t|
+    t.string   "prompt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> Team_Database
   end
 
+<<<<<<< HEAD
   create_table "user", force: :cascade do |t|
     t.integer  "hunt_id"
     t.integer  "type"
@@ -44,12 +71,40 @@ ActiveRecord::Schema.define(version: 20150224001735) do
     t.string   "clue"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+  create_table "pirates", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password"
+    t.string   "display_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+>>>>>>> Team_Database
   end
 
-  create_table "user_hunt_task", force: :cascade do |t|
+<<<<<<< HEAD
+  create_table "user", force: :cascade do |t|
     t.integer  "hunt_id"
-    t.integer  "task_id"
-    t.integer  "status"
+    t.integer  "type"
+    t.integer  "points"
+    t.string   "owner"
+    t.string   "user"
+    t.string   "clue"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+=======
+  create_table "questions", force: :cascade do |t|
+    t.string   "question"
+    t.string   "right_answer"
+    t.string   "submitted_answer"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+>>>>>>> Team_Database
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "points"
+    t.string   "clue"
+    t.boolean  "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
