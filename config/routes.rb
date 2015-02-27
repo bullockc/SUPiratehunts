@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'help/index'
+
   # Default routes for hunts/tasks
   resources :hunts
   resources :tasks
