@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.boolean  "active"
     t.boolean  "published"
     t.boolean  "public"
-
     t.datetime "start_date"
     t.datetime "end_date"
     t.string   "start_location"
@@ -49,17 +48,6 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
-
-
-  create_table "user", force: :cascade do |t|
-    t.integer  "hunt_id"
-    t.integer  "type"
-    t.integer  "points"
-    t.string   "owner"
-    t.string   "user"
-    t.string   "clue"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
 
   create_table "questions", force: :cascade do |t|
     t.string   "question"
