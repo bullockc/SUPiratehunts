@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20150227054322) do
 
+  create_table "gps", force: :cascade do |t|
+    t.string   "directions"
+    t.string   "correct_coordinates"
+    t.string   "submitted_coordinates"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "hunts", force: :cascade do |t|
     t.string   "title"
     t.string   "author"
@@ -27,6 +35,13 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.string   "prompt"
+    t.boolean  "submitted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pirates", force: :cascade do |t|
     t.string   "email"
     t.string   "password"
@@ -35,34 +50,20 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.integer  "points"
-    t.string   "clue"
-    t.boolean  "completed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "photos", force: :cascade do |t|
-    t.string   "prompt"
-    t.boolean  "submitted"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "gps", force: :cascade do |t|
-    t.string   "directions"
-    t.string   "coordinates"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "questions", force: :cascade do |t|
     t.string   "question"
     t.string   "right_answer"
     t.string   "submitted_answer"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "points"
+    t.string   "clue"
+    t.boolean  "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
