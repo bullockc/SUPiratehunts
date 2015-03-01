@@ -1,23 +1,41 @@
 <h1>Hunts</h1>
-
-<h3>This is the generate a hunt page!</h3>
-
-
 <br><br>
+<% provide(:title, 'Create Hunt') %>
+<h1>Create Hunt</h1>
+<!-- Ruby Form for Creating a hunt
+	<div class="row">
+	  <div class="col-md-6 col-md-offset-3">
+	  <!--The presence of the do keyword indicates that form_for takes a block with one variable, which we’ve called f (for “form”)-->
+		<%= form_for(@user) do |f| %>
+		  <%= f.label :hunt_name, "Hunt Name" %>
+		  <%= f.text_field :name %>
+		  
+		  <!-- Optional password field -->
+		  <%= f.label :password, "Password" %>
+		  <%= f.password_field :password %>
 
+		  <%= f.label :password_confirmation, "Confirmation" %>
+		  <%= f.password_field :password_confirmation %>
 
-<form>
-Name this Hunt:<br>
-<input type="text" name="HuntName">
-<input type="hidden" name="Username" value="idk how to make this the the user's username">
-</form>
+		  <%= f.submit "Create Hunt", class: "btn btn-primary" %>
+		<% end %>
+	  </div>
+	</div> 
+-->
 
-<br><br><br><br>
+<!-- Previously existing HTMl 
+	<form>
+	Name this Hunt:<br>
+	<input type="text" name="HuntName">
+	<input type="hidden" name="Username" value="idk how to make this the the user's username">
+	</form>
 
-<button type = "button">Create This Hunt</button>
+	<br><br><br><br>
 
-<!--I think this could be a link to the hunts/index page-->
-<button type = "button">Find Other Hunts</button>
-<=linkTo
+	<button type = "button">Create This Hunt</button>
 
+	<!--I think this could be a link to the hunts/index page-->
+	<button type = "button">Find Other Hunts</button>
+	<=linkTo
+-->
 
