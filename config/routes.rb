@@ -1,15 +1,23 @@
 Rails.application.routes.draw do
-  get 'help' => 'help#index'
+  get 'demo' => 'demo#index'        #The demo/index page gets rerouted to just /demo
+  get 'demo/pageOne' => 'demo#pageOne'  #must include all views in demo here like this one
+
+
+  get 'help' => 'help#index'    #The help/index page gets rerouted to just /help
+    
 
   # Default routes for hunts/tasks
   resources :hunts
   resources :tasks
+    
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
   # Use default devise user routes
-  devise_for :users
+  devise_for :users, skip: :demo
+    
+    
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
