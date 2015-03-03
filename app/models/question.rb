@@ -1,3 +1,3 @@
 class Question < ActiveRecord::Base
-	belongs_to :hunt
+	belongs_to :task, index :true
 end
