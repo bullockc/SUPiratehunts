@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Capstone2015</title>
-
-	
+  <title>Capstone2015</title>	
   
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -14,7 +12,10 @@
 <%= render 'layouts/navbarHeader' %>
 
 
-<testathing>
+
+        <li><%= link_to 'View Demo', demo_path%></li>
+
+
 <div class="container">
 
 	<% if notice %>
@@ -26,7 +27,6 @@
 
   <%= yield %>
 </div>
-<testathing>
 </body>
 
 </html>
