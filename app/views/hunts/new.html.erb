@@ -6,11 +6,22 @@
 <br><br>
 
 
-<form>
-Name this Hunt:<br>
-<input type="text" name="HuntName">
-<input type="hidden" name="Username" value="idk how to make this the the user's username">
-</form>
+<% provide(:title, 'Create Hunt') %>
+<h1>Create Hunt</h1>
+<!-- Ruby Form for Creating a hunt -->
+	<div class="row">
+	  <div class="col-md-6 col-md-offset-3">
+	  <!--The presence of the do keyword indicates that form_for takes a block with one variable, which we’ve called f (for “form”).-->
+		<%= form_for(@hunt) do |f| %>
+		  <%= f.label :huntname, "Hunt Name" %>
+		  <%= f.text_field :huntname %>
+		  
+		  <%= f.label %>
+
+		  <%= f.submit "Create Hunt", class: "btn btn-primary" %>
+		<% end %>
+	  </div>
+	</div> 
 
 <br><br><br><br>
 
