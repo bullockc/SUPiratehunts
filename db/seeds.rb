@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-pirate.create(:display_name => "Harry Potter")
+pirates = Pirate.create(:display_name => "Harry Potter")
 
-hunt.create(:title => "Chamber of Secrets",
+hunts = Hunt.create(:title => "Chamber of Secrets",
 				:author => "Harry Potter",
 				:active => "True",
 				:published => "True",
@@ -16,20 +16,20 @@ hunt.create(:title => "Chamber of Secrets",
 				:start_location => "library",
 				:description => "Theres a snake in there")
 
-task.create(:points => "100",
+tasks = Task.create(:points => "100",
 				:clue => "Do this",
 				:completed => "false")
 
-photo.create(:prompt => "Picture of a fang",
+photos = Photo.create(:prompt => "Picture of a fang",
 				:submitted => "False")
 
-gps.create(:directions => "Underneathe the girls bathroom",
+gpss = Gps.create(:directions => "Underneathe the girls bathroom",
 				:correct_coordinates => "0.0",
 				:submitted_cooridnates => "0.0")
-question.create(:question => "Worst house?",
+question = Question.create(:question => "Worst house?",
 					:right_answer => "Syltherin"
 					:submitted_answer => "Gryffindor")
 
-pirate_hunt.create()
+PirateHunt.create()
 
-pirate_task.create()
+PirateTask.create()
