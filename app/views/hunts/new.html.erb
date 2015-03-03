@@ -1,9 +1,32 @@
-<h1>Hunts</h1>
+﻿<h1>Hunts</h1>
 
 <h3>This is the generate a hunt page!</h3>
 
-
 <br><br>
+<%= form_for(@hunt) do |f| %>
+		  <%= f.label :title, "Title" %>
+		  <%= f.text_field :title %>
+		  
+		  
+		  <%= f.label :start_date, "Start Date" %>
+		  <%= f.date_field :start_date %>
+		  
+		  <%= f.label :end_date, "End Date" %>
+		  <%= f.date_field :end_date %>
+		  
+		  <%= f.label :start_location, "Start Location"%>
+		  <%= f.text_field :start_location%>
+		  
+		  <%= f.label :description, "Description"%>
+		  <%= f.text_field :description%>
+		  
+		  <%= f.label :created_at, "Created At" %>
+		  <%= f.date_field :created_at %>
+		  <%= f.label :updated_at, "Updated At" %>
+		  <%= f.date_field :updated_at %>
+		  
+		  <%= f.submit "Create Hunt", class: "btn btn-primary" %>
+		<% end %>
 
 
 <% provide(:title, 'Create Hunt') %>
@@ -23,12 +46,10 @@
 	  </div>
 	</div> 
 
-<br><br><br><br>
-
 <button type = "button">Create This Hunt</button>
 
 <!--I think this could be a link to the hunts/index page-->
 <button type = "button">Find Other Hunts</button>
-<=linkTo
+
 
 
