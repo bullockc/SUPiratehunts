@@ -3,7 +3,6 @@ class CreateHunts < ActiveRecord::Migration
     create_table :hunts do |t|
 
 		t.string :title
-		t.string :author #FIGURE ME OUT
 		t.boolean :active #ACTIVE VS INACTIVE
 		t.boolean :published 
 		t.boolean :public #PRIVATE VS PUBLIC

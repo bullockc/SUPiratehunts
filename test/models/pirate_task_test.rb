@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class QuestionTest < ActiveSupport::TestCase
+class PirateTaskTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

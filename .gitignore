@@ -18,3 +18,4 @@
 
 # Ignore vagrant instance stuff.
 /.vagrant
+app/views/layouts/help.html.erb

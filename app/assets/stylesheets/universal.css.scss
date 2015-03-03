@@ -1,0 +1,24 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+/*Center the navigation pills by displaying as an inline block subject to the text-center class in the html*/
+
+.center-pills {
+	display: inline-block;
+	  font-size: 18px;
+}
+
+body {
+	background-image:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSw6UYKDiaBqQe10VRJM_VHEVAs2OJvfs12Du-XllKunkTpXI66g3krEK4');
+	background-size: cover;
+}
+			
+h1 {
+	text-align: center; 
+	color: #fff; 
+}
+			
+p {
+	color: #fff; 
+	text-align: center; 
+} 
