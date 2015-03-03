@@ -17,19 +17,15 @@ hunts = Hunt.create(:title => "Chamber of Secrets",
 				:description => "Theres a snake in there")
 
 tasks = Task.create(:points => "100",
-				:clue => "Do this",
-				:completed => "false")
+				:clue => "by the girls bathroom",
+				:prompt => "Do this",
+				:correct_answer => "Moaning Mrytle",
+				:photo => "False",
+				:question => "False",
+				:gps => "True")
 
-photos = Photo.create(:prompt => "Picture of a fang",
-				:submitted => "False")
 
-gpss = Gps.create(:directions => "Underneathe the girls bathroom",
-				:correct_coordinates => "0.0",
-				:submitted_cooridnates => "0.0")
-question = Question.create(:question => "Worst house?",
-					:right_answer => "Syltherin"
-					:submitted_answer => "Gryffindor")
 
-PirateHunt.create()
+PirateHunt.create(:)
 
 PirateTask.create()

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227054322) do
+ActiveRecord::Schema.define(version: 20150303005338) do
 
   create_table "gps", force: :cascade do |t|
     t.string   "directions"
@@ -60,6 +60,19 @@ ActiveRecord::Schema.define(version: 20150227054322) do
     t.string   "name"
     t.text     "hunts_created"
     t.integer  "hunts_joined_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "pirate_hunts", force: :cascade do |t|
+    t.boolean  "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pirate_tasks", force: :cascade do |t|
+    t.boolean  "answer_uploaded"
+    t.boolean  "completed"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
