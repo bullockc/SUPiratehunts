@@ -1,4 +1,10 @@
 class HuntsController < ApplicationController
+
+  def myHunts
+    #@hunt = Pirate_Hunt.find(params[:pirate])
+    #@hunt = Hunt.new(hunt_params)
+  end
+    
   def new
     @hunt = Hunt.new
   end
