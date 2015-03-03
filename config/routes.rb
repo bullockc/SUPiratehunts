@@ -2,30 +2,14 @@ Rails.application.routes.draw do
   get 'demo' => 'demo#index'        #The demo/index page gets rerouted to just /demo
   get 'demo/pageOne' => 'demo#pageOne'  #must include all views in demo here like this one
 
-    
-    
-  get 'help' => 'help#index'    #The help/index page gets rerouted to just /help    
+  get 'help' => 'help#index'    #The help/index page gets rerouted to just /help
 
-  # Default routes for hunts/tasks
-  get 'hunts/' => 'hunts#index'
-  get 'hunts/create' => 'hunts#create'
-  get 'hunts/delete' => 'hunts#delete'
-  get 'hunts/destroy' => 'hunts#destroy'
-  get 'hunts/edit' => 'hunts#edit'
+  # Additional routes for a controller, if any, should be placed
+  # above their 'resources'
+  # myHunts route kept to keep hunts#index view from erroring
   get 'hunts/myHunts' => 'hunts#myHunts'
-  get 'hunts/new' => 'hunts#new'
-  get 'hunts/show' => 'hunts#show'
-  get 'hunts/update' => 'hunts#update'
-    
-  get 'tasks/' => 'tasks#index'
-  get 'tasks/create' => 'tasks#create'
-  get 'tasks/delete' => 'tasks#delete'
-  get 'tasks/destroy' => 'tasks#destroy'
-  get 'tasks/edit' => 'tasks#edit'
-  get 'tasks/mytasks' => 'tasks#mytasks'
-  get 'tasks/new' => 'tasks#new'
-  get 'tasks/show' => 'tasks#show'
-  get 'tasks/update' => 'tasks#update'
+  resources :hunts
+  resources :tasks
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
