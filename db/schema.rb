@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20150303005338) do
     t.datetime "updated_at",            null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "hunt", force: :cascade do |t|
     t.string   "huntname"
     t.string   "owner"
@@ -36,7 +34,6 @@ ActiveRecord::Schema.define(version: 20150303005338) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
->>>>>>> master
 
   create_table "hunts", force: :cascade do |t|
     t.string   "title"
@@ -57,8 +54,6 @@ ActiveRecord::Schema.define(version: 20150303005338) do
     t.boolean  "submitted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-=======
   end
 
   create_table "pirate", force: :cascade do |t|
@@ -80,7 +75,6 @@ ActiveRecord::Schema.define(version: 20150303005338) do
     t.boolean  "completed"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
->>>>>>> master
   end
 
   create_table "pirates", force: :cascade do |t|
