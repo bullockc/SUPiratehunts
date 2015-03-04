@@ -65,13 +65,21 @@ ActiveRecord::Schema.define(version: 20150303005338) do
   end
 
   create_table "pirate_hunts", force: :cascade do |t|
+    t.boolean  "completed"
+    t.integer  "pirate_id"
+    t.integer  "hunt_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "pirate_tasks", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "answer_uploaded"
+    t.boolean  "completed"
+    t.integer  "pirate_id"
+    t.integer  "task_id"
+    t.integer  "hunt_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "pirates", force: :cascade do |t|
