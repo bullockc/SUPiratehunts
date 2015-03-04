@@ -11,13 +11,14 @@ Rails.application.routes.draw do
   
   resources :hunts
   resources :tasks
+  
+  resources :pirate_hunts
+  resources :pirate_tasks
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-
-    
-    
-  # Use default devise user routes
+ 
+   # Use default devise user routes
   devise_for :users
     
     
