@@ -8,7 +8,8 @@ class CreateTasks < ActiveRecord::Migration
   		t.integer :points
     	t.string :prompt
   		t.string :clue
-		t.string :correct_answer
+		  t.string :correct_answer
+      t.references :hunt
   		
       t.timestamps null: false
     end
