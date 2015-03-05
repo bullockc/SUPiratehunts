@@ -1,4 +1,4 @@
-class CreateHunts < ActiveRecord::Migration
+class CreateHunts < ActiveRecord::Migration #plural because it is a migration
   def change
     create_table :hunts do |t|
 
@@ -10,6 +10,7 @@ class CreateHunts < ActiveRecord::Migration
 		t.datetime :end_date 
 		t.string :start_location
 		t.text :description
+		t.references :pirate #REFERENCES are for the ID field
 	
       t.timestamps null: false
     end
