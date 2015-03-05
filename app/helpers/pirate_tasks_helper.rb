@@ -1,0 +1,2 @@
+module PirateTasksHelper
+end
