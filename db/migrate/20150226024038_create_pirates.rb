@@ -4,6 +4,7 @@ class CreatePirates < ActiveRecord::Migration
 		t.string :display_name
 		t.timestamps null: false
         t.timestamps null: false
+        t.reference :user #user ID associated with pirate
     end
   end
 end

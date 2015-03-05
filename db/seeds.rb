@@ -6,7 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-pirates = Pirate.create(:display_name => "Harry Potter")
+
+users = User.create( :email => "null",
+					:encrypted_password => "null",
+					:reset_password_token => "null",
+					:reset_password_sent_at => nil,
+					:remember_created_at => nil,
+					:sign_in_count => nil,
+					:current_sign_in_at => nil,
+					:last_sign_in_at => nil,
+					:current_sign_in_ip => "null",
+					:last_sign_in_ip => "null")
+
+
+pirates = Pirate.create(:display_name => "Harry Potter",
+						:user => nil)
 
 hunts = Hunt.create(
 
