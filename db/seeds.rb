@@ -8,24 +8,26 @@
 
 pirates = Pirate.create(:display_name => "Harry Potter")
 
-hunts = Hunt.create(:title => "Chamber of Secrets",
-				:author => "Harry Potter",
+hunts = Hunt.create(
+
+				:title => "Chamber of Secrets",
 				:active => "True",
 				:published => "True",
 				:public => "True",
+				:start_date => 03252015,
+				:end_date => 03262015,
 				:start_location => "library",
-				:description => "Theres a snake in there")
+				:description => "Theres a snake in there",
+				:pirate => nil)
 
-tasks = Task.create(:points => "100",
-				:clue => "by the girls bathroom",
+tasks = Task.create(
+				:task_type => 3,
+				:points => 100,
 				:prompt => "Do this",
+				:clue => "by the girls bathroom",
 				:correct_answer => "Moaning Mrytle",
-				:photo => "False",
-				:question => "False",
-				:gps => "True")
+				:hunt => nil)
 
 
 
-PirateHunt.create(:)
 
-PirateTask.create()
