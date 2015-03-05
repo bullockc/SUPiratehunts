@@ -1,4 +1,4 @@
-class PirateTask < ActiveRecord::Base
+class PirateTask < ActiveRecord::Base #Singular because it is a class
   #I think 'index:true' syntax only applies if you declare the association in the migration file
   belongs_to :pirate #, index:true
   belongs_to :hunt #, index:true #overload of inferrmation

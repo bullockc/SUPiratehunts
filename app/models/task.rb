@@ -1,4 +1,4 @@
-class Task < ActiveRecord::Base
+class Task < ActiveRecord::Base #Singular because it is a class
 	#I think 'index:true' syntax only applies if you declare the association in the migration file
 	belongs_to :hunt #, index :true
 	#no longer relevant because we decided to have one tasks model
