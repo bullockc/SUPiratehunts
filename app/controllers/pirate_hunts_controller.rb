@@ -30,7 +30,7 @@ class PirateHuntsController < ApplicationController
   def update
    @pirate_hunt = PirateHunt.find(params[:id])
    @pirate_hunt.update_attributes(pirate_hunt_params)
-   redirect_to(:action => 'show', :id => @task.id)
+   redirect_to(:action => 'show', :id => @pirate_hunt.id)
    #took out if/else b/c would rather always redirect to task page, but w/
    #error message displayed on failure to update (UI functionality??)
   end
@@ -40,6 +40,11 @@ class PirateHuntsController < ApplicationController
 
   def destroy
     PirateHunt.find(params[:id]).destroy
-    redirect_to :action => 'list'
+    redirect_to :action => 'index'
+  end
+  
+  private
+  def pirate_hunt_params
+    params.require(:PirateHunt).permit(:completed, :pirate_id, :hunt_id)
   end
 end
