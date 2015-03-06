@@ -45,6 +45,6 @@ class PirateHuntsController < ApplicationController
   
   private
   def pirate_hunt_params
-    params.require(:pirate_hunt).permit(:completed, :pirate_id, :hunt_id)
+    params.require(:pirate_hunt).permit(:completed, :pirate, :hunt)
   end
 end
