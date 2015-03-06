@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   
   resources :hunts
   resources :tasks
+  resources :pirates
+
   
   resources :pirate_hunts
   resources :pirate_tasks
