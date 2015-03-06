@@ -12,7 +12,7 @@ class HuntsController < ApplicationController
   def create
     @hunt = Hunt.new(hunt_params)
     if @hunt.save
-      redirect_to('root_path') #this should probably change
+      redirect_to(@hunt) #redirects to the show for that individual hunt that was just created
     else
       render('new') #also maybe changes?
     end
