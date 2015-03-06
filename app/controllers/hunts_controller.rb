@@ -12,7 +12,7 @@ class HuntsController < ApplicationController
   def create
     @hunt = Hunt.new(hunt_params)
     if @hunt.save
-      redirect_to('root_path') #this should probably change
+      redirect_to(@hunt) #redirects to the show for that individual hunt that was just created
     else
       render('new') #also maybe changes?
     end
@@ -47,7 +47,7 @@ class HuntsController < ApplicationController
 
   private
   def hunt_params
-    params.require(:hunt).permit(:title, :author, :active, :published, :public, :start_date, :end_date, :start_location, :description, :created_at, :updated_at)
+    params.require(:hunt).permit(:title, :active, :published, :public, :start_date, :end_date, :start_location, :description, :pirate_id, :created_at, :updated_at)
   end
 #end #ends the 'private' section
 end #end of class
