@@ -1,4 +1,50 @@
+<!-- Jordan is using this page to edit forms for the various types of task pages, not yet ready to add the styling to 
+the universal css file-->
+<style>
+/* forms */
+/*I stole this directly from the ruby book in the form_for section */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+
+}
+input {
+  height: auto !important;
+}
+
+/*Trying to make just the text boxes more opaque and not the text entered, 
+this needs word because the text also becomes opaque, I played with this a little but need to look into it more*/
+.opaque-forms input{
+  opacity: 0.4; /*found info here https://css-tricks.com/almanac/properties/o/opacity/ */ 
+} 
+</style>
+<% provide(:title, 'Create New Task') %>
 <h1>Create New Task</h1>
+
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@task) do |f| %>
+	  <div class="opaque-forms">
+		  <%= f.label :clue, "Clue" %>
+		  <%= f.text_field :clue %>
+		  
+		  <%= f.label :points, "Point Value" %>
+		  <%= f.number_field(:points,in: 1..100, step: 1) %>
+
+		  <!-- Add an answer field but can't find the parameter in the Tasks controller-->
+	  </div>  
+	  <%= f.submit "Create Task", class: "btn btn-primary" %>
+	 
+    <% end %>
+  </div>
+</div>
+
+
+
+<!--
 <p>Click below to choose which type of task to create</p>
 <form>
 <input type="radio" name="question">Question
@@ -15,3 +61,4 @@ Write in a hint for your task:
 <br><br>
 <input type="submit" value="Submit">
 </form>
+-->
