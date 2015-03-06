@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   # Additional routes for a controller, if any, should be placed
   # above their 'resources'
   # myHunts route kept to keep hunts#index view from erroring
-  # get 'hunts/myHunts' => 'hunts#myHunts'
+  get 'pirate_hunts/myHunts' => 'pirate_hunts#myHunts' # use this syntax for adding on top of reseourceful stuff
   
   resources :hunts
   resources :tasks
+  resources :pirates
+
   
   resources :pirate_hunts
   resources :pirate_tasks

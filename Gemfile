@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use devise for accounts/authentication. Read more: https://github.com/plataformatec/devise
 gem 'devise', '~> 3.4.1'
 
+# Use paperclips for model attachments
+gem 'paperclip', '~> 4.2.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
