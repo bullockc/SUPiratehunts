@@ -41,6 +41,6 @@ class TasksController < ApplicationController
   
   private
   def task_params
-    params.require(:task).permit(:points, :clue, :completed, :completed_at, :updated_at)
+    params.require(:task).permit(:points, :clue, :task_type, :correct_answer, :prompt)
   end
 end
