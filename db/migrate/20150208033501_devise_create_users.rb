@@ -31,6 +31,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
 
+      #may need this line later
+      t.integer :pirate_id #needs the ID of the pirate class
+      
+
       t.timestamps
     end
 

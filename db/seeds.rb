@@ -18,9 +18,12 @@ users = User.create( :email => "null",
 					:current_sign_in_ip => "null",
 					:last_sign_in_ip => "null")
 
+pirates = Pirate.create(:display_name => "Harry Potter")
 
-pirates = Pirate.create(:display_name => "Harry Potter",
-						:user => nil)
+
+Pirate.create({
+				user_id: user.id
+	}, without_protection: true)
 
 hunts = Hunt.create(
 
@@ -31,17 +34,25 @@ hunts = Hunt.create(
 				:start_date => 03252015,
 				:end_date => 03262015,
 				:start_location => "library",
-				:description => "Theres a snake in there",
-				:pirate => nil)
+				:description => "Theres a snake in there"
+				#:pirate => pirate.id
+				)
+
+Hunt.create({
+				pirate_id: pirate.id
+	}, without_protection: true)
 
 tasks = Task.create(
 				:task_type => 3,
 				:points => 100,
 				:prompt => "Do this",
 				:clue => "by the girls bathroom",
-				:correct_answer => "Moaning Mrytle",
-				:hunt => nil)
+				:correct_answer => "Moaning Mrytle"
+				#:hunt => hunt.id
+				)
 
-
+Task.create({
+				pirate_id: pirate.id
+	}, without_protection: true)
 
 
