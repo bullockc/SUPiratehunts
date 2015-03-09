@@ -28,6 +28,7 @@
 		  <%= f.label :description, "Description"%>
 		  <%= f.text_field :description%>
 		  <br>
+		  <%= f.hidden_field :pirate_id, :value => current_user.id%>
 		  <%= f.hidden_field :created_at%>
 		  <%= f.hidden_field :updated_at%>
 		  <br>
