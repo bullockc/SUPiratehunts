@@ -1,10 +1,5 @@
 class HuntsController < ApplicationController
 
-    
-  has_many :tasks
-
-  accept_nested_attributes_for :tasks, :allow_destroy => true
-
   #def myHunts
     #@hunt = Pirate_Hunt.find(params[:pirate])
     #@hunt = Hunt.new(hunt_params)
