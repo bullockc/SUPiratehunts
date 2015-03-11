@@ -1,5 +1,7 @@
 class PiratesController < ApplicationController
 
+  belongs_to :owner
+    
   def new
     @pirate = Pirate.new
   end

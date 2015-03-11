@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   # myHunts route kept to keep hunts#index view from erroring
   get 'pirate_hunts/myHunts' => 'pirate_hunts#myHunts' # use this syntax for adding on top of reseourceful stuff
   
-  resources :hunts
-  resources :tasks
+  resources :hunts do
+    resources :tasks
+  end
+  
   resources :pirates
 
-  
   resources :pirate_hunts
   resources :pirate_tasks
 
