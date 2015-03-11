@@ -2,27 +2,18 @@
 <style>
 
 
-	h1 {
-	 text-align: center; 
-	 color: #fff; 
-	}
-	
-	p {
-	color: #fff; 
-	text-align: center; 
-	padding: 20px;
-	} 
-	
-	
 </style>
 <body>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= render 'layouts/navbarHeader' %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 			
 
 	<h1>Pirate Hunt Demo</h1>
 	
+	
+	<!-- Paragraph about creating new hunts  -->
 	<p>
 	This demo will show you how to create hunts, add tasks to hunts, and other functionalities of Pirate Hunt. 
 	To get started, you will create a hunt. From the home page, click on the "Hunts" button; this will take you to the 
@@ -32,6 +23,8 @@
 	 description of your scavenger hunt. Once finished, click the  "Create Hunt" button.
 	 </p>
 	 
+	 
+	 <!-- Paragraph about creating tasks for hunts  -->
 	 <p>
 	 Next you will create tasks for your hunt. From this page, the specific page for your hunt, there is a button near the
 	 bottom with the words "Create New Task." All good scavenger hunts have many tasks to be completed, so start with 
@@ -46,22 +39,12 @@
 	 
 	 </p>
     
-		THIS DOESN'T WORK BECAUSE OF THE CODE BELOW
-	
-	<!-- don't know the path for new user, or which method to call
-	
-	<%= button_to "Remove Hunt", new_user_path, :method => "create" %> 
-	
-	-->
-	
-	
-		THIS DOESN'T WORK BECAUSE OF THE CODE ABOVE
-		
-		
-		
-        <li><%= link_to 'Start the Demo', demo_pageOne_path%></li>
-
-
+		<center>
+		<%= link_to 'Start the Demo', demo_pageOne_path, :class => 'btn btn-primary'%>
+		<br><br>
+		<!--the below path will change to the account creation path -->
+		<%= link_to 'Create Account', demo_pageOne_path, :class => 'btn btn-primary'%>
+		</center>
     
     
 </body>
