@@ -14,6 +14,10 @@
 <button type = "button">Join This Hunt</button>
 
 <!--This needs to be admin only-->
+<<<<<<< HEAD
 <%= button_to "Create New Task", new_task_path, :method => "get" %>
 <%= button_to "Remove Hunt", hunt_path, :method => "delete" %>
+=======
+<%= button_to "Create New Task", new_hunt_task_path(@hunt), :method => "get" %>
+>>>>>>> origin/master
 
