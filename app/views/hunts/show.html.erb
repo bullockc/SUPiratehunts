@@ -1,10 +1,18 @@
-<h1>Hunts</h1>
+<h1><%= @hunt.title.upcase%></h1><%#The title of the hunt will be the header of the page%>
 
-<h3>This is the 'shows a specific hunt' page!</h3>
-
+<h2><%= @hunt.description%></h2><%#The description will be directly beneath the hunt title for easy readability%>
+<p>This hunt starts at <%=@hunt.start_location%></p>
+<p>This hunt starts at <%= @hunt.start_date%> and ends <%= @hunt.end_date%></p>
+<%#This displays the start and end times of the hunt%>
+<p><% if(@hunt.public?) %><div class="public">This hunt is a public hunt</div><% else %><div class="private">This hunt is a private hunt </div><%end%></p>
+<%#This displays whether the hunt is public or private%>
+<p><% if(@hunt.active?) %><div class="active">This hunt is currently active</div><% else %><div class="inactive">This hunt is currently not active </div><%end%></p>
+<%#This is meant to display whether or not the hunt is active based on the active bool%>
+<%#Currently the public and active displays are not staying in line with the rest of the paragraphs, but that is a stylesheet issue and will be fixed later%>
 <p>I think maybe a table of tasks for this hunt will go here?</p>
 
 <button type = "button">Join This Hunt</button>
 
 <!--This needs to be admin only-->
-<button type = "button">Create New Task</button>
+<%= button_to "Create New Task", new_hunt_task_path(@hunt), :method => "get" %>
+

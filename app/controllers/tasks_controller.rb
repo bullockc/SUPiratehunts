@@ -26,19 +26,21 @@ class TasksController < ApplicationController
 
   def update
    @task = Task.find(params[:id])
-    @task.update_attributes(task_params)
-    redirect_to(:action => 'show', :id => @task.id)
-    #took out if/else b/c would rather always redirect to task page, but w/ error message displayed on failure to update (UI functionality??)
+   @task.update_attributes(task_params)
+   redirect_to(:action => 'show', :id => @task.id)
+   #took out if/else b/c would rather always redirect to task page, but w/ error message displayed on failure to update (UI functionality??)
   end
 
   def delete
   end
 
   def destroy
+    Task.find(params[:id]).destroy
+    redirect_to :action => 'index'
   end
   
   private
   def task_params
-    params.require(:Task).permit(:points, :clue, :completed, :completed_at, :updated_at)
+    params.require(:task).permit(:points, :clue, :task_type, :correct_answer, :prompt)
   end
 end
