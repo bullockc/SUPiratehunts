@@ -21,6 +21,7 @@ this needs word because the text also becomes opaque, I played with this a littl
   opacity: 0.4; /*found info here https://css-tricks.com/almanac/properties/o/opacity/ */ 
 } 
 </style>
+
 -->
 <% provide(:title, 'Create New Task') %>
 <h1>Create New Task</h1>
@@ -29,13 +30,22 @@ this needs word because the text also becomes opaque, I played with this a littl
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@task, url: hunt_tasks_path) do |f| %>
 	  <div class="opaque-forms">
-		  <%= f.label :clue, "Clue" %>
+		  <%= f.hidden_field :hunt_id, :value => @huntID %>
+
+		  <%= f.label :prompt, "What is the Task?"%>
+		  <%= f.text_field :prompt %>
+
+		  <%= f.label :clue, "Add a Clue (Optional)" %>
 		  <%= f.text_field :clue %>
 		  
-		  <%= f.label :points, "Point Value" %>
+		  <%= f.label :correct_answer, "Correct Answer" %>
+		  <%= f.text_field :correct_answer %>
+
+		  <%= f.label :points, "Point Value (0-100)" %>
 		  <%= f.number_field(:points,in: 1..100, step: 1) %>
 
-		  <!-- Add an answer field but can't find the parameter in the Tasks controller-->
+		  <%= f.hidden_field :task_type, :value => "0"%>
+		  <!-- initialized to a static value, representative of a given hunt type. Can be changed later -->
 	  </div>  
 	  <%= f.submit "Create Task", class: "btn btn-primary" %>
 	 
