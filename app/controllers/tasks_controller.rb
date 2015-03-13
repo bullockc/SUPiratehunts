@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def new
       @task = Task.new
+      @huntID = params[:hunt_id]
   end
 
   def create
@@ -41,6 +42,6 @@ class TasksController < ApplicationController
   
   private
   def task_params
-    params.require(:task).permit(:points, :clue, :task_type, :correct_answer, :prompt)
+    params.require(:task).permit(:points, :clue, :task_type, :correct_answer, :prompt, :hunt_id)
   end
 end
