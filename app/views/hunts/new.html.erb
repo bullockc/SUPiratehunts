@@ -1,21 +1,28 @@
-﻿<h1>Hunts</h1>
+﻿<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-<h3>This is the generate a hunt page!</h3>
+<h1>Hunts</h1>
+
+<h3>Let's create a hunt</h3>
 
 <br><br>
 <%= form_for(@hunt) do |f| %>
+		  <div class="opaque-forms">
 		  <%= f.label :title, "Title" %>
 		  <%= f.text_field :title %>
 		  <br>
 		  <%= f.label :active, "Active"%>	
 		  <%= f.check_box :active %>
-		  <br>
+		 
 		  <%= f.label :published, "Published"%>	
 		  <%= f.check_box :published %>
-		  <br>
+		  
+		  <!--Since this is not an option currently, should I get rid of it? -->
 		  <%= f.label :public, "Public"%>	
 		  <%= f.check_box :public %>
-		  <br>
+		  
 		  <%= f.label :start_date, "Start Date" %>
 		  <%= f.date_field :start_date %>
 		  <br>
@@ -28,10 +35,13 @@
 		  <%= f.label :description, "Description"%>
 		  <%= f.text_field :description%>
 		  <br>
+		  <%= f.hidden_field :pirate_id, :value => current_user.id%>
 		  <%= f.hidden_field :created_at%>
 		  <%= f.hidden_field :updated_at%>
 		  <br>
+		  </div>
 		  <%= f.submit "Create Hunt", class: "btn btn-primary" %>
+		 
 		<% end %>
 
 
