@@ -11,10 +11,12 @@
 <%#Currently the public and active displays are not staying in line with the rest of the paragraphs, but that is a stylesheet issue and will be fixed later%>
 <p>I think maybe a table of tasks for this hunt will go here?</p>
 
+<!-- This is just a dummy button-->
 <button type = "button">Join This Hunt</button>
 
 <!--This needs to be admin only-->
-<%= button_to "Remove Hunt", hunt_path, :method => "delete" %>
-<%= button_to "Create New Task", new_hunt_task_path(@hunt), :method => "get" %>
+<%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary'%>
+<br>
+<%= button_to 'Create New Task', new_hunt_task_path(@hunt), :method => 'get', :class => 'btn btn-primary'%>
 
 
