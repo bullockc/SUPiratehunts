@@ -46,7 +46,7 @@ class PirateTasksController < ApplicationController
 
   private
   def pirate_task_params
-    params.require(:pirate_task).permit(:answer_uploaded, :completed, :pirate, :task, :hunt)
+    params.require(:pirate_task).permit(:answer_uploaded, :completed, :pirate, :task, :hunt, :submission)
       #pirate, hunt, and task are id fields (references)
   end
   
