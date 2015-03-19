@@ -1,4 +1,11 @@
 class TasksController < ApplicationController
+  
+  #Added this line according to Christian's specs
+  #@huntID = params[:hunt_id]
+  #Can't actually add, keeps giving me an error. Christian, get with me to resolve this if it continues to be an issue -RLW
+    
+  #I changed the index method to be the "myTasks" page for the specified hunt, thus the /hunts/x/tasks page should have all tasks associated with the hunt id x available to it
+    
   def new
       @task = Task.new
       @huntID = params[:hunt_id]
@@ -14,12 +21,14 @@ class TasksController < ApplicationController
   end
 
   def index
-      @tasks = Task.all #for 'browse all' page
+    #Grabs all tasks with the indicated hunt_id
+    @task = Task.find(params[:hunt_id])
   end
 
   def show
       @task = Task.find(params[:id])
   end
+    
 
   def edit
       @task = Task.find(params[:id])
@@ -43,5 +52,10 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:points, :clue, :task_type, :correct_answer, :prompt, :hunt_id)
+<<<<<<< HEAD
+=======
+    #added :hunt_id to the above according to Christian's specs  
+      
+>>>>>>> master
   end
 end
