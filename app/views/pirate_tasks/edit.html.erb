@@ -1,2 +1,9 @@
 <h1>PirateTasks#edit</h1>
 <p>Find me in app/views/hunts/edit.html.erb</p>
+
+<%= form_for(:pirate_task, url: pirate_tasks_path, :url=>{:action => "update"}, multipart: true) do |f| %>
+    <%= f.label :submission %>
+    <%= f.file_field :submission %>
+    <%= f.submit %>
+<% end %>
+
