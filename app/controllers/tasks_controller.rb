@@ -52,10 +52,7 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:points, :clue, :task_type, :correct_answer, :prompt, :hunt_id)
-<<<<<<< HEAD
-=======
     #added :hunt_id to the above according to Christian's specs  
-      
->>>>>>> master
+
   end
 end
