@@ -1,5 +1,7 @@
 <h1>show pirateHunts</h1>
 
+<!--
+ This is not working the way that I want it to, commening it out and trying a different form 
 <%= form_for(:pirate_task, url: pirate_task_path, method: :patch, multipart: true) do |f| %>
   <div class="field">
     <%= f.label :submission %>
@@ -9,3 +11,31 @@
     <%= f.submit %>
   </div>
 <% end %>
+-->
+
+
+
+<%= form_for @pirate_task, html: { multipart: true} do |f| %>
+<div class="field">
+    <%= f.text_field :pirate_id %>
+  </div>
+  <div class="field">
+    <%= f.file_field :submission %>
+  </div>
+<div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<!-- proof that update is working, I can update the pirate ID-->
+<%= @pirate_task.pirate_id %>
+<br>
+
+
+<%= @pirate_task.submission.url %>
+
+<%= image_tag @pirate_task.submission.url %>
+
+
+
+

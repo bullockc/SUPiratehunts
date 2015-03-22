@@ -1,7 +1,9 @@
 class PirateTasksController < ApplicationController
     
+    
+    
   def myTasks
-  end	
+  end	    
 	
   def new
     @pirate_task = PirateTask.new
@@ -52,7 +54,7 @@ class PirateTasksController < ApplicationController
 
   private
   def pirate_task_params
-    params.require(:pirate_task).permit(:submission_file_name, :submission_content_type, :submission_file_size, :submission_updated_at, :answer_uploaded, :completed, :pirate_id, :task_id, :hunt_id, :created_at, :updated_at)
+    params.require(:pirate_task).permit(:submission, :answer_uploaded, :completed, :pirate_id, :task_id, :hunt_id, :created_at, :updated_at)
       
     
       #pirate, hunt, and task are id fields (references)
