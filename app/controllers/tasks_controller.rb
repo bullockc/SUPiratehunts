@@ -8,6 +8,7 @@ class TasksController < ApplicationController
     
   def new
       @task = Task.new
+      @huntID = params[:hunt_id]
   end
 
   def create
