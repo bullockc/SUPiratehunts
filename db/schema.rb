@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.datetime "end_date"
     t.string   "start_location"
     t.text     "description"
+    t.integer  "pirate_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -52,12 +53,11 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.string   "display_name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_id"
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.boolean  "photo"
-    t.boolean  "gps"
-    t.boolean  "question"
+    t.integer  "task_type"
     t.integer  "points"
     t.string   "prompt"
     t.string   "clue"
