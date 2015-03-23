@@ -1,7 +1,7 @@
 #!/bin/bash --login
 
 sudo apt-get update
-sudo apt-get install -y nodejs sqlite3 libsqlite3-dev
+sudo apt-get install -y nodejs sqlite3 libsqlite3-dev imagemagick
 
 cd /vagrant
 rvm use 2.1.5
