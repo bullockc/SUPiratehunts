@@ -4,4 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
+
+    # Devise Parameters
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  # Devise Parameters
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << [pirate_attributes: [:display_name, :user_id]]
+  end
 end
