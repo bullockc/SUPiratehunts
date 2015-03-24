@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303005338) do
+ActiveRecord::Schema.define(version: 20150317205210) do
 
   create_table "hunts", force: :cascade do |t|
     t.string   "title"
@@ -41,8 +41,12 @@ ActiveRecord::Schema.define(version: 20150303005338) do
     t.integer  "pirate_id"
     t.integer  "task_id"
     t.integer  "hunt_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "submission_file_name"
+    t.string   "submission_content_type"
+    t.integer  "submission_file_size"
+    t.datetime "submission_updated_at"
   end
 
   create_table "pirates", force: :cascade do |t|

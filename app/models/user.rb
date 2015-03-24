@@ -4,5 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  belongs_to :pirate    
+  has_one :pirate, :dependent => :destroy
+  #attr_accessible :display_name
+  accepts_nested_attributes_for :pirate, allow_destroy: true   
 end

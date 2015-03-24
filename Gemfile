@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use datepicker for dates in firefox
+gem 'bootstrap-datepicker-rails'
+
 # Use devise for accounts/authentication. Read more: https://github.com/plataformatec/devise
 gem 'devise', '~> 3.4.1'
 

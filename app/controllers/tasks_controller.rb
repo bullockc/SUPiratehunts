@@ -8,12 +8,14 @@ class TasksController < ApplicationController
     
   def new
       @task = Task.new
+      @huntID = params[:hunt_id]
   end
 
   def create
   @task = Task.new(task_params)
+  @huntID = params[:hunt_id]
     if @task.save
-      redirect_to('root_path') #this should probably change
+      redirect_to(hunt_path(@huntID))
     else
       render('new') #also maybe changes?
     end
@@ -52,6 +54,6 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:points, :clue, :task_type, :correct_answer, :prompt, :hunt_id)
     #added :hunt_id to the above according to Christian's specs  
-      
+
   end
 end
