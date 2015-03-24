@@ -8,8 +8,8 @@ class PirateHuntsController < ApplicationController
 
   def create
     @pirate_hunt = PirateHunt.new(pirate_hunt_params)
-    if @PirateHunt.save
-      redirect_to('root_path') #this should probably change
+    if @pirate_hunt.save
+      redirect_to(hunt_path(params[:hunt_id]) #this should probably change
     else
       render('new') #also maybe changes?
     end
@@ -45,6 +45,6 @@ class PirateHuntsController < ApplicationController
   
   private
   def pirate_hunt_params
-    params.require(:pirate_hunt).permit(:completed, :pirate, :hunt)
+    params.require(:pirate_hunt).permit(:completed, :user, :hunt)
   end
 end

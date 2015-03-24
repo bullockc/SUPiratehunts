@@ -2,7 +2,7 @@ class CreatePirateHunts < ActiveRecord::Migration #plural because it is a migrat
   def change
     create_table :pirate_hunts do |t|
       t.boolean :completed
-      t.references :pirate
+      t.references :user
       t.references :hunt #REFERENCES are for the ID field
       t.timestamps null: false
     end
