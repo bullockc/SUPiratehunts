@@ -13,8 +13,9 @@ class TasksController < ApplicationController
 
   def create
   @task = Task.new(task_params)
+  @huntID = params[:hunt_id]
     if @task.save
-      redirect_to('root_path') #this should probably change
+      redirect_to(hunt_path(@huntID))
     else
       render('new') #also maybe changes?
     end
