@@ -13,5 +13,6 @@ class ApplicationController < ActionController::Base
   # Devise Parameters
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << [pirate_attributes: [:display_name, :user_id]]
+    devise_parameter_sanitizer.for(:account_update) << [pirate_attributes: [:display_name]]
   end
 end
