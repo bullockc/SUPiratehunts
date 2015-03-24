@@ -20,33 +20,38 @@ class HuntTest < ActiveSupport::TestCase
 	  assert_not hunt.valid?, "hunt active/inactive information not saved"
   end
   
+    test "hunt has not been declared published or not published" do
+	  hunt = Hunt.create(active: true, public: true, start_date: 05/14/2015 , end_date: 05/22/2015,start_location: 'CS Lounge', description: 'a new hunt', references: 1 )
+	  assert_not hunt.valid?, "hunt title not saved" 
+  end
+  
      test "hunt has not been declared public or not public" do
-	  hunt = Hunt.create(title: 'Hunt1', active: true, start_date: 05/14/2015 , end_date: 05/22/2015,start_location: 'CS Lounge', description: 'a new hunt', references: 1 )
+	  hunt = Hunt.create(title: 'Hunt1', active: true, published: true, start_date: 05/14/2015 , end_date: 05/22/2015,start_location: 'CS Lounge', description: 'a new hunt', references: 1 )
 	  assert_not hunt.valid?, "hunt public/not public not saved"
   end
   
      test "hunt has no start date" do
-	  hunt = Hunt.create(title: 'Hunt1', active: true, public: true, end_date: 05/22/2015,start_location: 'CS Lounge', description: 'a new hunt', references: 1 )
+	  hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, end_date: 05/22/2015,start_location: 'CS Lounge', description: 'a new hunt', references: 1 )
 	  assert_not hunt.valid?, "hunt start date information not saved"
   end
   
      test "hunt has no end date" do
-	  hunt = Hunt.create(title: 'Hunt1', active: true, public: true, start_date: 05/14/2015 , start_location: 'CS Lounge', description: 'a new hunt', references: 1 )
+	  hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, start_date: 05/14/2015 , start_location: 'CS Lounge', description: 'a new hunt', references: 1 )
 	  assert_not hunt.valid?, "hunt end date information not saved"
   end
   
      test "hunt has no start location" do
-	  hunt = Hunt.create(title: 'Hunt1', active: true, public: true, start_date: 05/14/2015 , end_date: 05/22/2015, description: 'a new hunt', references: 1 )
+	  hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, start_date: 05/14/2015 , end_date: 05/22/2015, description: 'a new hunt', references: 1 )
 	  assert_not hunt.valid?, "hunt  start location not saved"
   end
   
      test "hunt has no description" do
-	  hunt = Hunt.create(title: 'Hunt1', active: true, public: true, start_date: 05/14/2015 , end_date: 05/22/2015,start_location: 'CS Lounge', description: 'a new hunt', references: 1 )
+	  hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, start_date: 05/14/2015 , end_date: 05/22/2015,start_location: 'CS Lounge', description: 'a new hunt', references: 1 )
 	  assert_not hunt.valid?, "hunt description not saved"
   end
   
      test "hunt has no references to the pirate id" do
-	  hunt = Hunt.create(title: 'Hunt1', active: true, public: true, start_date: 05/14/2015 , end_date: 05/22/2015,start_location: 'CS Lounge', description: 'a new hunt')
+	  hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, start_date: 05/14/2015 , end_date: 05/22/2015,start_location: 'CS Lounge', description: 'a new hunt')
 	  assert hunt.valid?, "hunt reference information saved"
   end
   
