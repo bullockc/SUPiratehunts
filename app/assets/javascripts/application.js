@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+//= require bootstrap-datepicker
+
+$(function() {
+  $("#hunt_start_date").datepicker();
+});
+
+$(function() {
+  $("#hunt_end_date").datepicker();
+});
