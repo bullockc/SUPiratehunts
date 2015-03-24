@@ -9,7 +9,7 @@ class PiratesController < ApplicationController
   def create
     @pirate = Pirate.new(pirate_params)
     if @pirate.save
-      redirect_to('root_path') #this should probably change
+      redirect_to(root_path) #this should probably change
     else
       render('new') #also maybe changes?
     end
