@@ -12,7 +12,7 @@ class PirateTask < ActiveRecord::Base #Singular because it is a class
     validates_attachment :submission,
   :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
     
-  # Validate content type
+# Validate content type
 #  validates_attachment_content_type :submission, :content_type => /\Aimage/
 #  # Validate filename
 #  validates_attachment_file_name :submission, :matches => [/png\Z/, /jpe?g\Z/]
