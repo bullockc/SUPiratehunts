@@ -3,15 +3,19 @@ class PirateHuntsController < ApplicationController
   end
 
   def new
-	@pirate_hunt = PirateHunt.new
+	 @pirate_hunt = PirateHunt.new
+   #@pirate_hunt.pirate.build
   end
 
   def create
     @pirate_hunt = PirateHunt.new(pirate_hunt_params)
     if @pirate_hunt.save
-      redirect_to(hunt_path(params[:hunt_id]) #this should probably change
+      #redirect_to(root_path)
+      @hunt_id = pirate_hunt_params[:hunt_id]
+      redirect_to(hunt_path(@hunt_id))
     else
-      render('new') #also maybe changes?
+      redirect_to(hunts_path) #also maybe changes?
+      #TODO: add alert to user that join hunt failed
     end
   end
 
@@ -45,6 +49,6 @@ class PirateHuntsController < ApplicationController
   
   private
   def pirate_hunt_params
-    params.require(:pirate_hunt).permit(:completed, :user, :hunt)
+    params.require(:pirate_hunt).permit(:completed, :user_id, :hunt_id)
   end
 end
