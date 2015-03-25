@@ -43,11 +43,13 @@ body {
 h1 {
 	text-align: center; 
 	color: #000; 
+	font-size: 72px; 
 }
 			
 p {
 	color: #000; 
 	text-align: center; 
+	font-size: 48px;
 	padding: 20px;
 } 
 
@@ -89,9 +91,26 @@ button stuff
 http://stackoverflow.com/questions/10136487/how-to-style-buttons-in-ruby-on-rails
 */
 
-.button{
-  color: #bbbbbb;
-  width: 200px;
-  height: 100px;
-  /*add any other properties you want to style*/
+$break-small: 320px;
+$break-large: 1024px;
+$btn-width: 500px;
+$btn-height: 100px;
+
+
+.btn{
+
+float: center;
+  @media screen and (max-width: $break-small) {
+    float: center;
+  }
+  @media screen and (min-width: $break-large) {
+    width: $btn-width *1.5;
+    float: center;
+  }
+  
+  color: #ffffff;
+  font-size: 48px;
+  width: $btn-width;
+  height: $btn-height;
+ 
 }
