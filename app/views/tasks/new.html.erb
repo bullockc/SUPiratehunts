@@ -9,70 +9,68 @@
 <h1>Create New Task</h1>
 
 
-
-
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-	
-	<%= form_for(@task, url: hunt_tasks_path) do |f| %>
-	  <div class="opaque-forms">
-		  <%= f.hidden_field :hunt_id, :value => @huntID %>
-		  
-		  
-		  <%= f.label :task_type, "Task Type"%>
-		
-		  <table style="width: 100%;">
-		  <tr>
-			  <td style="width: 50%;" align="center";><%= label_tag(:task_type, "Photo", :value => 1) %></td>
+ <div class="col-md-6 col-md-offset-3">
+   <center>
+   <ul class="nav nav-tabs">
+     <li class="active"><a data-toggle="tab" href="#QA">QA Task</a></li>
+     <li><a data-toggle="tab" href="#photo">Photo Task</a></li>
+  </ul>
+  </center>
+
+  <div class="tab-content">
+    <div id="QA" class="tab-pane fade in active">
+		<p>
+			<%= form_for(@task, url: hunt_tasks_path) do |f| %>
+		    <div class="opaque-forms">
+			  <%= f.hidden_field :hunt_id, :value => @huntID %>
+
+			  <%= f.label :prompt, "Task Prompt (What will be displayed)"%>
+			  <%= f.text_field :prompt %>
+
+			  <%= f.label :clue, "Add a Clue (Optional)" %>
+			  <%= f.text_field :clue %>
 			  
-			  <td style="width: 50%;" align="center";><%= label_tag(:task_type, "QA", :value => 2) %></td>
-		  </tr>
-		  <tr>
-		      <td style="width: 50%;"><%= radio_button_tag(:task_type, "Photo") %></td>
-		  
-		      <td style="width: 50%;"><%= radio_button_tag(:task_type, "QA") %></td>
-		  </tr>
-		  </table>
-		  
-		  
-		  <%= f.label :prompt, "Task Prompt (What will be displayed)"%>
-		  <%= f.text_field :prompt %>
+			  <%= f.label :correct_answer, "Correct Answer" %>
+			  <%= f.text_field :correct_answer %>
 
-		  <%= f.label :clue, "Add a Clue (Optional)" %>
-		  <%= f.text_field :clue %>
-		  
-		  <%= f.label :correct_answer, "Correct Answer" %>
-		  <%= f.text_field :correct_answer %>
+			  <%= f.label :points, "Point Value (0-100)" %>
+			  <%= f.number_field(:points,in: 5..100, step: 5) %>
 
-		  <%= f.label :points, "Point Value (0-100)" %>
-		  <%= f.number_field(:points,in: 5..100, step: 5) %>
+			  <%= f.hidden_field :task_type, :value => "0"%>
+			  <!-- initialized to a static value, representative of a given hunt type. Can be changed later -->
+		  </div>  
+		  <%= f.submit "Create Task", class: "btn btn-primary" %>
+		 
+		    <% end %>
+	    </p>
+    </div>
+ 
+    
+	
+	<div id="photo" class="tab-pane fade">
+        <p>
+			<%= form_for(@task, url: hunt_tasks_path) do |f| %>
+					<div class="opaque-forms">
+					  <%= f.hidden_field :hunt_id, :value => @huntID %>
 
-		  <%= f.hidden_field :task_type, :value => "0"%>
-		  <!-- initialized to a static value, representative of a given hunt type. Can be changed later -->
-	  </div>  
-	  <%= f.submit "Create Task", class: "btn btn-primary" %>
-	 
-    <% end %>
-  </div>
+					  <%= f.label :prompt, "Task Prompt (What will be displayed)"%>
+					  <%= f.text_field :prompt %>
+
+					  <%= f.label :clue, "Add a Clue (Optional)" %>
+					  <%= f.text_field :clue %>
+
+					  <%= f.label :points, "Point Value (0-100)" %>
+					  <%= f.number_field(:points,in: 5..100, step: 5) %>
+
+					  <%= f.hidden_field :task_type, :value => "1"%>
+					  <!-- initialized to a static value, representative of a given hunt type. Can be changed later -->
+				  </div>  
+				<%= f.submit "Create Task", class: "btn btn-primary" %>
+		  <% end %>
+		</p>
+    </div>
+</div>
+</div>
 </div>
 
-
-
-<!--
-<p>Click below to choose which type of task to create</p>
-<form>
-<input type="radio" name="question">Question
-<br>
-<input type="radio" name="photo">Photo
-<br>
-<input type="radio" name="gps">GPS
-<br>
-<input type="radio" name="qr code">QR Code
-<br>
-Write in a hint for your task:
-<br>
-<input type="text" name= "hint">
-<br><br>
-<input type="submit" value="Submit">
-</form>
--->
