@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :tasks
   end
   
-  resources :pirates
+  #resources :users
 
   resources :pirate_hunts
   resources :pirate_tasks

@@ -10,7 +10,7 @@ class CreateHunts < ActiveRecord::Migration #plural because it is a migration
 		t.datetime :end_date 
 		t.string :start_location
 		t.text :description
-		t.references :pirate #REFERENCES are for the ID field
+		t.references :user #REFERENCES are for the ID field
 	
       t.timestamps null: false
     end

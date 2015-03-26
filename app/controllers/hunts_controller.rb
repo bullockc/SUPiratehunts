@@ -1,7 +1,7 @@
 class HuntsController < ApplicationController
 
   #def myHunts
-    #@hunt = Pirate_Hunt.find(params[:pirate])
+    #@hunt = Pirate_Hunt.find(params[:user])
     #@hunt = Hunt.new(hunt_params)
   #end
     
@@ -12,7 +12,7 @@ class HuntsController < ApplicationController
   def create
     @hunt = Hunt.new(hunt_params)
     if @hunt.save
-      redirect_to(@hunt) #redirects to the show for that individual hunt that was just created
+      redirect_to(hunt_path(@hunt.id)) #redirects to the show for that individual hunt that was just created
     else
       render('new') #also maybe changes?
     end
@@ -47,7 +47,7 @@ class HuntsController < ApplicationController
 
   private
   def hunt_params
-    params.require(:hunt).permit(:title, :active, :published, :public, :start_date, :end_date, :start_location, :description, :pirate_id, :created_at, :updated_at)
+    params.require(:hunt).permit(:title, :active, :published, :public, :start_date, :end_date, :start_location, :description, :user_id, :created_at, :updated_at)
   end
 #end #ends the 'private' section
 end #end of class
