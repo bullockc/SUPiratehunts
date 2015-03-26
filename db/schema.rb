@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.datetime "end_date"
     t.string   "start_location"
     t.text     "description"
-    t.integer  "pirate_id"
+    t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
   create_table "pirate_hunts", force: :cascade do |t|
     t.boolean  "completed"
-    t.integer  "pirate_id"
+    t.integer  "user_id"
     t.integer  "hunt_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20150317205210) do
   create_table "pirate_tasks", force: :cascade do |t|
     t.boolean  "answer_uploaded"
     t.boolean  "completed"
-    t.integer  "pirate_id"
+    t.integer  "user_id"
     t.integer  "task_id"
     t.integer  "hunt_id"
     t.datetime "created_at",              null: false
@@ -48,13 +48,7 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.integer  "submission_file_size"
     t.datetime "submission_updated_at"
   end
-
-  create_table "pirates", force: :cascade do |t|
-    t.string   "display_name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
+  
   create_table "tasks", force: :cascade do |t|
     t.integer  "task_type"
     t.integer  "points"
@@ -67,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150317205210) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "display_name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

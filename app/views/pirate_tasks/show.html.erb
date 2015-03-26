@@ -17,7 +17,7 @@
 
 <%= form_for @pirate_task, html: { multipart: true} do |f| %>
 <div class="field">
-    <%= f.text_field :pirate_id %>
+    <%= f.text_field :user_id %>
   </div>
   <div class="field">
     <%= f.file_field :submission %>
@@ -27,9 +27,9 @@
   </div>
 <% end %>
 
-<!-- proof that update is working, I can update the pirate ID-->
+<!-- proof that update is working, I can update the pirate ID
 <%= @pirate_task.pirate_id %>
-<br>
+<br>-->
 
 
 <%= @pirate_task.submission.url %>
