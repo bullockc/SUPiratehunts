@@ -21,6 +21,8 @@ class TasksController < ApplicationController
     end
   end
 
+    #	If a Hunt is not published but the User is the creator, then we want to show
+	#	all of the Tasks
   def index
     #Grabs all tasks with the indicated hunt_id
     @task = Task.find(params[:hunt_id])
