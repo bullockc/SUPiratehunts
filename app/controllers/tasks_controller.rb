@@ -22,7 +22,15 @@ class TasksController < ApplicationController
   end
 
     #	If a Hunt is not published but the User is the creator, then we want to show
-	#	all of the Tasks
+	#	all of the Tasks.
+	
+	#	If the Hunt is published and the Hunt is inactive and you are
+	#	a participant of the Hunt, then you cannot see the Tasks.
+	
+	#	If the Hunt is active, then everyone can see the Tasks
+	
+	#	If a Hunt is published but inactive and you are the creator, then you should
+	#	be able to see the Tasks but not change them.
   def index
     #Grabs all tasks with the indicated hunt_id
     @task = Task.find(params[:hunt_id])
