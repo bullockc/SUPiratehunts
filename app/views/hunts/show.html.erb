@@ -25,7 +25,7 @@
 <!--This needs to be admin only-->
 <%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary'%>
 <br>
-<%= button_to 'Create New Task', new_hunt_task_path(@hunt), :method => 'get', :class => 'btn btn-primary'%>
+<%= button_to 'View Tasks', hunt_tasks_path(@hunt), :method => 'get', :class => 'btn btn-primary'%>
 
 <%#http://stackoverflow.com/questions/27156737/using-button-to-to-create-new-record-in-database-error-param-is-missing-or-the%>
 <%= button_to 'Join Hunt', {:controller => 'pirate_hunts', :action => 'create', :pirate_hunt => {:completed => 'false', :user_id => current_user.id, :hunt_id => @hunt.id}}, :method => :post %>

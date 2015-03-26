@@ -13,15 +13,23 @@
 		  <%= f.label :title, "Title" %>
 		  <%= f.text_field :title %>
 		  <br>
-		  <%= f.label :active, "Active"%>	
-		  <%= f.check_box :active %>
-		 
-		  <%= f.label :published, "Published"%>	
-		  <%= f.check_box :published %>
 		  
-		  <!--Since this is not an option currently, should I get rid of it? -->
-		  <%= f.label :public, "Public"%>	
-		  <%= f.check_box :public %>
+		  <table style="width: 100%;">
+		  <tr>
+			  <td style="width: 33%;" align="center";><%= f.label :active, "Active"%></td>
+			 
+			  <td style="width: 33%;" align="center";><%= f.label :published, "Published"%></td>
+			  
+			  <td style="width: 33%;" align="center";><%= f.label :public, "Public"%></td>
+		  </tr>
+		  <tr>
+		      <td style="width: 33%;"><%= f.check_box :active %></td>
+		  
+		      <td style="width: 33%;"><%= f.check_box :published %></td>
+			  
+			   <td style="width: 33%;"><%= f.check_box :public %></td>
+		  </tr>
+		  </table>
 		  
 		  <%= f.label :start_date, "Start Date" %>
 		  <%= f.date_field :start_date %>
