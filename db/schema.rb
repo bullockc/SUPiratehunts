@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.boolean  "active"
     t.boolean  "published"
     t.boolean  "public"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "start_location"
     t.text     "description"
     t.integer  "user_id"
@@ -48,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.integer  "submission_file_size"
     t.datetime "submission_updated_at"
   end
-  
+
   create_table "tasks", force: :cascade do |t|
     t.integer  "task_type"
     t.integer  "points"
@@ -72,6 +74,7 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "pirate_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
