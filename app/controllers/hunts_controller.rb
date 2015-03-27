@@ -51,7 +51,7 @@ class HuntsController < ApplicationController
 
   def destroy
     Hunt.find(params[:id]).destroy
-    redirect_to :action => 'index'
+    redirect_to controller: 'welcome', :action => 'index'
   end
 
   private
