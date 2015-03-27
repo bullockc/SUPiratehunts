@@ -19,3 +19,6 @@
 # Ignore vagrant instance stuff.
 /.vagrant
 app/views/layouts/help.html.erb
+
+# Ignore vagrant file with updated mobile port stuff
+VagrantFile
