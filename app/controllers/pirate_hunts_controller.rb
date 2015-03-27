@@ -1,6 +1,6 @@
 class PirateHuntsController < ApplicationController
-  def myHunts
-  end
+  #def myHunts
+  #end
 
   def new
 	 @pirate_hunt = PirateHunt.new
