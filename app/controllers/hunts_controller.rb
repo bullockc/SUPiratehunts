@@ -19,11 +19,12 @@ class HuntsController < ApplicationController
   end
 
   def index
-    @hunts = Hunt.all #for 'browse all' page
+    @hunts = Hunt.all #.where(published: true, public: true) #for 'browse all' page
   end
 
   def show
     @hunt = Hunt.find(params[:id])
+    @tasks = @hunt.tasks
   end
 
   def edit #if 'edit hunt' page is a thing
@@ -42,7 +43,7 @@ class HuntsController < ApplicationController
 
   def destroy
     Hunt.find(params[:id]).destroy
-    redirect_to :action => 'index'
+    redirect_to controller: 'welcome', :action => 'index'
   end
 
   private
