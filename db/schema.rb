@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.integer  "submission_file_size"
     t.datetime "submission_updated_at"
   end
-  
+
   create_table "tasks", force: :cascade do |t|
     t.integer  "task_type"
     t.integer  "points"

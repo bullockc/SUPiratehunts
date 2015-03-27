@@ -1,9 +1,4 @@
 class PirateTasksController < ApplicationController
-    
-    
-    
-  def myTasks
-  end	    
 	
   def new
     @pirate_task = PirateTask.new

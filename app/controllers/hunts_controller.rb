@@ -24,7 +24,7 @@ class HuntsController < ApplicationController
 
   # TODO index should only pass to the View Hunts that are both public and published
   def index
-    @hunts = Hunt.all #for 'browse all' page
+    @hunts = Hunt.all #.where(published: true, public: true) #for 'browse all' page
   end
 
   # TODO possibly a routing issue
@@ -33,6 +33,7 @@ class HuntsController < ApplicationController
   #	or if the hunt is private and published and you have been invited
   def show
     @hunt = Hunt.find(params[:id])
+    @tasks = @hunt.tasks
   end
 
   def edit #if 'edit hunt' page is a thing
