@@ -6,8 +6,10 @@ class CreateHunts < ActiveRecord::Migration #plural because it is a migration
 		t.boolean :active #ACTIVE VS INACTIVE
 		t.boolean :published 
 		t.boolean :public #PRIVATE VS PUBLIC
-		t.datetime :start_date #user assigns it as they create it
-		t.datetime :end_date 
+		t.time :start_time #user assigns it as they create it
+		t.time :end_time
+		t.date :start_date
+		t.date :end_date
 		t.string :start_location
 		t.text :description
 		t.references :user #REFERENCES are for the ID field

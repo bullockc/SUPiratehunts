@@ -8,7 +8,7 @@ class UserTest < ActiveSupport::TestCase
 
   #may need to add all of the other fields from the schema here? not sure yet.
   test "user has email and password" do
-	user = User.create(email: 'user1@gmail.com', encrypted_password: '4p78D')
+	user = User.create(email: 'user1@gmail.com', encrypted_password: 'password1')
 	assert user.valid?, "User information not saved"
   end
  
