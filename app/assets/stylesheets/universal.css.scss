@@ -78,14 +78,6 @@ p {
   }
 }
 
-input::-webkit-calendar-picker-indicator{
-    display: none;
-}
-
-input[type="date"]::-webkit-input-placeholder{ 
-    visibility: hidden !important;
-}
-
 /*
 button stuff
 http://stackoverflow.com/questions/10136487/how-to-style-buttons-in-ruby-on-rails
@@ -93,24 +85,29 @@ http://stackoverflow.com/questions/10136487/how-to-style-buttons-in-ruby-on-rail
 
 $break-small: 320px;
 $break-large: 1024px;
-$btn-width: 500px;
-$btn-height: 100px;
+$small-btn-width: 300px;
+$small-btn-height: 100px;
+$large-btn-width: 750px;
+$large-btn-height: 200px;
 
 
 .btn{
 
 float: center;
-  @media screen and (max-width: $break-small) {
-    float: center;
-  }
-  @media screen and (min-width: $break-large) {
-    width: $btn-width *1.5;
-    float: center;
-  }
   
   color: #ffffff;
-  font-size: 48px;
-  width: $btn-width;
-  height: $btn-height;
+  font-size: 24px;
+  width: $small-btn-width;
+  height: $small-btn-height;
+  margin-bottom: 10px;
  
+}
+
+@media (min-width: $break-large - 1) {
+	.btn{
+		color: #000000;
+		font-size: 48px;
+		width: $large-btn-width;
+		height: $large-btn-height
+		}
 }
