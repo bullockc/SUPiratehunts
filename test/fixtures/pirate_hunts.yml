@@ -6,10 +6,8 @@
 #
 one: 
   completed: true
-  pirate: '#12345678'
   hunt: '#15231242'
 
 two:
   completed: false
-  pirate: '#98765432'
   hunt: '#24782345'

@@ -2,7 +2,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       
-      t.string :display_name
+      t.string :display_name,       null: false, default: ""
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
 
       #may need this line later
-      t.integer :pirate_id #needs the ID of the pirate class
+      #t.integer :pirate_id #needs the ID of the pirate class
       
 
       t.timestamps
