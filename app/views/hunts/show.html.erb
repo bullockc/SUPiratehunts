@@ -16,11 +16,7 @@
 
 <%#Currently the public and active displays are not staying in line with the rest of the paragraphs, but that is a stylesheet issue and will be fixed later%>
 
-<p>I think maybe a table of tasks for this hunt will go here?</p>
-
-<%# Add this button when we can join a hunt
-<button type = "button">Join This Hunt</button>
-%>
+<ol class="tasks"><%= render @tasks %></ol><br>
 
 <!--This needs to be admin only-->
 <%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary btn-block'%>
