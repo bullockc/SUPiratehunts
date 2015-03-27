@@ -9,7 +9,9 @@ class PirateHuntsController < ApplicationController
 
   def create
     @pirate_hunt = PirateHunt.new(pirate_hunt_params)
-    #@pirate_tasks = Hunt.tasks.pirate_tasks.build
+    #array of tasks associated w/ this hunt
+    #temp = Task.where(hunt_id: pirate_hunt_params[:hunt_id])
+    #@pirate_tasks = temp.build_pirate_tasks
     if @pirate_hunt.save
       #redirect_to(root_path)
       @hunt_id = pirate_hunt_params[:hunt_id]

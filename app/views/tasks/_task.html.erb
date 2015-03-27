@@ -1,12 +1,12 @@
 <li id="task-<%= task.id %>">
-  <span class="typeIcon">ICON</span><% this will eventually be an icon based on the type of the task%>
-  <span class="Prompt"><%=link_to task.prompt, task %></span>
-  <span class="pointReward"> "Points: " + task.point</span>
+  <%#<span class="typeIcon">ICON</span><% this will eventually be an icon based on the type of the task%>
+  <span class="Prompt"><%=link_to task.prompt, hunt_task_path(task.hunt_id, task.id) %></span>
+  <span class="pointReward"> "Points: " + task.points</span>
   <% if(@hunt.public?) %>
     <div class="public">
       <span class="taskbuttons">
-        <%= button_to "Edit Task", edit_task_path%>
-        <%= button_to "Remove Task", task_path, :method => "delete"%><% will need to be changed later based on the hunt that they give us %>
+        <%= button_to "Edit Task", edit_hunt_task_path%>
+        <%= button_to "Remove Task", hunt_task_path, :method => "delete"%><% will need to be changed later based on the hunt that they give us %>
       </span>
     </div>
 <%end%>
