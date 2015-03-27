@@ -5,11 +5,11 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  display_name: user
+  #display_name: user
   email: user@example.com
   encrypted_password: password1
 
 two: 
-  display_name: user2
+  #display_name: user2
   email: user2@example.com
   encrypted_password: password2

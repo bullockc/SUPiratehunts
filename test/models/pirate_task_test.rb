@@ -7,19 +7,19 @@ class PirateTaskTest < ActiveSupport::TestCase
 
   #test that the entry is valid when all parameters are entered
   test "pirate task complete" do
-  	pirateTask = PirateTask.create(answer_uploaded: 'True', completed: 'True', task: '1423', hunt: '9876')
+  	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, task: '1423', hunt: '9876')
   	assert pirateTask.valid?, 'PirateTask data not saved'
   end
 
   #test that the entry is invalid without an answer uploaded
   test "pirate task without answer" do
-  	pirateTask = PirateTask.create(completed: 'True', task: '1423', hunt: '9876')
+  	pirateTask = PirateTask.create(completed: true, task: '1423', hunt: '9876')
   	assert_not pirateTask.valid?, 'PirateTask data not saved'
   end
 
   #test that the entry is invalid without a completed
   test "pirate task without completed" do
-  	pirateTask = PirateTask.create(answer_uploaded: 'True', task: '1423', hunt: '9876')
+  	pirateTask = PirateTask.create(answer_uploaded: true, task: '1423', hunt: '9876')
   	assert_not pirateTask.valid?, 'PirateTask data not saved'
   end
 
