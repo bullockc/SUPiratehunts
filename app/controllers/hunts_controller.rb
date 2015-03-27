@@ -19,11 +19,12 @@ class HuntsController < ApplicationController
   end
 
   def index
-    @hunts = Hunt.all #for 'browse all' page
+    @hunts = Hunt.all #.where(published: true, public: true) #for 'browse all' page
   end
 
   def show
     @hunt = Hunt.find(params[:id])
+    @tasks = @hunt.tasks
   end
 
   def edit #if 'edit hunt' page is a thing
