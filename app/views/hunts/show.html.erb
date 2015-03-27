@@ -5,7 +5,7 @@
 <p>This hunt starts at <%=@hunt.start_location%></p>
 
 <%#This displays the start and end times of the hunt%>
-<p>The hunt begins on <%= @hunt.start_date.to_s(:short)%> and ends on <%= @hunt.end_date.to_s(:short)%></p>
+<p>The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_date.to_s(:long)%></p>
 
 
 <%#This displays whether the hunt is public or private%>
@@ -23,11 +23,11 @@
 %>
 
 <!--This needs to be admin only-->
-<%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary'%>
-<br>
-<%= button_to 'View Tasks', hunt_tasks_path(@hunt), :method => 'get', :class => 'btn btn-primary'%>
+<%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary btn-block'%>
+
+<%= button_to 'View Tasks', hunt_tasks_path(@hunt), :method => 'get', :class => 'btn btn-primary btn-block'%>
 
 <%#http://stackoverflow.com/questions/27156737/using-button-to-to-create-new-record-in-database-error-param-is-missing-or-the%>
-<%= button_to 'Join Hunt', {:controller => 'pirate_hunts', :action => 'create', :pirate_hunt => {:completed => 'false', :user_id => current_user.id, :hunt_id => @hunt.id}}, :method => :post %>
+<%= button_to 'Join Hunt', {:controller => 'pirate_hunts', :action => 'create', :pirate_hunt => {:completed => 'false', :user_id => current_user.id, :hunt_id => @hunt.id}}, :method => :post, :class => 'btn btn-primary btn-block' %>
 
 </center>
