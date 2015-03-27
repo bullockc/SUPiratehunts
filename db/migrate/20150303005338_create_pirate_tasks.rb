@@ -6,8 +6,8 @@ class CreatePirateTasks < ActiveRecord::Migration #plural because it is a migrat
       t.boolean :completed
       t.references :user #REFERENCES are for the ID field
       t.references :task
-      t.references :hunt
-
+      t.references :hunt 
+      
       t.timestamps null: false
     end
   end

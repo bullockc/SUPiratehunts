@@ -7,7 +7,7 @@ class CreateTasks < ActiveRecord::Migration #plural because it is a migration
     	t.string :prompt
   		t.string :clue
 		  t.string :correct_answer
-      t.references :hunt #REFERENCES are for the ID field
+      t.references :hunt#REFERENCES are for the ID field
   		
       t.timestamps null: false
     end
