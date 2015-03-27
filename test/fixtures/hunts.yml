@@ -10,10 +10,10 @@ one:
   active: true
   published: true
   public: true
-  start_time: 0800
-  end_time: 1000
-  start_date: 04012015
-  end_date: 04012015
+  #start_time: 0800
+  #end_time: 1000
+  #start_date: 04012015
+  #end_date: 04012015
   start_location: cs lounge
   description: a new hunt
 
@@ -22,9 +22,9 @@ two:
   active: false
   published: true
   public: true
-  start_time: 0800
-  end_time: 1000
-  start_date: 04012015
-  end_date: 04012015
+  #start_time: 0800
+  #end_time: 1000
+  #start_date: 04012015
+  #end_date: 04012015
   start_location: cs loung
   description: another new hunt
