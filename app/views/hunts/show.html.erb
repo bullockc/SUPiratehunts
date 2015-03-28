@@ -5,21 +5,27 @@
 <p>This hunt starts at <%=@hunt.start_location%></p>
 
 <%#This displays the start and end times of the hunt%>
-<p>The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_date.to_s(:long)%></p>
+<p>The hunt begins on <%= @hunt.start_date.to_s(:long)%> and <br> ends on <%= @hunt.end_date.to_s(:long)%></p>
 
 
-<%#This displays whether the hunt is public or private%>
-<p><% if(@hunt.public?) %><div class="public">This hunt is a public hunt</div><% else %><div class="private">This hunt is a private hunt </div><%end%></p>
+<%#This displays whether the hunt is public or private, but we aren't currently using this %>
+<!-- <p><% if(@hunt.public?) %><div class="public">This hunt is a public hunt</div><% else %><div class="private">This hunt is a private hunt </div><%end%></p> -->
 
-<%#This is meant to display whether or not the hunt is active based on the active bool%>
-<p><% if(@hunt.active?) %><div class="active">This hunt is currently active</div><% else %><div class="inactive">This hunt is currently not active </div><%end%></p>
+
+<%#This is meant to display whether or not the hunt is active based on the active bool, apparently this is supposed to be hidden as well%>
+<!-- <p><% if(@hunt.active?) %><div class="active">This hunt is currently active</div><% else %><div class="inactive">This hunt is currently not active </div><%end%></p> -->
 
 <%#Currently the public and active displays are not staying in line with the rest of the paragraphs, but that is a stylesheet issue and will be fixed later%>
 
 <ol class="tasks"><%= render @tasks %></ol><br>
 
+
+
 <!--This needs to be admin only-->
+
 <%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary btn-block'%>
+
+<%= button_to 'Create Task', hunt_tasks_path(@tasks), :method => 'new', :class => 'btn btn-primary btn-block'%>
 
 <%= button_to 'View Tasks', hunt_tasks_path(@hunt), :method => 'get', :class => 'btn btn-primary btn-block'%>
 
