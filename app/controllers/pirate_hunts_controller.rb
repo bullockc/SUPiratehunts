@@ -9,19 +9,8 @@ class PirateHuntsController < ApplicationController
   # Move this to hunt#join ?
   # Todo: Lock joining a hunt until published? Or have task#create check for
   #       all respective PirateHunt(s) and add the new PirateTask to them.
+  # Moved
   def create
-    @pirate_hunt = PirateHunt.new(pirate_hunt_params)
-    if @pirate_hunt.save
-      # Create each PirateTask
-      @pirate_hunt.hunt.tasks.each do |task|
-        PirateTask.create(task: task, hunt: @pirate_hunt.hunt, user: current_user, pirate_hunt: @pirate_hunt).save
-      end
-      @hunt_id = pirate_hunt_params[:hunt_id]
-      redirect_to(hunt_path(@hunt_id))
-    else
-      redirect_to(hunts_path) #also maybe changes?
-      #TODO: add alert to user that join hunt failed
-    end
   end
 
   def index
