@@ -124,24 +124,26 @@ $large-btn-height: 200px;
 float: center;
   
   color: #ffffff;
-  font-size: 48px;
+  font-size: 30px;
   width: $small-btn-width;
   height: $small-btn-height;
   margin-bottom: 10px;
   display: table-cell;
   vertical-align: middle;
+  white-space: normal;
  
 }
 
 @media (min-width: $break-large) {
 	.btn{
 		color: #ffffff;
-		font-size: 48px;
+		font-size: 30px;
 		width: $large-btn-width;
 		height: $large-btn-height;
 		margin-bottom: 10px;
 		display: table-cell;
 		vertical-align: middle;
+		white-space: normal;
 		
 		}
 		
