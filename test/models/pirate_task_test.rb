@@ -32,7 +32,11 @@ class PirateTaskTest < ActiveSupport::TestCase
   #test that the entry is invalid without a task
   test "pirate task without task" do
 <<<<<<< HEAD
+<<<<<<< HEAD
   	pirateTask = PirateTask.create(answer_uploaded: 'True', completed: 'True', pirate: '1234', hunt: '9876')
+=======
+  	pirateTask = PirateTask.create(answer_uploaded: 'True', completed: 'True', hunt: '9876')
+>>>>>>> parent of 92f93bf... changes to unit tests
 =======
   	pirateTask = PirateTask.create(answer_uploaded: 'True', completed: 'True', hunt: '9876')
 >>>>>>> parent of 92f93bf... changes to unit tests
@@ -42,7 +46,11 @@ class PirateTaskTest < ActiveSupport::TestCase
   #test that the entry is invalid without a hunt
   test "pirate task without hunt" do
 <<<<<<< HEAD
+<<<<<<< HEAD
   	pirateTask = PirateTask.create(answer_uploaded: 'True', completed: 'True', pirate: '1234', task: '1423')
+=======
+  	pirateTask = PirateTask.create(answer_uploaded: 'True', completed: 'True', task: '1423')
+>>>>>>> parent of 92f93bf... changes to unit tests
 =======
   	pirateTask = PirateTask.create(answer_uploaded: 'True', completed: 'True', task: '1423')
 >>>>>>> parent of 92f93bf... changes to unit tests
