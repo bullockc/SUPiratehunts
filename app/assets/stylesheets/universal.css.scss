@@ -45,13 +45,48 @@ h1 {
 	color: #000; 
 	font-size: 72px; 
 }
+
+h2 {
+	text-align: center; 
+	color: #000; 
+	font-size: 60px; 
+}
+
 			
 p {
 	color: #000; 
 	text-align: center; 
-	font-size: 48px;
+	font-size: 40px;
 	padding: 20px;
 } 
+
+ol {
+	color: #000; 
+	text-align: center; 
+	font-size: 24px;
+	padding: 20px;
+}
+
+
+.public, .private, .active, .inactive{
+	text-align: center; 
+	font-size: 40px;
+	padding: 20px;
+}
+
+.public, .private{
+	color: #00F;
+}
+
+.active{
+	color: #000080;
+}
+
+.inactive{
+	color: #F00;
+}
+
+
 
 .hunts {
   list-style: none;
@@ -85,8 +120,8 @@ http://stackoverflow.com/questions/10136487/how-to-style-buttons-in-ruby-on-rail
 
 $break-small: 320px;
 $break-large: 1024px;
-$small-btn-width: 300px;
-$small-btn-height: 100px;
+$small-btn-width: 280px;
+$small-btn-height: 75px;
 $large-btn-width: 750px;
 $large-btn-height: 200px;
 
@@ -96,18 +131,28 @@ $large-btn-height: 200px;
 float: center;
   
   color: #ffffff;
-  font-size: 24px;
+  font-size: 30px;
   width: $small-btn-width;
   height: $small-btn-height;
   margin-bottom: 10px;
+  display: table-cell;
+  vertical-align: middle;
+  white-space: normal;
  
-}
 
-@media (min-width: $break-large - 1) {
+
+@media (min-width: $break-large) {
 	.btn{
-		color: #000000;
-		font-size: 48px;
+		color: #ffffff;
+		font-size: 30px;
 		width: $large-btn-width;
-		height: $large-btn-height
+		height: $large-btn-height;
+		margin-bottom: 10px;
+		display: table-cell;
+		vertical-align: middle;
+		white-space: normal;
+		
 		}
+
+}
 }
