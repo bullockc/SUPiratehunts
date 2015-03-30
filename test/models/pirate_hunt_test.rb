@@ -7,25 +7,25 @@ class PirateHuntTest < ActiveSupport::TestCase
 
   #test that the entry is valid when all parameters are entered
   test "pirate hunt complete" do
-    pirateHunt = PirateHunt.create(completed: false, user: User.id, hunt: Hunt.id)
+    pirateHunt = PirateHunt.create(completed: false, user_id: "1231", hunt_id: "12312")
   	assert pirateHunt.valid?, 'PirateHunt data not saved'
   end
 
   #test that the entry is invalid without a completed field
   test "pirate hunt without completion" do
-    pirateHunt = PirateHunt.create(user: User.id, hunt: Hunt.id)
+    pirateHunt = PirateHunt.create(user_id: "12312", hunt_id: "222121")
   	assert_not pirateHunt.valid?, 'Should be invalid without all parameters'
   end
   
   #test that the entry is invalid without a hunt
   test "pirate hunt without hunt" do
-  	pirateHunt = PirateHunt.create(completed: false, user: User.id)
+  	pirateHunt = PirateHunt.create(completed: false, user_id: "38393")
   	assert_not pirateHunt.valid?, 'Should be invalid without all parameters'
   end
 
   #test that the entry is invalid without a user
   test "pirate hunt without user" do
-    pirateHunt = PirateHunt.create(completed: false, hunt: Hunt.id)
+    pirateHunt = PirateHunt.create(completed: false, hunt_id: "12032013")
     assert_not pirateHunt.valid?, 'Should be invalid without all parameters'
   end
 
