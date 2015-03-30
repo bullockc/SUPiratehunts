@@ -45,6 +45,13 @@ h1 {
 	color: #000; 
 	font-size: 72px; 
 }
+
+h2 {
+	text-align: center; 
+	color: #000; 
+	font-size: 60px; 
+}
+
 			
 p {
 	color: #000; 
@@ -131,7 +138,7 @@ float: center;
   display: table-cell;
   vertical-align: middle;
  
-}
+
 
 @media (min-width: $break-large) {
 	.btn{
@@ -144,6 +151,6 @@ float: center;
 		vertical-align: middle;
 		
 		}
-		
-		
+
+}
 }
