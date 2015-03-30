@@ -22,7 +22,7 @@ class HuntTest < ActiveSupport::TestCase
   
   test "hunt has not been declared published or not published" do
     hunt = Hunt.create(title: 'Hunt1', active: true, public: true, start_time: Time.now, end_time: Time.now, start_date: Date.new(2015,4,3) , end_date: Date.new(2015,4,4), start_location: 'CS Lounge', description: 'a new hunt')
-	  assert_not hunt.valid?, "hunt title not saved" 
+	  assert_not hunt.valid?, "hunt published information not saved" 
   end
   
   test "hunt has not been declared public or not public" do
