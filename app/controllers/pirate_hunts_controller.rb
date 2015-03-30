@@ -4,7 +4,6 @@ class PirateHuntsController < ApplicationController
 
   def new
 	@pirate_hunt = PirateHunt.new
-	@pirate_hunt.pirate.build
   end
 
   # Move this to hunt#join ?
