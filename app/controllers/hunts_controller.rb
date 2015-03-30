@@ -55,6 +55,29 @@ class HuntsController < ApplicationController
     redirect_to controller: 'welcome', :action => 'index'
   end
 
+  # Moved from PirateHunts#create to here
+  def join
+    @hunt = Hunt.find(params[:id])
+    unless @hunt
+      # If hunt not found, redirect
+      redirect_to(root_path)
+    end
+
+    # There's probably a better way to do this..
+    @pirate_hunt = PirateHunt.create(hunt: @hunt, user: current_user)
+
+    if @pirate_hunt.save
+      # Create each PirateTask
+      @pirate_hunt.hunt.tasks.each do |task|
+        PirateTask.create(task: task, hunt: @pirate_hunt.hunt, user: current_user, pirate_hunt: @pirate_hunt).save
+      end
+      redirect_to(hunt_path(params[:id]))
+    else
+      redirect_to(hunts_path) #also maybe changes?
+      #TODO: add alert to user that join hunt failed
+    end
+  end
+
   private
   def hunt_params
     params.require(:hunt).permit(:title, :active, :published, :public, :start_date, :end_date, :start_location, :description, :user_id, :created_at, :updated_at)
