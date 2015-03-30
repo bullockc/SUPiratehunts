@@ -3,14 +3,19 @@ class PirateHuntsController < ApplicationController
   #end
 
   def new
-	 @pirate_hunt = PirateHunt.new
-   #@pirate_hunt.pirate.build
+	@pirate_hunt = PirateHunt.new
   end
 
+  # Move this to hunt#join ?
+  # Todo: Lock joining a hunt until published? Or have task#create check for
+  #       all respective PirateHunt(s) and add the new PirateTask to them.
   def create
     @pirate_hunt = PirateHunt.new(pirate_hunt_params)
     if @pirate_hunt.save
-      #redirect_to(root_path)
+      # Create each PirateTask
+      @pirate_hunt.hunt.tasks.each do |task|
+        PirateTask.create(task: task, hunt: @pirate_hunt.hunt, user: current_user, pirate_hunt: @pirate_hunt).save
+      end
       @hunt_id = pirate_hunt_params[:hunt_id]
       redirect_to(hunt_path(@hunt_id))
     else

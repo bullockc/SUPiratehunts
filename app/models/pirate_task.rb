@@ -3,7 +3,7 @@ class PirateTask < ActiveRecord::Base #Singular because it is a class
   belongs_to :user #, index:true
   belongs_to :hunt #, index:true #overload of inferrmation
   belongs_to :task #, index:true #https://github.com/rails/rails/pull/5262#issuecomment-4329571
-
+  belongs_to :pirate_hunt
     #https://www.youtube.com/watch?v=Z5W-Y3aROVE
     
     #Can add file sizes here

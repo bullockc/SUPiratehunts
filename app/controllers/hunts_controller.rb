@@ -4,7 +4,11 @@ class HuntsController < ApplicationController
     #@hunt = Pirate_Hunt.find(params[:user])
     #@hunt = Hunt.new(hunt_params)
   #end
-    
+  
+	#	when a hunt is published, for now we do not want the creator of the hunt to
+	#	be able to add more tasks, because then we have to play catch-up with pirate_hunts
+	#	and their pirate_tasks.
+  
   def new
     @hunt = Hunt.new
   end
@@ -18,10 +22,15 @@ class HuntsController < ApplicationController
     end
   end
 
+  # TODO index should only pass to the View Hunts that are both public and published
   def index
     @hunts = Hunt.all #.where(published: true, public: true) #for 'browse all' page
   end
 
+  # TODO possibly a routing issue
+  # you should only be able to see a hunt either if you are a the creator
+  # or if the hunt is public and published
+  #	or if the hunt is private and published and you have been invited
   def show
     @hunt = Hunt.find(params[:id])
     @tasks = @hunt.tasks
