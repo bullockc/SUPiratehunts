@@ -5,7 +5,7 @@ class HuntTest < ActiveSupport::TestCase
   #didn't add in reference field
   #check formatting for dates and times
   test "hunt has all required values" do
-    hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, start_time: Time.now, end_time: Time.now, start_date: Date.new(2015,4,3) , end_date: Date.new(2015,4,4), start_location: 'CS Lounge', description: 'a new hunt')	  assert hunt.valid?, "hunt information saved"
+    hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, start_time: Time.now, end_time: Time.now, start_date: Date.new(2015,4,3) , end_date: Date.new(2015,4,4), start_location: 'CS Lounge', description: 'a new hunt')
     assert hunt.valid?, "hunt information not saved"
   end
   
@@ -59,5 +59,5 @@ class HuntTest < ActiveSupport::TestCase
     hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, start_time: Time.now, end_time: Time.now, start_date: Date.new(2015,4,3) , end_date: Date.new(2015,4,4), start_location: 'CS Lounge')
 	  assert_not hunt.valid?, "hunt description not saved"
   end
-  
+
 end

@@ -7,7 +7,7 @@ class PirateHuntTest < ActiveSupport::TestCase
 
   #test that the entry is valid when all parameters are entered
   test "pirate hunt complete" do
-  	pirateHunt = PirateHunt.create(completed: false, user: 'user', hunt: '15221234')
+    pirateHunt = PirateHunt.create(completed: false, user: 'user', hunt: 15221234)
   	assert pirateHunt.valid?, 'PirateHunt data not saved'
   end
 
