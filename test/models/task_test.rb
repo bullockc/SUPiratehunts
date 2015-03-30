@@ -9,7 +9,7 @@ class TaskTest < ActiveSupport::TestCase
   #test that the entry is valid when all parameters are entered
   test "task is complete" do
     task = Task.create(task_type: 1, points: 25, prompt: 'Sample task', clue: 'Try to complete', correct_answer: 'Apple', hunt_id: "1234")
-    assert Task.valid?, 'Task information was not saved'
+    assert task.valid?, 'Task information was not saved'
   end
 
   #test that the entry is invalid when the task type is missing
