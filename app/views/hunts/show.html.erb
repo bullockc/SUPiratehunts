@@ -36,9 +36,16 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_
 <%#http://stackoverflow.com/questions/27156737/using-button-to-to-create-new-record-in-database-error-param-is-missing-or-the%>
 <%= button_to 'Join Hunt', {:controller => 'pirate_hunts', :action => 'create', :pirate_hunt => {:completed => 'false', :user_id => current_user.id, :hunt_id => @hunt.id}}, :method => :post, :class => 'btn btn-primary btn-block' %>
 			
-<%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary btn-block'%>
+<%if @hunt.user_id == current_user.id%>
+	<%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary btn-block'%>
+<%end%>
+
 <br>
-<%= button_to 'Create Task', new_hunt_task_path(@hunt), :method => 'get', :class => 'btn btn-primary btn-block'%>
+
+<%if @hunt.user_id == current_user.id%>
+	<%= button_to 'Create Task', new_hunt_task_path(@hunt), :method => 'get', :class => 'btn btn-primary btn-block'%>
+<%end%>
+
 <br>
 <%# We don't need this button, do we? %>
 <%#= button_to 'View Tasks', hunt_tasks_path(@hunt), :method => 'get', :class => 'btn btn-primary btn-block'%>
@@ -47,16 +54,13 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_
 <%# Also, we probably want to hide these buttons once their fields are set to true so you cannot
 	republish/reactivate a hunt over and over%>
 
-<%if @hunt.published == false%>
+<%if @hunt.published == false && @hunt.user_id == current_user.id%>
 	<%= button_to 'Publish Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:published => 'true'}}, :method => :put, :class => 'btn btn-primary' %>
 <%end%>
 
-<%if @hunt.active == false%>
+<%if @hunt.active == false && @hunt.user_id == current_user.id%>
 	<%= button_to 'Activate Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:active => 'true'}}, :method => :put, :class => 'btn btn-primary' %>
 <%end%>
-
-
-
 
 			</center>
 		<div>
