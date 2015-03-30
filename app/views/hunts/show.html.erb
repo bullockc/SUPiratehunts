@@ -29,6 +29,16 @@
 <%= button_to 'Join Hunt', {:controller => 'pirate_hunts', :action => 'create', :pirate_hunt => {:completed => 'false', :user_id => current_user.id, :hunt_id => @hunt.id}}, :method => :post, :class => 'btn btn-primary' %>
 
 <%# The button for publishing a may need to be moved so that only creators of a hunt can publish %>
-<%= button_to 'Publish Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:published => 'true'}}, :method => :put, :class => 'btn btn-primary' %>
+<%# Also, we probably want to hide these buttons once their fields are set to true so you cannot
+	republish/reactivate a hunt over and over%>
+
+<%if @hunt.published == false%>
+	<%= button_to 'Publish Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:published => 'true'}}, :method => :put, :class => 'btn btn-primary' %>
+<%end%>
+
+<%if @hunt.active == false%>
+	<%= button_to 'Activate Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:active => 'true'}}, :method => :put, :class => 'btn btn-primary' %>
+<%end%>
+
 
 </center>

@@ -35,7 +35,7 @@ class PirateTasksController < ApplicationController
        
    end
        
-       #took out if/else b/c would rather always redirect to task page, but w/
+   #took out if/else b/c would rather always redirect to task page, but w/
    #error message displayed on failure to update (UI functionality??)
   end
 
