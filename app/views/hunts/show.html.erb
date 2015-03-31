@@ -34,7 +34,7 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_
 <!--This needs to be admin only-->
 
 <%#http://stackoverflow.com/questions/27156737/using-button-to-to-create-new-record-in-database-error-param-is-missing-or-the%>
-<%= button_to 'Join Hunt', {:controller => 'pirate_hunts', :action => 'create', :pirate_hunt => {:completed => 'false', :user_id => current_user.id, :hunt_id => @hunt.id}}, :method => :post, :class => 'btn btn-primary btn-block' %>
+<%= button_to 'Join Hunt', { :controller => 'hunts', :action => 'join' }, :method => :post, :class => 'btn btn-primary btn-block' %>
 			
 <%if @hunt.user_id == current_user.id%>
 	<%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary btn-block'%>
