@@ -1,3 +1,7 @@
+=begin
+Hunts are the Scavenger Hunt shells; they are filled by tasks which are then completed by users. 
+=end
+
 class CreateHunts < ActiveRecord::Migration #plural because it is a migration
   def change
     create_table :hunts do |t|
