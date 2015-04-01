@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
 		<div class="col-sm-10 col-md-10 col-md-offset-1 col-lg-10">
-            <center> 
+            <div class = "text-center"> 
 			<h3><%= @hunt.title.upcase%></h3><%#The title of the hunt will be the header of the page%>
 			
 
@@ -57,16 +57,17 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_
 	republish/reactivate a hunt over and over%>
 
 <%if @hunt.published == false && @hunt.user_id == current_user.id%>
-	<%= button_to 'Publish Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:published => 'true'}}, :method => :put, :class => 'btn btn-primary' %>
+	<%= button_to 'Publish Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:published => 'true'}}, :method => :put, :class => 'btn btn-primary btn-block' %>
 <%end%>
 
 <%# Do we need to add some sort of check that makes the creator publish the hunt before%
 	making it Active?%>
 <%if @hunt.active == false && @hunt.user_id == current_user.id%>
-	<%= button_to 'Activate Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:active => 'true'}}, :method => :put, :class => 'btn btn-primary' %>
+	<%= button_to 'Activate Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:active => 'true'}}, :method => :put, :class => 'btn btn-primary btn-block' %>
 <%end%>
 
-			</center>
+
+			</div>
 		<div>
 	</div>
 <div>
