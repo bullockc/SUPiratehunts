@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317205210) do
+ActiveRecord::Schema.define(version: 20150401154714) do
 
   create_table "hunts", force: :cascade do |t|
     t.string   "title"
     t.boolean  "active"
     t.boolean  "published"
     t.boolean  "public"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "start_location"
     t.text     "description"
     t.integer  "user_id"
@@ -47,7 +49,11 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.string   "submission_content_type"
     t.integer  "submission_file_size"
     t.datetime "submission_updated_at"
+    t.integer  "pirate_hunt_id"
+    t.string   "qa_submission"
   end
+
+  add_index "pirate_tasks", ["pirate_hunt_id"], name: "index_pirate_tasks_on_pirate_hunt_id"
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "task_type"
@@ -72,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150317205210) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "pirate_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
