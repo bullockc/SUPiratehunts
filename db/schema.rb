@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327200547) do
+ActiveRecord::Schema.define(version: 20150401154714) do
 
   create_table "hunts", force: :cascade do |t|
     t.string   "title"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150327200547) do
     t.integer  "submission_file_size"
     t.datetime "submission_updated_at"
     t.integer  "pirate_hunt_id"
+    t.string   "qa_submission"
   end
 
   add_index "pirate_tasks", ["pirate_hunt_id"], name: "index_pirate_tasks_on_pirate_hunt_id"
