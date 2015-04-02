@@ -8,9 +8,16 @@ class PirateHuntTest < ActiveSupport::TestCase
   #test that the entry is valid when all parameters are entered
   test "pirate hunt complete" do
 <<<<<<< HEAD
+<<<<<<< HEAD
   	pirateHunt = PirateHunt.create(completed: false, user: 'user', hunt: 15221234)
 =======
     pirateHunt = PirateHunt.create(completed: false, user_id: "1231", hunt_id: "12312")
+>>>>>>> Team_Database
+=======
+    pirateHunt = PirateHunt.create(completed: false, user_id: "1231", hunt_id: "12312")
+=======
+  	pirateHunt = PirateHunt.create(completed: false, user: 'user', hunt: 15221234)
+>>>>>>> master
 >>>>>>> Team_Database
   	assert pirateHunt.valid?, 'PirateHunt data not saved'
   end
@@ -18,6 +25,11 @@ class PirateHuntTest < ActiveSupport::TestCase
   #test that the entry is invalid without a completed field
   test "pirate hunt without completion" do
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    pirateHunt = PirateHunt.create(user_id: "12312", hunt_id: "222121")
+=======
+>>>>>>> Team_Database
   	pirateHunt = PirateHunt.create(user: 'user', hunt: 15221232'
   	assert_not pirateHunt.valid?, 'Should be invalid without all parameters'
   end
@@ -25,8 +37,12 @@ class PirateHuntTest < ActiveSupport::TestCase
   #test that the entry is invalid without a user
   test "pirate hunt without pirate" do
   	pirateHunt = PirateHunt.create(completed: false, hunt: 15223342)
+<<<<<<< HEAD
 =======
     pirateHunt = PirateHunt.create(user_id: "12312", hunt_id: "222121")
+>>>>>>> Team_Database
+=======
+>>>>>>> master
 >>>>>>> Team_Database
   	assert_not pirateHunt.valid?, 'Should be invalid without all parameters'
   end
@@ -34,9 +50,16 @@ class PirateHuntTest < ActiveSupport::TestCase
   #test that the entry is invalid without a hunt
   test "pirate hunt without hunt" do
 <<<<<<< HEAD
+<<<<<<< HEAD
   	pirateHunt = PirateHunt.create(completed: false, user: 'user')
 =======
   	pirateHunt = PirateHunt.create(completed: false, user_id: "38393")
+>>>>>>> Team_Database
+=======
+  	pirateHunt = PirateHunt.create(completed: false, user_id: "38393")
+=======
+  	pirateHunt = PirateHunt.create(completed: false, user: 'user')
+>>>>>>> master
 >>>>>>> Team_Database
   	assert_not pirateHunt.valid?, 'Should be invalid without all parameters'
   end

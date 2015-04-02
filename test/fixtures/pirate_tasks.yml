@@ -6,11 +6,7 @@
 #
 one:
 <<<<<<< HEAD
-      answer_uploaded: true
-      completed: true
-two:
-      answer_uploaded: false
-      completed: false
+<<<<<<< HEAD
 =======
   answer_uploaded: true
   completed: true
@@ -18,4 +14,22 @@ two:
 two:
   answer_uploaded: false
   completed: false
+=======
+>>>>>>> Team_Database
+      answer_uploaded: true
+      completed: true
+two:
+      answer_uploaded: false
+      completed: false
+<<<<<<< HEAD
+=======
+  answer_uploaded: true
+  completed: true
+
+two:
+  answer_uploaded: false
+  completed: false
+>>>>>>> Team_Database
+=======
+>>>>>>> master
 >>>>>>> Team_Database
