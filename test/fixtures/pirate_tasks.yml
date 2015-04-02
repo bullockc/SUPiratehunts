@@ -5,9 +5,17 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+<<<<<<< HEAD
   answer_uploaded: true
   completed: true
 
 two:
   answer_uploaded: false
   completed: false
+=======
+      answer_uploaded: true
+      completed: true
+two:
+      answer_uploaded: false
+      completed: false
+>>>>>>> master

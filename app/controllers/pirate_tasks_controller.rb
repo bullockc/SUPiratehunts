@@ -1,9 +1,4 @@
 class PirateTasksController < ApplicationController
-    
-    
-    
-  def myTasks
-  end	    
 	
   def new
     @pirate_task = PirateTask.new
@@ -40,7 +35,7 @@ class PirateTasksController < ApplicationController
        
    end
        
-       #took out if/else b/c would rather always redirect to task page, but w/
+   #took out if/else b/c would rather always redirect to task page, but w/
    #error message displayed on failure to update (UI functionality??)
   end
 
@@ -54,10 +49,9 @@ class PirateTasksController < ApplicationController
 
   private
   def pirate_task_params
-    params.require(:pirate_task).permit(:submission, :answer_uploaded, :completed, :user_id, :task_id, :hunt_id, :created_at, :updated_at)
-      
+    params.require(:pirate_task).permit(:pirate_hunt_id, :submission, :answer_uploaded, :completed, :user_id, :task_id, :hunt_id, :created_at, :updated_at)
     
-      #pirate, hunt, and task are id fields (references)
+      #pirate, hunt, pirate_hunt, and task are id fields (references)
   end
   
 end

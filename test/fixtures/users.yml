@@ -4,12 +4,21 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+<<<<<<< HEAD
 one: 
   display_name: user
+=======
+one:
+  #display_name: user
+>>>>>>> master
   email: user@example.com
   encrypted_password: password1
 
 two: 
+<<<<<<< HEAD
   display_name: user2
+=======
+  #display_name: user2
+>>>>>>> master
   email: user2@example.com
   encrypted_password: password2

@@ -1,14 +1,20 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-  
 
   #may need to add all of the other fields from the schema here? not sure yet.
+<<<<<<< HEAD
  test "user has display name, email and encrypted password" do
 	user = User.create(display_name: 'user', email: 'user1@gmail.com', encrypted_password: 'password1')
+=======
+  test "user has display name, email and password" do
+	user = User.create(display_name: 'user', email: 'user1@gmail.com', encrypted_password: 'password1')
+	assert user.valid?, "User information saved"
+  end
+  
+    test "only display name entered" do
+	user = User.create(display_name: 'user')
+>>>>>>> master
 	assert user.valid?, "User information not saved"
  end
  
@@ -17,6 +23,7 @@ class UserTest < ActiveSupport::TestCase
 	assert_not user.valid?, "User email and password not entered"
  end
  
+<<<<<<< HEAD
  test "only an email entered" do
 	  user = User.create(encrypted_password: '4p78D')
 	  assert_not user.valid?, "User display name and password not entered"
@@ -26,6 +33,17 @@ class UserTest < ActiveSupport::TestCase
     user= User.create(email: 'user1@gmail.com')
 	  assert_not user.valid?, "User display name and email not entered"
  end
+=======
+ test "only email entered" do
+	user = User.create(email: 'user1@gmail.com')
+	assert_not user.valid?, "User information not saved"
+  end
+ 
+  test "only password entered" do
+  	user = User.create(encrypted_password: 'password1')
+	assert_not user.valid?, "User information not saved"
+  end
+>>>>>>> master
   
 end
 

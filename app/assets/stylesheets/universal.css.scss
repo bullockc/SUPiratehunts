@@ -45,6 +45,13 @@ h1 {
 	color: #000; 
 	font-size: 72px; 
 }
+
+h2 {
+	text-align: center; 
+	color: #000; 
+	font-size: 60px; 
+}
+
 			
 p {
 	color: #000; 
@@ -52,6 +59,14 @@ p {
 	font-size: 40px;
 	padding: 20px;
 } 
+
+ol {
+	color: #000; 
+	text-align: center; 
+	font-size: 24px;
+	padding: 20px;
+}
+
 
 .public, .private, .active, .inactive{
 	text-align: center; 
@@ -116,24 +131,28 @@ $large-btn-height: 200px;
 float: center;
   
   color: #ffffff;
-  font-size: 24px;
+  font-size: 30px;
   width: $small-btn-width;
   height: $small-btn-height;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   display: table-cell;
   vertical-align: middle;
+  white-space: normal;
  
-}
+
 
 @media (min-width: $break-large) {
 	.btn{
 		color: #ffffff;
-		font-size: 48px;
+		font-size: 30px;
 		width: $large-btn-width;
 		height: $large-btn-height;
 		margin-bottom: 10px;
 		display: table-cell;
 		vertical-align: middle;
+		white-space: normal;
 		
 		}
+
+}
 }

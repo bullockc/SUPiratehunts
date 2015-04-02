@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :hunts do
     resources :tasks
   end
+  post 'hunts/:id/join' => 'hunts#join'
   
   #resources :users
 
