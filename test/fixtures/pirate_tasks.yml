@@ -7,13 +7,19 @@
 one:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Team_Database
   answer_uploaded: true
   completed: true
 
 two:
   answer_uploaded: false
   completed: false
+=======
+<<<<<<< HEAD
+>>>>>>> Team_Database
 =======
 >>>>>>> Team_Database
       answer_uploaded: true
@@ -22,6 +28,7 @@ two:
       answer_uploaded: false
       completed: false
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   answer_uploaded: true
   completed: true
@@ -29,6 +36,9 @@ two:
 two:
   answer_uploaded: false
   completed: false
+>>>>>>> Team_Database
+=======
+>>>>>>> master
 >>>>>>> Team_Database
 =======
 >>>>>>> master

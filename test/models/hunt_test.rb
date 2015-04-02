@@ -3,13 +3,19 @@ require 'test_helper'
 class HuntTest < ActiveSupport::TestCase
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Team_Database
 
   #didn't add in reference field
   #check formatting for dates and times
   test "hunt has all required values" do
     hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, start_time: Time.now, end_time: Time.now, start_date: Date.new(2015,4,3) , end_date: Date.new(2015,4,4), start_location: 'CS Lounge', description: 'a new hunt')
     assert hunt.valid?, "hunt information not saved"
+=======
+<<<<<<< HEAD
+>>>>>>> Team_Database
 =======
 >>>>>>> Team_Database
 	#didn't add in reference field
@@ -18,6 +24,7 @@ class HuntTest < ActiveSupport::TestCase
   test "hunt has all required values" do
 	  hunt = Hunt.create(title: 'Hunt1', active: true, published: true, public: true, start_time: Time.now, end_time: Time.now, start_date: Date.new(2015,4,3) , end_date: Date.new(2015,4,4), start_location: 'CS Lounge', description: 'a new hunt')
 	  assert hunt.valid?, "hunt information saved"
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -30,13 +37,19 @@ class HuntTest < ActiveSupport::TestCase
 =======
 >>>>>>> master
 >>>>>>> Team_Database
+=======
+>>>>>>> master
+>>>>>>> Team_Database
   end
   
   #make sure other missing parameters result in the hunt not being valid
   test "hunt has no title" do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Team_Database
 	  hunt = Hunt.create(active: true, published: true, public: true, start_time: Time.now, end_time: Time.now, start_date: Date.new(2015,4,3) , end_date: Date.new(2015,4,4), start_location: 'CS Lounge', description: 'a new hunt')
     assert_not hunt.valid?, "hunt title not saved"
   end
@@ -86,6 +99,9 @@ class HuntTest < ActiveSupport::TestCase
 	  assert_not hunt.valid?, "hunt description not saved"
   end
 
+=======
+<<<<<<< HEAD
+>>>>>>> Team_Database
 =======
 >>>>>>> Team_Database
 	hunt = Hunt.create(active: true, published: true, public: true, start_time: Time.now, end_time: Time.now, start_date: Date.new(2015,4,3) , end_date: Date.new(2015,4,4), start_location: 'CS Lounge', description: 'a new hunt')
@@ -138,6 +154,7 @@ class HuntTest < ActiveSupport::TestCase
   end
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	  hunt = Hunt.create(active: true, published: true, public: true, start_time: Time.now, end_time: Time.now, start_date: Date.new(2015,4,3) , end_date: Date.new(2015,4,4), start_location: 'CS Lounge', description: 'a new hunt')
     assert_not hunt.valid?, "hunt title not saved"
@@ -188,6 +205,9 @@ class HuntTest < ActiveSupport::TestCase
 	  assert_not hunt.valid?, "hunt description not saved"
   end
 
+>>>>>>> Team_Database
+=======
+>>>>>>> master
 >>>>>>> Team_Database
 =======
 >>>>>>> master

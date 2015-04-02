@@ -9,9 +9,16 @@ class PirateHuntTest < ActiveSupport::TestCase
   test "pirate hunt complete" do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   	pirateHunt = PirateHunt.create(completed: false, user: 'user', hunt: 15221234)
 =======
     pirateHunt = PirateHunt.create(completed: false, user_id: "1231", hunt_id: "12312")
+>>>>>>> Team_Database
+=======
+    pirateHunt = PirateHunt.create(completed: false, user_id: "1231", hunt_id: "12312")
+=======
+  	pirateHunt = PirateHunt.create(completed: false, user: 'user', hunt: 15221234)
+>>>>>>> master
 >>>>>>> Team_Database
 =======
     pirateHunt = PirateHunt.create(completed: false, user_id: "1231", hunt_id: "12312")
@@ -26,6 +33,11 @@ class PirateHuntTest < ActiveSupport::TestCase
   test "pirate hunt without completion" do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    pirateHunt = PirateHunt.create(user_id: "12312", hunt_id: "222121")
+=======
+>>>>>>> Team_Database
 =======
     pirateHunt = PirateHunt.create(user_id: "12312", hunt_id: "222121")
 =======
@@ -38,8 +50,12 @@ class PirateHuntTest < ActiveSupport::TestCase
   test "pirate hunt without pirate" do
   	pirateHunt = PirateHunt.create(completed: false, hunt: 15223342)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     pirateHunt = PirateHunt.create(user_id: "12312", hunt_id: "222121")
+>>>>>>> Team_Database
+=======
+>>>>>>> master
 >>>>>>> Team_Database
 =======
 >>>>>>> master
@@ -51,15 +67,21 @@ class PirateHuntTest < ActiveSupport::TestCase
   test "pirate hunt without hunt" do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   	pirateHunt = PirateHunt.create(completed: false, user: 'user')
 =======
   	pirateHunt = PirateHunt.create(completed: false, user_id: "38393")
 >>>>>>> Team_Database
 =======
+=======
+>>>>>>> Team_Database
   	pirateHunt = PirateHunt.create(completed: false, user_id: "38393")
 =======
   	pirateHunt = PirateHunt.create(completed: false, user: 'user')
 >>>>>>> master
+<<<<<<< HEAD
+>>>>>>> Team_Database
+=======
 >>>>>>> Team_Database
   	assert_not pirateHunt.valid?, 'Should be invalid without all parameters'
   end

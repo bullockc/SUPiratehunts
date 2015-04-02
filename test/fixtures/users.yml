@@ -6,11 +6,20 @@
 #
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 one:
   #display_name: user
 =======
 one: 
   display_name: user
+>>>>>>> Team_Database
+=======
+one: 
+  display_name: user
+=======
+one:
+  #display_name: user
+>>>>>>> master
 >>>>>>> Team_Database
 =======
 one: 
@@ -26,15 +35,21 @@ one:
 two: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   #display_name: user2
 =======
   display_name: user2
 >>>>>>> Team_Database
 =======
+=======
+>>>>>>> Team_Database
   display_name: user2
 =======
   #display_name: user2
 >>>>>>> master
+<<<<<<< HEAD
+>>>>>>> Team_Database
+=======
 >>>>>>> Team_Database
   email: user2@example.com
   encrypted_password: password2

@@ -5,15 +5,6 @@
 # below each fixture, per the syntax in the comments below
 #
 <<<<<<< HEAD
-<<<<<<< HEAD
-
-one: 
-  title: hunt
-=======
-one: 
-  title: 'hunt'
->>>>>>> Team_Database
-=======
 one: 
   title: 'hunt'
 =======
@@ -21,7 +12,6 @@ one:
 one: 
   title: hunt
 >>>>>>> master
->>>>>>> Team_Database
   active: true
   published: true
   public: true
@@ -30,31 +20,18 @@ one:
   #start_date: 04012015
   #end_date: 04012015
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
   start_location: 'cs lounge'
   description: 'a new hunt'
 
 two: 
   title: 'hunt2'
 =======
->>>>>>> Team_Database
   start_location: cs lounge
   description: a new hunt
 
 two: 
   title: hunt2
-<<<<<<< HEAD
-=======
-  start_location: 'cs lounge'
-  description: 'a new hunt'
-
-two: 
-  title: 'hunt2'
->>>>>>> Team_Database
-=======
 >>>>>>> master
->>>>>>> Team_Database
   active: false
   published: true
   public: true
@@ -63,18 +40,9 @@ two:
   #start_date: 04012015
   #end_date: 04012015
 <<<<<<< HEAD
-<<<<<<< HEAD
-  start_location: cs loung
-  description: another new hunt
-=======
-  start_location: 'cs lounge'
-  description: 'another new hunt'
->>>>>>> Team_Database
-=======
   start_location: 'cs lounge'
   description: 'another new hunt'
 =======
   start_location: cs loung
   description: another new hunt
 >>>>>>> master
->>>>>>> Team_Database

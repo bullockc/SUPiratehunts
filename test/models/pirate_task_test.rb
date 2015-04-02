@@ -9,9 +9,16 @@ class PirateTaskTest < ActiveSupport::TestCase
   test "pirate task complete" do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, task: '1423', hunt: '9876')
 =======
   	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, user_id: "1232", task_id: "12123", hunt_id: "1231231")
+>>>>>>> Team_Database
+=======
+  	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, user_id: "1232", task_id: "12123", hunt_id: "1231231")
+=======
+  	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, task: '1423', hunt: '9876')
+>>>>>>> master
 >>>>>>> Team_Database
 =======
   	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, user_id: "1232", task_id: "12123", hunt_id: "1231231")
@@ -25,7 +32,10 @@ class PirateTaskTest < ActiveSupport::TestCase
   #test that the entry is invalid without an answer uploaded
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Team_Database
    test "pirate task without answer" do
     pirateTask = PirateTask.create(completed: true, user_id: "1232", task_id: "12123", hunt_id: "1231231")
     assert_not pirateTask.valid?, 'Should be invalid without all paramaters'
@@ -41,6 +51,9 @@ class PirateTaskTest < ActiveSupport::TestCase
   test "pirate task without user" do
     pirateTask = PirateTask.create(answer_uploaded: true, completed: true, task_id: "12123", hunt_id: "1231231")
     assert_not pirateTask.valid?, 'Should be invalid without all paramaters'
+=======
+<<<<<<< HEAD
+>>>>>>> Team_Database
 =======
 >>>>>>> Team_Database
   test "pirate task without answer" do
@@ -60,6 +73,7 @@ class PirateTaskTest < ActiveSupport::TestCase
   	pirateTask = PirateTask.create(answer_uploaded: 'True', completed: 'True', task: '1423', hunt: '9876')
   	assert_not pirateTask.valid?, 'PirateTask data not saved'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
    test "pirate task without answer" do
     pirateTask = PirateTask.create(completed: true, user_id: "1232", task_id: "12123", hunt_id: "1231231")
@@ -80,11 +94,15 @@ class PirateTaskTest < ActiveSupport::TestCase
 =======
 >>>>>>> master
 >>>>>>> Team_Database
+=======
+>>>>>>> master
+>>>>>>> Team_Database
   end
 =end
 
   #test that the entry is invalid with a task
   test "pirate task without task" do
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, hunt: '9876')
@@ -101,9 +119,18 @@ class PirateTaskTest < ActiveSupport::TestCase
   	assert_not pirateTask.valid?, 'PirateTask data not saved'
 >>>>>>> master
 >>>>>>> Team_Database
+=======
+    pirateTask = PirateTask.create(answer_uploaded: true, completed: true, user_id: "1232", hunt_id: "1231231")
+    assert_not pirateTask.valid?, 'Should be invalid without all paramaters'
+=======
+  	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, hunt: '9876')
+  	assert_not pirateTask.valid?, 'PirateTask data not saved'
+>>>>>>> master
+>>>>>>> Team_Database
   end
   #test that the entry is invalid with a hunt
   test "pirate task without hunt" do
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, task: '1423')
@@ -111,6 +138,14 @@ class PirateTaskTest < ActiveSupport::TestCase
 =======
     pirateTask = PirateTask.create(answer_uploaded: true, completed: true, user_id: "1232", task_id: "12123")
     assert_not pirateTask.valid?, 'Should be invalid without all paramaters'
+>>>>>>> Team_Database
+=======
+    pirateTask = PirateTask.create(answer_uploaded: true, completed: true, user_id: "1232", task_id: "12123")
+    assert_not pirateTask.valid?, 'Should be invalid without all paramaters'
+=======
+  	pirateTask = PirateTask.create(answer_uploaded: true, completed: true, task: '1423')
+  	assert_not pirateTask.valid?, 'PirateTask data not saved'
+>>>>>>> master
 >>>>>>> Team_Database
 =======
     pirateTask = PirateTask.create(answer_uploaded: true, completed: true, user_id: "1232", task_id: "12123")
