@@ -1,3 +1,4 @@
+/* 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
@@ -5,7 +6,8 @@
 
 .center-pills {
 	display: inline-block;
-	  font-size: 18px;
+	font-size: 18px;
+	color: #000; 
 }
 
 /*Box sizing mixin, necessary or box sizing gets mad*/
@@ -35,21 +37,24 @@ this needs word because the text also becomes opaque, I played with this a littl
   border: none; 
 } 
 
-body {
-	background-image:url('http://freeseamlesstextures.com/images/28-faded-parchment-background-sml.jpg');
-	background-size: cover;
-}
+
 			
 h1 {
 	text-align: center; 
 	color: #000; 
-	font-size: 72px; 
+	font-size: 60px; 
 }
 
 h2 {
 	text-align: center; 
 	color: #000; 
-	font-size: 60px; 
+	font-size: 50px; 
+}
+
+h3 {
+   text-align: center ; 
+   color: #000; 
+   font-size: 28px; 
 }
 
 			
@@ -113,46 +118,4 @@ ol {
   }
 }
 
-/*
-button stuff
-http://stackoverflow.com/questions/10136487/how-to-style-buttons-in-ruby-on-rails
-*/
 
-$break-small: 320px;
-$break-large: 1024px;
-$small-btn-width: 280px;
-$small-btn-height: 75px;
-$large-btn-width: 750px;
-$large-btn-height: 200px;
-
-
-.btn{
-
-float: center;
-  
-  color: #ffffff;
-  font-size: 30px;
-  width: $small-btn-width;
-  height: $small-btn-height;
-  margin-bottom: 10px;
-  display: table-cell;
-  vertical-align: middle;
-  white-space: normal;
- 
-
-
-@media (min-width: $break-large) {
-	.btn{
-		color: #ffffff;
-		font-size: 30px;
-		width: $large-btn-width;
-		height: $large-btn-height;
-		margin-bottom: 10px;
-		display: table-cell;
-		vertical-align: middle;
-		white-space: normal;
-		
-		}
-
-}
-}
