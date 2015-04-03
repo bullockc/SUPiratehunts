@@ -2,12 +2,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
-<h1>Hunts</h1>
-
+<div class="text-center">
+<img class="img-circle" src="http://www.bootbundle.com/bundle/roundicons/free-60-icons-26.png">
+</div>
 <h3>Let's create a hunt</h3>
-
-<br><br>
+<br>
 <%= form_for(@hunt) do |f| %>
 		  <div class="opaque-forms">
 		  <%= f.label :title, "Title" %>
@@ -44,12 +43,11 @@
 		  <%= f.text_field :description%>
 		  <br>
 		  <%= f.hidden_field :user_id, :value => current_user.id%>
-		  <%= f.hidden_field :hunt_id, :value => current_hunt.id%>  <%#added in hunt field
 		  <%= f.hidden_field :created_at%>
 		  <%= f.hidden_field :updated_at%>
 		  <br>
 		  </div>
-		  <%= f.submit "Create Hunt", class: "btn btn-primary btn-block" %>
+		  <%= f.submit "Create Hunt", class: "btn btn-default btn-block" %>
 		 
 		<% end %>
 
