@@ -117,5 +117,22 @@ ol {
     margin-left: 60px;
   }
 }
+/*Teal buttons*/
+.btn-ratstone {
+  color: #fff;
+  background-color: #0099CC;
+  border-color: #2e6da4;
+}
+.btn-ratstone:focus,
+.btn-ratstone.focus {
+  color: #fff;
+  background-color: #0099CC;
+  border-color: #122b40;
+}
+.btn-ratstone:hover {
+  color: #fff;
+  background-color:#008AB8; // #286090;
+  border-color: #204d74;
+}
 
 
