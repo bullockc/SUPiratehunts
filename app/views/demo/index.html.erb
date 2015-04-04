@@ -43,7 +43,9 @@
 		<%= link_to 'Start the Demo', demo_pageOne_path, :class => 'btn btn-primary'%>
 		<br><br>
 		<!--the below path will change to the account creation path -->
-		<%= link_to 'Create Account', demo_pageOne_path, :class => 'btn btn-primary'%>
+		<% if !user_signed_in?%>
+			<%= link_to 'Create Account', demo_pageOne_path, :class => 'btn btn-primary'%>
+		<% end %>
 		</center>
     
     
