@@ -13,6 +13,7 @@
 		  <%= f.label :title, "Title" %>
 		  <%= f.text_field :title %>
 		  <br>
+
 		  
 	
 		      <%= f.hidden_field :active, :value => false %>
@@ -35,6 +36,7 @@
 		  <%= f.text_field :description%>
 		  <br>
 		  <%= f.hidden_field :user_id, :value => current_user.id%>
+		  <%= f.hidden_field :hunt_id, :value => current_hunt.id%>  <%#added in hunt field
 		  <%= f.hidden_field :created_at%>
 		  <%= f.hidden_field :updated_at%>
 		  <br>

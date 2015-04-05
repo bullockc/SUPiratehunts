@@ -49,4 +49,4 @@ answers = PirateTask.create(
    completed: 1,
    user_id: natalia.id,
    task_id: todo.id #need to lookup hunts
-   )
+   ) 

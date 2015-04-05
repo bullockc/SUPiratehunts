@@ -1,3 +1,9 @@
+=begin
+This is the user model created by devise. We did not need the Confirmable or Lockable functionality. Users
+log in using an email and encrypted password (encrypted by devise) and have a display name. We keep track
+of when the user was created as well as when they were last logged in and currently logged in. 
+=end
+
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|

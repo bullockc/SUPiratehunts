@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
 		<div class="col-sm-10 col-md-10 col-md-offset-1 col-lg-10">
-            <center> 
+            <div class = "text-center"> 
 			<h3><%= @hunt.title.upcase%></h3><%#The title of the hunt will be the header of the page%>
 			
 
@@ -31,11 +31,12 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_
 
 <%#Currently the public and active displays are not staying in line with the rest of the paragraphs, but that is a stylesheet issue and will be fixed later%>
 
-<!--This needs to be admin only-->
+<p></p>
 
 <%#http://stackoverflow.com/questions/27156737/using-button-to-to-create-new-record-in-database-error-param-is-missing-or-the%>
 <%= button_to 'Join Hunt', { :controller => 'hunts', :action => 'join' }, :method => :post, :class => 'btn btn-primary btn-block' %>
-			
+
+<br>
 <%if @hunt.user_id == current_user.id%>
 	<%= button_to 'Remove Hunt', hunt_path, :method => 'delete', :class => 'btn btn-primary btn-block'%>
 <%end%>
@@ -44,7 +45,7 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_
 
 <%# is the if statement enough to prevent the creator from creating tasks after
 	the hunt is published or should we make it more secure?%>
-<%if @hunt.user_id == current_user.id && @hunt.published == false%>
+<%if @hunt.user_id == current_user.id && @hunt.published == false && !@hunt.published%>
 	<%= button_to 'Create Task', new_hunt_task_path(@hunt), :method => 'get', :class => 'btn btn-primary btn-block'%>
 <%end%>
 
@@ -57,16 +58,18 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_
 	republish/reactivate a hunt over and over%>
 
 <%if @hunt.published == false && @hunt.user_id == current_user.id%>
-	<%= button_to 'Publish Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:published => 'true'}}, :method => :put, :class => 'btn btn-primary' %>
+	<%= button_to 'Publish Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:published => 'true'}}, :method => :put, :class => 'btn btn-primary btn-block' %>
 <%end%>
 
+<br>
 <%# Do we need to add some sort of check that makes the creator publish the hunt before%
 	making it Active?%>
 <%if @hunt.active == false && @hunt.user_id == current_user.id%>
-	<%= button_to 'Activate Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:active => 'true'}}, :method => :put, :class => 'btn btn-primary' %>
+	<%= button_to 'Activate Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:active => 'true'}}, :method => :put, :class => 'btn btn-primary btn-block' %>
 <%end%>
 
-			</center>
+
+			</div>
 		<div>
 	</div>
 <div>
