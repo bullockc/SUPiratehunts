@@ -1,4 +1,4 @@
-﻿<head>
+<head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -14,22 +14,13 @@
 		  <%= f.text_field :title %>
 		  <br>
 		  
-		  <table style="width: 100%;">
-		  <tr>
-			  <td style="width: 33%;" align="center";><%= f.label :active, "Active"%></td>
-			 
-			  <td style="width: 33%;" align="center";><%= f.label :published, "Published"%></td>
-			  
-			  <td style="width: 33%;" align="center";><%= f.label :public, "Public"%></td>
-		  </tr>
-		  <tr>
-		      <td style="width: 33%;"><%= f.check_box :active %></td>
+	
+		      <%= f.hidden_field :active, :value => false %>
 		  
-		      <td style="width: 33%;"><%= f.check_box :published %></td>
+		      <%= f.hidden_field :published, :value => false %>
 			  
-			   <td style="width: 33%;"><%= f.check_box :public %></td>
-		  </tr>
-		  </table>
+			  <%= f.hidden_field :public, :value => true %>
+		  
 		  
 		  <%= f.label :start_date, "Start Date (put in yyyy-mm-dd if typing in)" %>
 		  <%= f.date_field :start_date %>

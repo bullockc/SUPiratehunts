@@ -15,6 +15,7 @@ class HuntsController < ApplicationController
 
   def create
     @hunt = Hunt.new(hunt_params)
+      
     if @hunt.save
       redirect_to(hunt_path(@hunt.id)) #redirects to the show for that individual hunt that was just created
     else
