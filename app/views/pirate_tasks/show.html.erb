@@ -1,24 +1,24 @@
 <h1>show pirateHunts</h1>
 
-<!--
- This is not working the way that I want it to, commening it out and trying a different form 
+<!-- this is the qa form -->
+
+
 <%= form_for(:pirate_task, url: pirate_task_path, method: :patch, multipart: true) do |f| %>
   <div class="field">
-    <%= f.label :submission %>
-    <%= f.file_field :submission %>
+   <%= f.label :answer_uploaded %>
   </div>
+    <div>
+           <%= f.text_field :answer_uploaded %>
+</div>
 <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit QA Answer" %>
   </div>
 <% end %>
--->
 
-
+<!-- This is only a thing when there is a photo question -->
 
 <%= form_for @pirate_task, html: { multipart: true} do |f| %>
-<div class="field">
-    <%= f.text_field :user_id %>
-  </div>
+
   <div class="field">
     <%= f.file_field :submission %>
   </div>
@@ -27,9 +27,7 @@
   </div>
 <% end %>
 
-<!-- proof that update is working, I can update the pirate ID
-<%= @pirate_task.pirate_id %>
-<br>-->
+
 
 
 <%= @pirate_task.submission.url %>

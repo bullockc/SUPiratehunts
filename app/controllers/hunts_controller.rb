@@ -77,7 +77,7 @@ class HuntsController < ApplicationController
     if @pirate_hunt.save
       # Create each PirateTask
       @pirate_hunt.hunt.tasks.each do |task|
-        PirateTask.create(task: task, hunt: @pirate_hunt.hunt, user: current_user, pirate_hunt: @pirate_hunt).save
+        PirateTask.create(task: task, hunt: @pirate_hunt.hunt, user: current_user, pirate_hunt: @pirate_hunt, answer_uploaded: false, completed: false).save
       end
       redirect_to(pirate_hunt_path(@pirate_hunt.id))
     else
