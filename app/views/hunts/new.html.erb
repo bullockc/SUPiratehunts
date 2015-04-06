@@ -1,4 +1,4 @@
-﻿<head>
+<head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -13,7 +13,16 @@
 		  <%= f.label :title, "Title" %>
 		  <%= f.text_field :title %>
 		  <br>
-		    
+
+		  
+	
+		      <%= f.hidden_field :active, :value => false %>
+		  
+		      <%= f.hidden_field :published, :value => false %>
+			  
+			  <%= f.hidden_field :public, :value => true %>
+		  
+		  
 		  <%= f.label :start_date, "Start Date (put in yyyy-mm-dd if typing in)" %>
 		  <%= f.date_field :start_date %>
 		  <br>
