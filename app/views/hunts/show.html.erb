@@ -21,6 +21,7 @@ This hunt starts at <%=@hunt.start_location%>
 <%#This displays the start and end times of the hunt%>
 The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_date.to_s(:long)%>
 
+<br><br><br>
 
 <%#This displays whether the hunt is public or private, but we aren't currently using this %>
 <!-- <p><% if(@hunt.public?) %><div class="public">This hunt is a public hunt</div><% else %><div class="private">This hunt is a private hunt </div><%end%></p> -->
