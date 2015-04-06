@@ -31,6 +31,8 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_
 
 <%#Currently the public and active displays are not staying in line with the rest of the paragraphs, but that is a stylesheet issue and will be fixed later%>
 
+<%= render @tasks %>
+
 <p></p>
 
 <%#http://stackoverflow.com/questions/27156737/using-button-to-to-create-new-record-in-database-error-param-is-missing-or-the%>
