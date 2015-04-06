@@ -22,3 +22,8 @@ app/views/layouts/help.html.erb
 
 # Ignore vagrant file with updated mobile port stuff
 VagrantFile
+*.rb
+
+*.rb
+
+*.yml
