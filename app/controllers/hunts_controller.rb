@@ -88,7 +88,7 @@ class HuntsController < ApplicationController
 
   private
   def hunt_params
-   params.require(:hunt).permit(:title, :public, :published, :active, :start_date, :end_date, :start_location, :description, :user_id, :created_at, :updated_at)
+   params.require(:hunt).permit(:title, :public, :published, :active, :start_date, :start_time, :end_date, :end_time, :start_location, :description, :user_id, :created_at, :updated_at)
   end
 #end #ends the 'private' section
 end #end of class
