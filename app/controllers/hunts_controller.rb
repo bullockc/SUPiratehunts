@@ -17,7 +17,7 @@ class HuntsController < ApplicationController
     @hunt = Hunt.new(hunt_params)
       
     if @hunt.save
-      redirect_to(hunt_path(@hunt.id)) #redirects to the show for that individual hunt that was just created
+      redirect_to(hunt_path(@hunt.id), notice: 'Hunt successfully created') #redirects to the show for that individual hunt that was just created
     else
       render('new') #also maybe changes?
     end
@@ -79,7 +79,7 @@ class HuntsController < ApplicationController
       @pirate_hunt.hunt.tasks.each do |task|
         PirateTask.create(task: task, hunt: @pirate_hunt.hunt, user: current_user, pirate_hunt: @pirate_hunt, answer_uploaded: false, completed: false).save
       end
-      redirect_to(pirate_hunt_path(@pirate_hunt.id))
+      redirect_to(pirate_hunt_path(@pirate_hunt.id), notice: 'Hunt successfully joined')
     else
       redirect_to(hunts_path) #also maybe changes?
       #TODO: add alert to user that join hunt failed
