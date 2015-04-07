@@ -65,22 +65,12 @@ class HuntsController < ApplicationController
       return
     end
 
-    # Check if user has already joined the hunt
-    if PirateHunt.find_by(user_id: current_user.id, hunt_id: @hunt.id)
-      redirect_to(root_path)
-      return
-    end
-
-    # There's probably a better way to do this..
-    @pirate_hunt = PirateHunt.create(hunt: @hunt, user: current_user)
-
-    if @pirate_hunt.save
-      # Create each PirateTask
-      @pirate_hunt.hunt.tasks.each do |task|
-        PirateTask.create(task: task, hunt: @pirate_hunt.hunt, user: current_user, pirate_hunt: @pirate_hunt, answer_uploaded: false, completed: false).save
-      end
+    @pirate_hunt, result = @hunt.join(current_user)
+    if result == :success
       redirect_to(pirate_hunt_path(@pirate_hunt.id), notice: 'Hunt successfully joined')
-    else
+    elsif result == :already_joined
+      redirect_to(root_path)
+    elsif result == :error
       redirect_to(hunts_path) #also maybe changes?
       #TODO: add alert to user that join hunt failed
     end
