@@ -50,7 +50,10 @@ ActiveRecord::Schema.define(version: 20150401154714) do
     t.integer  "submission_file_size"
     t.datetime "submission_updated_at"
     t.string   "qa_submission"
+    t.integer  "pirate_hunt_id"
   end
+
+  add_index "pirate_tasks", ["pirate_hunt_id"], name: "index_pirate_tasks_on_pirate_hunt_id"
 
   create_table "tasks", force: :cascade do |t|
     t.integer  "task_type"
