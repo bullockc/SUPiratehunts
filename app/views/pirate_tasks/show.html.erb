@@ -2,9 +2,7 @@
 
 <!-- this is the qa form -->
 
-<%if @pirate_task.completed == false%>
-    The current answer is incorrect   <br>
-<%end%>
+
 <%if @pirate_task.completed == true %> <br>
     ANSWER CORRECT!!!
 <%end%>
@@ -12,30 +10,39 @@
    Submit an answer here <br>
 <% end %>
     
-<%= form_for @pirate_task, url: {action: "update" } do |f| %>
-    <%= f.text_field :qa_submission %>
-    <%= f.hidden_field :answer_uploaded, :value => true %>    
-    <%= f.submit "Submit QA Answer" %>
-<% end %>
+<%if @pirate_task.completed == false%>
+       
+    <%if @pirate_task.task.task_type == 0 %>
+        <%= form_for @pirate_task, url: {action: "update" } do |f| %>
+            <%= f.text_field :qa_submission %>
+            <%= f.hidden_field :answer_uploaded, :value => true %>    
+            <%= f.submit "Submit QA Answer" %>
+        <% end %>
+    <%end%>
 
-<!-- This is only a thing when there is a photo question -->
+    <%if @pirate_task.task.task_type == 1 %>
+        <!-- This is only a thing when there is a photo question -->
+        <%= form_for @pirate_task, html: { multipart: true} do |f| %>
+          <div class="field">
+            <%= f.file_field :submission %>
+          </div>
+        <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %> <!-- ends form-->
 
-<%= form_for @pirate_task, html: { multipart: true} do |f| %>
+            <%= @pirate_task.submission.url %>
 
-  <div class="field">
-    <%= f.file_field :submission %>
-  </div>
-<div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+            <%= image_tag @pirate_task.submission.url %>
+
+    <%end%>
+<%end%>
 
 
 
 
-<%= @pirate_task.submission.url %>
 
-<%= image_tag @pirate_task.submission.url %>
+
 
 
 
