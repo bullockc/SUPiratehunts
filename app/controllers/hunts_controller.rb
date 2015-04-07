@@ -61,7 +61,7 @@ class HuntsController < ApplicationController
     @hunt = Hunt.find(params[:id])
     unless @hunt
       # If hunt not found, redirect
-      redirect_to(root_path)
+      redirect_to(root_path, notice: 'Hunt not found')
       return
     end
 
@@ -69,10 +69,9 @@ class HuntsController < ApplicationController
     if result == :success
       redirect_to(pirate_hunt_path(@pirate_hunt.id), notice: 'Hunt successfully joined')
     elsif result == :already_joined
-      redirect_to(root_path)
+      redirect_to(root_path, notice: 'You are already participating in this hunt')
     elsif result == :error
-      redirect_to(hunts_path) #also maybe changes?
-      #TODO: add alert to user that join hunt failed
+      redirect_to(hunts_path, notice: 'Error occurred while joining hunt') #also maybe changes?
     end
   end
 
