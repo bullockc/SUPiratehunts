@@ -12,7 +12,7 @@ class Task < ActiveRecord::Base #Singular because it is a class
   def create_pirate_tasks
     phunts = PirateHunt.where(hunt: hunt).to_a
     phunts.each do |phunt|
-      PirateTask.create(user: phunt.user, hunt: self.hunt, task: self, pirate_hunt: phunt)
+      PirateTask.create(user: phunt.user, hunt: self.hunt, task: self, pirate_hunt: phunt, answer_uploaded: false, completed: false)
     end
   end
 end

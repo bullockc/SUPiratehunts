@@ -47,7 +47,7 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> and ends on <%= @hunt.end_
 
 <%# is the if statement enough to prevent the creator from creating tasks after
 	the hunt is published or should we make it more secure?%>
-<%if @hunt.user_id == current_user.id && @hunt.published == false && !@hunt.published%>
+<%if @hunt.user_id == current_user.id && @hunt.active == false%>
 	<%= button_to 'Create Task', new_hunt_task_path(@hunt), :method => 'get', :class => 'btn btn-primary btn-block'%>
 <%end%>
 
