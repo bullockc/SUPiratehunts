@@ -1,3 +1,10 @@
+=begin
+Pirate Tasks contain the Task information related to a specific User. This is done via associations that
+link the Pirate Task to similar information as Tasks. Each Pirate Task belongs to a specific User as well as
+a Pirate Hunt that should belong to that same User. A Pirate Task also belongs to the Task that it is a 
+personalized copy of and the Hunt that that Task belongs to. Pirate Tasks can have file attached to them
+for submissions such as Photos, so code related to that is used as well.
+=end
 class PirateTask < ActiveRecord::Base #Singular because it is a class
   #I think 'index:true' syntax only applies if you declare the association in the migration file
   belongs_to :user #, index:true
