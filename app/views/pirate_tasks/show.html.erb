@@ -2,17 +2,20 @@
 
 <!-- this is the qa form -->
 
-
-<%= form_for(:pirate_task, url: pirate_task_path, method: :patch, multipart: true) do |f| %>
-  <div class="field">
-   <%= f.label :answer_uploaded %>
-  </div>
-    <div>
-           <%= f.text_field :answer_uploaded %>
-</div>
-<div class="actions">
+<%if @pirate_task.completed == false%>
+    The current answer is incorrect   <br>
+<%end%>
+<%if @pirate_task.completed == true %> <br>
+    ANSWER CORRECT!!!
+<%end%>
+<% if @pirate_task.answer_uploaded == false%> <!-- answer uploaded is false, nothing has been submitted -->
+   Submit an answer here <br>
+<% end %>
+    
+<%= form_for @pirate_task, url: {action: "update" } do |f| %>
+    <%= f.text_field :qa_submission %>
+    <%= f.hidden_field :answer_uploaded, :value => true %>    
     <%= f.submit "Submit QA Answer" %>
-  </div>
 <% end %>
 
 <!-- This is only a thing when there is a photo question -->
