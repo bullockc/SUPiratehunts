@@ -1,11 +1,15 @@
+/* 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+
 
 /*Center the navigation pills by displaying as an inline block subject to the text-center class in the html*/
 
 .center-pills {
 	display: inline-block;
-	  font-size: 18px;
+	font-size: 18px;
+	color: #000; 
 }
 
 /*Box sizing mixin, necessary or box sizing gets mad*/
@@ -35,28 +39,35 @@ this needs word because the text also becomes opaque, I played with this a littl
   border: none; 
 } 
 
-body {
-	background-image:url('http://freeseamlesstextures.com/images/28-faded-parchment-background-sml.jpg');
-	background-size: cover;
+.footer {
+  bottom: 0;
+  font-size: 12px;
 }
+
 			
 h1 {
 	text-align: center; 
 	color: #000; 
-	font-size: 72px; 
+	font-size: 60px; 
 }
 
 h2 {
 	text-align: center; 
 	color: #000; 
-	font-size: 60px; 
+	font-size: 50px; 
+}
+
+h3 {
+   text-align: center ; 
+   color: #000; 
+   font-size: 28px; 
 }
 
 			
 p {
 	color: #000; 
 	text-align: center; 
-	font-size: 40px;
+	font-size: 18px;
 	padding: 20px;
 } 
 
@@ -96,17 +107,12 @@ ol {
     border-top: 1px solid #e8e8e8;
   }
   .title {
-    font-size: 48px;
     margin-top: 5em;
     padding-top: 0;
   }
-  .author{
-    display: block;
-    align: center;
-  }
   .description {
     display: block;
-    align: center;
+    margin-left: 60px;
     img {
       display: block;
       padding: 5px 0;
@@ -114,50 +120,99 @@ ol {
   }
   .timestamp {
     display: block;
-    align: center;
+    margin-left: 60px;
+  }
+}
+/*Blue Buttons*/
+.btn-capstone {
+  color: #FFDA47; //Text color 
+  background-color: #000;
+  border-color: #000;
+}
+.btn-capstone:focus,
+.btn-capstone.focus {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+}
+/*Hover colors*/
+.btn-capstone:hover {
+  color: #fff;
+  background-color:#000; 
+  border-color: #000;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 30px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-/*
-button stuff
-http://stackoverflow.com/questions/10136487/how-to-style-buttons-in-ruby-on-rails
-*/
 
-$break-small: 320px;
-$break-large: 1024px;
-$small-btn-width: 280px;
-$small-btn-height: 75px;
-$large-btn-width: 750px;
-$large-btn-height: 200px;
-
-
-.btn{
-
-float: center;
-  
-  color: #ffffff;
-  font-size: 30px;
-  width: $small-btn-width;
-  height: $small-btn-height;
-  margin-bottom: 10px;
-  display: table-cell;
-  vertical-align: middle;
-  white-space: normal;
- 
-
-
-@media (min-width: $break-large) {
-	.btn{
-		color: #ffffff;
-		font-size: 30px;
-		width: $large-btn-width;
-		height: $large-btn-height;
-		margin-bottom: 10px;
-		display: table-cell;
-		vertical-align: middle;
-		white-space: normal;
-		
-		}
-
-}
-}
