@@ -12,9 +12,10 @@ class TasksController < ApplicationController
   end
 
   def create
-  @task = Task.new(task_params)
-  @huntID = params[:hunt_id]
+    @task = Task.new(task_params)
+    @huntID = params[:hunt_id]
     if @task.save
+      @task.create_pirate_tasks
       redirect_to(hunt_path(@huntID))
     else
       render('new') #also maybe changes?

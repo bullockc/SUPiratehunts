@@ -12,4 +12,13 @@ class Task < ActiveRecord::Base #Singular because it is a class
 	#has_many :photos, :class_name=> 'Photo'
 	#has_many :questions, :class_name=> 'Question'
 	#has_many :GPSs, :class_name=> 'GPS'
+
+  # Create all PirateTasks for existing PirateHunts related
+  # to this Task
+  def create_pirate_tasks
+    phunts = PirateHunt.where(hunt: hunt).to_a
+    phunts.each do |phunt|
+      PirateTask.create(user: phunt.user, hunt: self.hunt, task: self, pirate_hunt: phunt, answer_uploaded: false, completed: false)
+    end
+  end
 end

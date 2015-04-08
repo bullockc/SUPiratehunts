@@ -24,6 +24,9 @@ app/views/layouts/help.html.erb
 VagrantFile
 *.rb
 
+# Ignore uploaded avatars
+public/system/
+
 *.rb
 
 *.yml
