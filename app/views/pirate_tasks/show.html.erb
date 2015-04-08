@@ -1,40 +1,50 @@
-<h1>show pirateHunts</h1>
+<!-- No permissions as far as active/published/public defined -->
 
-<!--
- This is not working the way that I want it to, commening it out and trying a different form 
-<%= form_for(:pirate_task, url: pirate_task_path, method: :patch, multipart: true) do |f| %>
-  <div class="field">
-    <%= f.label :submission %>
-    <%= f.file_field :submission %>
-  </div>
-<div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
--->
+<head> <!-- this allows alerts to be visible on the pirate_task/show page-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<%if @pirate_task.user_id == current_user.id%>
+
+   <%= @pirate_task.task.points %> Points <br>
+   Prompt: <%= @pirate_task.task.points %> <br>
+    Clue: <%= @pirate_task.task.clue %>
 
 
+    <%if @pirate_task.task.task_type == 0 %>
 
-<%= form_for @pirate_task, html: { multipart: true} do |f| %>
-<div class="field">
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.file_field :submission %>
-  </div>
-<div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+        <%if @pirate_task.completed == false%>
 
-<!-- proof that update is working, I can update the pirate ID
-<%= @pirate_task.pirate_id %>
-<br>-->
+            <%= form_for @pirate_task, url: {action: "update" } do |f| %>
+                <%= f.text_field :qa_submission %>
+                <%= f.hidden_field :answer_uploaded, :value => true %>    
+                <%= f.submit "Submit QA Answer" %>
+            <% end %>
+        <%end%>
+    <% end%>
+
+    <%if @pirate_task.task.task_type == 1 %>
+        <!-- This is only a thing when there is a photo question -->
+        <%= form_for @pirate_task, html: { multipart: true} do |f| %>
+              <div class="field">
+                <%= f.file_field :submission %>
+              </div>
+            <div class="actions">
+                <%= f.submit %>
+              </div>
+        <% end %> <!-- ends form-->
+
+                <%= @pirate_task.submission.url %>
+
+                <%= image_tag @pirate_task.submission.url %>
+
+    <%end%>
+
+<%end%>
 
 
-<%= @pirate_task.submission.url %>
 
-<%= image_tag @pirate_task.submission.url %>
+
 
 
 

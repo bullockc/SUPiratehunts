@@ -19,6 +19,7 @@ class PirateHuntsController < ApplicationController
 
   def show
   	@pirate_hunt = PirateHunt.find(params[:id])
+    @pirate_tasks = @pirate_hunt.pirate_tasks
   end
 
   def edit
