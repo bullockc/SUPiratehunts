@@ -75,6 +75,10 @@ ol {
 	padding: 20px;
 }
 
+/*TODO: Try and get all of the labels to be black*/
+.label{
+	color: #000;
+}
 
 .public, .private, .active, .inactive{
 	text-align: center; 
@@ -101,7 +105,7 @@ ol {
   padding: 0;
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    border-top: 1px solid #000;
   }
   .title {
     margin-top: 5em;
