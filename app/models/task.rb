@@ -1,3 +1,9 @@
+#Task Model allows there to be a field of tasks that are
+# associated with hunts because tasks belong to hunts in our model
+# architecture. That way we can know which tasks coincide with the 
+# proper hunt. Otherwise there would just be tasks running crazy and 
+# not allocating their points to the right hunt. 
+
 class Task < ActiveRecord::Base #Singular because it is a class
 	#I think 'index:true' syntax only applies if you declare the association in the migration file
 	belongs_to :hunt #, index :true
@@ -6,4 +12,13 @@ class Task < ActiveRecord::Base #Singular because it is a class
 	#has_many :photos, :class_name=> 'Photo'
 	#has_many :questions, :class_name=> 'Question'
 	#has_many :GPSs, :class_name=> 'GPS'
+
+  # Create all PirateTasks for existing PirateHunts related
+  # to this Task
+  def create_pirate_tasks
+    phunts = PirateHunt.where(hunt: hunt).to_a
+    phunts.each do |phunt|
+      PirateTask.create(user: phunt.user, hunt: self.hunt, task: self, pirate_hunt: phunt, answer_uploaded: false, completed: false)
+    end
+  end
 end

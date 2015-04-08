@@ -17,7 +17,7 @@ class HuntsController < ApplicationController
     @hunt = Hunt.new(hunt_params)
       
     if @hunt.save
-      redirect_to(hunt_path(@hunt.id)) #redirects to the show for that individual hunt that was just created
+      redirect_to(hunt_path(@hunt.id), notice: 'Hunt successfully created') #redirects to the show for that individual hunt that was just created
     else
       render('new') #also maybe changes?
     end
@@ -25,7 +25,7 @@ class HuntsController < ApplicationController
 
   # TODO index should only pass to the View Hunts that are both public and published
   def index
-    @hunts = Hunt.all #.where(published: true, public: true) #for 'browse all' page
+    @hunts = Hunt.where(published: true, public: true) #for 'browse all' page
   end
 
   # TODO possibly a routing issue
@@ -61,28 +61,17 @@ class HuntsController < ApplicationController
     @hunt = Hunt.find(params[:id])
     unless @hunt
       # If hunt not found, redirect
-      redirect_to(root_path)
+      redirect_to(root_path, notice: 'Hunt not found')
       return
     end
 
-    # Check if user has already joined the hunt
-    if PirateHunt.find_by(user_id: current_user.id, hunt_id: @hunt.id)
-      redirect_to(root_path)
-      return
-    end
-
-    # There's probably a better way to do this..
-    @pirate_hunt = PirateHunt.create(hunt: @hunt, user: current_user)
-
-    if @pirate_hunt.save
-      # Create each PirateTask
-      @pirate_hunt.hunt.tasks.each do |task|
-        PirateTask.create(task: task, hunt: @pirate_hunt.hunt, user: current_user, pirate_hunt: @pirate_hunt).save
-      end
-      redirect_to(pirate_hunt_path(@pirate_hunt.id))
-    else
-      redirect_to(hunts_path) #also maybe changes?
-      #TODO: add alert to user that join hunt failed
+    @pirate_hunt, result = @hunt.join(current_user)
+    if result == :success
+      redirect_to(pirate_hunt_path(@pirate_hunt.id), notice: 'Hunt successfully joined')
+    elsif result == :already_joined
+      redirect_to(root_path, notice: 'You are already participating in this hunt')
+    elsif result == :error
+      redirect_to(hunts_path, notice: 'Error occurred while joining hunt') #also maybe changes?
     end
   end
 

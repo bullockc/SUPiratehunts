@@ -1,9 +1,9 @@
+
 <h1>Hunt List</h1>
-<ol class="hunts"><%= render @hunts %></ol>
-<link href="assets/css/hunts.scss" rel="stylesheet">
+<ol class="hunts"><%= render partial: "browse", collection: @hunts, as: 'hunt' %></ol>
 <br>
 <center>
-<%= link_to 'Create a Hunt', new_hunt_path, :class => 'btn btn-capstone expand'%> 
+<%= link_to 'Create a Hunt', new_hunt_path, :class => 'btn btn-primary expand'%> 
 </center>
 
 

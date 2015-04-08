@@ -25,19 +25,20 @@ class PirateTasksController < ApplicationController
   def edit 
     @pirate_task = PirateTask.find(params[:id])
   end
-
+    
+      #Doesn't do photos correctly yet, will need to accept them always
   def update
    @pirate_task = PirateTask.find(params[:id])
-   if @pirate_task.update(pirate_task_params)
-    redirect_to(:action => 'show', :id => @pirate_task.id)
-   else
-    redirect_to(:action => 'index')
-       
+   @pirate_task.update_attributes(pirate_task_params)
+      @message = "Answer incorrect, try again"
+   if @pirate_task.qa_submission == @pirate_task.task.correct_answer  
+     @pirate_task.update_attributes(completed: true)
+     @message = "Submission correct! Task completed."
    end
-       
-   #took out if/else b/c would rather always redirect to task page, but w/
-   #error message displayed on failure to update (UI functionality??)
+    return redirect_to(:action => 'show', :id => @pirate_task.id, notice: @message)
+      
   end
+    
 
   def delete
   end
@@ -49,7 +50,7 @@ class PirateTasksController < ApplicationController
 
   private
   def pirate_task_params
-    params.require(:pirate_task).permit(:pirate_hunt_id, :submission, :answer_uploaded, :completed, :user_id, :task_id, :hunt_id, :created_at, :updated_at)
+    params.require(:pirate_task).permit(:pirate_hunt_id, :submission, :answer_uploaded, :completed, :user_id, :task_id, :hunt_id, :created_at, :updated_at, :qa_submission)
     
       #pirate, hunt, pirate_hunt, and task are id fields (references)
   end

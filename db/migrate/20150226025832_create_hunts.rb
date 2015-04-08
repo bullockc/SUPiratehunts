@@ -1,5 +1,8 @@
 =begin
-Hunts are the Scavenger Hunt shells; they are filled by tasks which are then completed by users. 
+Hunts are the Scavenger Hunt shells; they are filled by tasks which are then completed by users. When 
+a hunt is created, the owner: defines a name for the hunt, determines if it is active or inactive, makes it
+public or private, specifies a start and end date, names a starting location, and provides a 
+short description of the hunt. 
 =end
 
 class CreateHunts < ActiveRecord::Migration #plural because it is a migration
