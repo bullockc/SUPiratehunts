@@ -6,14 +6,19 @@
 <%= render 'layouts/altNavBar' %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
+	
 <!-- I took the following FAQ example from http://www.prepbootstrap.com/bootstrap-template/faq-example -->
 <div class="container">
+    <br />
+    <br />
+    <br />
 
-    <div class="alert alert-info alert-dismissible" role="alert">
+    <div class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         This section contains a wealth of information related to the web app. For a tutorial with screen shots please visit our demo page.  
     </div>
+
+    <br />
 
     <div class="panel-group" id="accordion">
         <div class="faqHeader">Frequently Asked Questions</div>
@@ -67,6 +72,7 @@
         -o-transform: rotate(-90deg);
         transform: rotate(-90deg);
     } */
+
 	/*
     .panel-heading [data-toggle="collapse"].collapsed:after {
         /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
@@ -102,3 +108,4 @@
 	</div>
 </div>
 </body>
+

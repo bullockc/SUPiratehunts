@@ -4,6 +4,7 @@ ul li a {
   color: black;
 }
 </style> 
+
 <div class="span12 text-center">
 	<% if user_signed_in? %>
 	<ul class="nav nav-pills center-pills">
@@ -19,7 +20,17 @@ ul li a {
 				<li><%= link_to "Logout", destroy_user_session_path, method: :delete%></li>
 			</ul>
   		</li>
-		<li><%= link_to "Help", help_path %></li>
+		<li role="presentation" class="dropdown">
+    			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+			<strong><%= 'Help' %></strong>
+
+			<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li><%= link_to 'Help', help_path%></li>
+				<li><%= link_to 'Demo', demo_path%></li>
+			</ul>
+  		</li>
 	</ul>
 	<% else %>
 	<ul class="nav nav-pills center-pills">
