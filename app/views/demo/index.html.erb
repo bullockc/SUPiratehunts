@@ -22,16 +22,16 @@
   color: #000000;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0,0,0,.1);
-  background-color: #008AB8;
-  background-image: -webkit-gradient(linear,left top,left bottom,from(#000000),to(#000000));
-  background-image: -webkit-linear-gradient(top,#000000 0,#000000 100%);
-  background-image: -o-linear-gradient(top,#000000 0,#000000 100%);
-  background-image: linear-gradient(to bottom,#000000 0,#000000 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0);
+  background-color: #0052A3;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#0052A3),to(#004282));
+  background-image: -webkit-linear-gradient(top,#0052A3 0,#004282 100%);
+  background-image: -o-linear-gradient(top,#0052A3 0,#004282 100%);
+  background-image: linear-gradient(to bottom,#0052A3 0,#004282 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0052A3', endColorstr='#004282', GradientType=0);
   background-repeat: repeat-x;
 }
 .bs-docs-header h1 {
-color: #FFDA47; 
+color: #fff; 
 font-size: 30px; 
 }
 * {
@@ -47,7 +47,7 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: #fff;
   background-color: #000;
 }
 
@@ -120,20 +120,23 @@ html {
 			 </p>
 			
 				<div class="text-center">
-				<%= link_to 'Start the Demo', demo_pageOne_path, :class => 'btn btn-ratstone btn-block'%>
+				<%= link_to 'Start the Demo', demo_pageOne_path, :class => 'btn btn-capstone btn-block'%>
 				<br>
 				<!--the below path will change to the account creation path -->
-				<%= link_to 'Create Account', demo_pageOne_path, :class => 'btn btn-ratstone btn-block'%>
+				<%= link_to 'Create Account', demo_pageOne_path, :class => 'btn btn-capstone btn-block'%>
 				</div>
+				
+				
+            <br><br>
+			<!-- FOOTER -->
+			  <footer>
+				<p class="footer" style="float: right"><a href="#">Back to top</a></p>
+				<p class="footer" style="float: left">This App is compliments of the Computer Science Capstone 2015.</p>
+			  </footer>
 		</div>
 	</div>
 </div>
 
-<!-- FOOTER -->
-  <footer>
-    <p class="pull-right"><a href="#">Back to top</a></p>
-    <h3>This App is compliments of the Computer Science Capstone 2015.</h3>
-  </footer>
     
     
 </body>
