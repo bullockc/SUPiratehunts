@@ -25,16 +25,20 @@ class PirateTasksController < ApplicationController
   def edit 
     @pirate_task = PirateTask.find(params[:id])
   end
-
+    
+      #Doesn't do photos correctly yet, will need to accept them always
   def update
    @pirate_task = PirateTask.find(params[:id])
    @pirate_task.update_attributes(pirate_task_params)
-    if @pirate_task.qa_submission == @pirate_task.task.correct_answer  
+      @message = "Answer incorrect, try again"
+   if @pirate_task.qa_submission == @pirate_task.task.correct_answer  
      @pirate_task.update_attributes(completed: true)
-    end
- redirect_to(:action => 'show', :id => @pirate_task.id)
-
+     @message = "Submission correct! Task completed."
+   end
+    return redirect_to(:action => 'show', :id => @pirate_task.id, notice: @message)
+      
   end
+    
 
   def delete
   end
