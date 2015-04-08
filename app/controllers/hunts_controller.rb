@@ -25,7 +25,7 @@ class HuntsController < ApplicationController
 
   # TODO index should only pass to the View Hunts that are both public and published
   def index
-    @hunts = Hunt.all #.where(published: true, public: true) #for 'browse all' page
+    @hunts = Hunt.where(published: true, public: true) #for 'browse all' page
   end
 
   # TODO possibly a routing issue
