@@ -403,7 +403,7 @@ ul.sidebar-menu li a.active i {
     margin-left: 210px;
 }
 
-.header, .footer {
+.header{
     min-height: 60px;
     padding: 0 15px;
 }
@@ -1045,14 +1045,6 @@ PANELS CONFIGURATIONS
 	font-weight: 200;
 	margin-top: 10px;
 	color: white;
-}
-.darkblue-panel footer {
-	color: white;
-}
-.darkblue-panel footer h5 {
-	margin-left:10px; 
-	margin-right: 10px;
-	font-weight: 700;
 }
 
 /*Green Panel*/
@@ -2090,72 +2082,16 @@ label {
     height: 10px;
 }
 
-.panel-footer.revenue-foot {
-    background-color: #e6e7ec;
-    -webkit-border-radius: 0px 0px 4px 4px;
-    border-radius: 0px 0px 4px 4px;
-    border: none;
-    padding: 0;
-    width: 100%;
-    display: inline-block;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    /* Safari and Chrome */
-    .panel-footer.revenue-foot {
-        margin-bottom: -4px;
-    };
-    }
 
 
-.panel-footer.revenue-foot ul  {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: inline-flex;
-}
 
-.panel-footer.revenue-foot ul li {
-    float: left;
-    width: 33.33%;
-}
 
-.panel-footer.revenue-foot ul li.first a:hover, .panel-footer.revenue-foot ul li.first a {
-    -webkit-border-radius: 0px 0px 0px 4px;
-    border-radius: 0px 0px 0px 4px;
-}
 
-.panel-footer.revenue-foot ul li.last a:hover, .panel-footer.revenue-foot ul li.last a {
-    -webkit-border-radius: 0px 0px 4px 0px;
-    border-radius: 0px 0px 4px 0px;
-    border-right: none;
 
-}
 
-.panel-footer.revenue-foot ul li a{
-    display: inline-block;
-    width: 100%;
-    padding: 14px 15px;
-    text-align: center;
-    border-right: 1px solid #d5d8df;
-    color: #797979;
-}
 
-.panel-footer.revenue-foot ul li a:hover, .panel-footer.revenue-foot ul li.active a {
-    background: #fff;
-    position: relative;
-}
 
-.panel-footer.revenue-foot ul li a i {
-    color: #c6cad5;
-    display: block;
-    font-size: 16px;
-}
-.panel-footer.revenue-foot ul li a:hover i, .panel-footer.revenue-foot ul li.active a i {
-    color: #ff6c60;
-    display: block;
-    font-size: 16px;
-}
+
 
 
 /*flot chart*/
@@ -2217,12 +2153,6 @@ label {
     border-left: 3px solid #BEC3C7;
 }
 
-/*footer*/
-.site-footer {
-    background: #68dff0;
-    color: #fff;
-    padding: 10px 0;
-}
 
 
 .go-top {
@@ -2351,9 +2281,7 @@ label {
 
     /*---------*/
 
-    .modal-footer .btn {
-        margin-bottom: 0px !important;
-    }
+
 
     .btn {
         margin-bottom: 5px;
