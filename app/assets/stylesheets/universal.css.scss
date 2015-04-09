@@ -82,9 +82,10 @@ ol {
 	padding: 20px;
 }
 
-/*TODO: Try and get all of the labels to be black*/
+
 .label{
 	color: #000;
+	font-weight: bold;
 }
 
 .public, .private, .active, .inactive{
