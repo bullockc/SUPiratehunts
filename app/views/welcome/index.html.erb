@@ -7,6 +7,17 @@
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
 <% provide(:title, 'Home') %>
+<div class="container">
+	<div class="row>
+		<div class ="col-md-4 text-center'>
+			<p>Created Hunts: </p>
+			<ol class="hunts"><%= render @created_hunts %></ol>
+            <p>Joined Hunts: </p>
+			<%#calls pirate_hunt partial %>
+			<ol class="hunts"><%= render @joined_hunts %></ol>
+		</div>
+	</div>
+</div>	
 
 <div class="container marketing">
   <hr class="featurette-divider">
