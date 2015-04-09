@@ -36,6 +36,10 @@ this needs word because the text also becomes opaque, I played with this a littl
   border: none; 
 } 
 
+.opaque-forms{
+  color: black;
+}
+
 .footer {
   bottom: 0;
   font-size: 12px;
@@ -126,7 +130,10 @@ ol {
     display: block;
     margin-left: 60px;
   }
-}
+}  
+  
+  
+
 /*Blue Buttons*/
 .btn-capstone {
   color: #fff; //Text color 

@@ -6,8 +6,8 @@
 
 <%if @pirate_task.user_id == current_user.id%>
 
-   <%= @pirate_task.task.points %> Points <br>
-   Prompt: <%= @pirate_task.task.points %> <br>
+   <%=  @pirate_task.task.points %> Points <br>
+   Prompt: <%= @pirate_task.task.prompt %> <br>
     Clue: <%= @pirate_task.task.clue %>
 
 
@@ -17,8 +17,8 @@
 
             <%= form_for @pirate_task, url: {action: "update" } do |f| %>
                 <%= f.text_field :qa_submission %>
-                <%= f.hidden_field :answer_uploaded, :value => true %>    
-                <%= f.submit "Submit QA Answer" %>
+                <%= f.hidden_field :answer_uploaded, :value => true%>    
+                <%= f.submit "Submit QA Answer", :class => "btn-capstone"%>
             <% end %>
         <%end%>
     <% end%>
