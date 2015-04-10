@@ -1,3 +1,8 @@
+=begin
+Pirate Hunt associations
+Just like a Hunt, every Pirate Hunt can have multiple Tasks and belongs to the User who created it. However,
+Pirate Hunts also belong to a Hunt
+=end
 class PirateHunt < ActiveRecord::Base #Singular because it is a class
 	#I think 'index:true' syntax only applies if you declare the association in the migration file
 	belongs_to :user #, index:true #this makes it a field in the table
