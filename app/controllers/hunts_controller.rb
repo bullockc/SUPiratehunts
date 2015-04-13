@@ -69,9 +69,9 @@ class HuntsController < ApplicationController
     if result == :success
       redirect_to(pirate_hunt_path(@pirate_hunt.id), notice: 'Hunt successfully joined')
     elsif result == :already_joined
-      redirect_to(root_path, notice: 'You are already participating in this hunt')
+      redirect_to(root_path, alert: 'You are already participating in this hunt')
     elsif result == :error
-      redirect_to(hunts_path, notice: 'Error occurred while joining hunt') #also maybe changes?
+      redirect_to(hunts_path, alert: 'Error occurred while joining hunt') #also maybe changes?
     end
   end
 

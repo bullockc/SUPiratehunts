@@ -46,7 +46,7 @@ class PirateTasksController < ApplicationController
             @message = "Answer approved, no updates can be made"
         end
     end
-    return redirect_to(:action => 'show', :id => @pirate_task.id, notice: @message)
+    return redirect_to({:action => 'show', :id => @pirate_task.id}, notice: @message)
       
   end
     
