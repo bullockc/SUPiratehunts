@@ -43,11 +43,26 @@ this needs word because the text also becomes opaque, I played with this a littl
 .footer {
   bottom: 0;
   font-size: 12px;
-  margin-top: 25px;
+  margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #000;
 }
 
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	margin: 0 auto -30px; /* the bottom margin is the negative value of the footer's height */
+}
+
+footer, .push {
+	height: 30px; /* '.push' must be the same height as 'footer' */
+}
 			
 h1 {
 	text-align: center; 
@@ -222,6 +237,7 @@ body{
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
+  border-top: 1px solid #000;
 }
 
 
