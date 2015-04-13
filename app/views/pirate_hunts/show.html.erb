@@ -4,4 +4,9 @@
 	<%= button_to 'Leave Hunt', pirate_hunt_path, :method => 'delete', :class => 'btn btn-primary btn-block'%>
 <%end%>
 
+
+<%if @pirate_hunt.hunt.active == true%>
+
 <%= render @pirate_tasks %>
+
+<%end%>
