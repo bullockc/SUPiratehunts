@@ -14,7 +14,7 @@
 <id="top">
 <%= render 'layouts/navbarHeader' %>
 </id>
-
+<div class="wrapper">
 <div class="container">
 
 	<% if notice %>
@@ -26,8 +26,11 @@
 
   <%= yield %>
 </div>
-</body>
-
+<div class="push"></div>
+</div>
+<div class="footer">
 <%= render 'layouts/footer' %>
+</div>
+</body>
 
 </html>
