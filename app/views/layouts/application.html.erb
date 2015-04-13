@@ -7,9 +7,13 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
+<!--- The id tag here is an anchor tag for the footer. By pressing "back to top" in the footer, the page jumps up to this tag --->
+<id="top">
 <%= render 'layouts/navbarHeader' %>
+</id>
 
 <div class="container">
 
@@ -23,5 +27,7 @@
   <%= yield %>
 </div>
 </body>
+
+<%= render 'layouts/footer' %>
 
 </html>
