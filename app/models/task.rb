@@ -13,6 +13,9 @@ class Task < ActiveRecord::Base #Singular because it is a class
 	#has_many :questions, :class_name=> 'Question'
 	#has_many :GPSs, :class_name=> 'GPS'
 
+        validates :points, presence: true
+	validates :prompt, presence: true
+
   # Create all PirateTasks for existing PirateHunts related
   # to this Task
   def create_pirate_tasks
