@@ -1,12 +1,23 @@
-<h1>PirateHunts#show</h1>
-<p>Find me in app/views/pirate_hunts/show.html.erb</p>
-<%if @pirate_hunt.user_id == current_user.id%>
-	<%= button_to 'Leave Hunt', pirate_hunt_path, :method => 'delete', :class => 'btn btn-primary btn-block'%>
-<%end%>
 
+<head>
+<link rel="stylesheet" type="text/css" href="app\assets\stylesheets\universal.css.scss">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<div class="container">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 text-center">
+			<h1><%= @pirate_hunt.hunt.title %></h1> 
 
-<%if @pirate_hunt.hunt.active == true%>
+			<%if @pirate_hunt.user_id == current_user.id%>
+			<%if @pirate_hunt.hunt.active == true%>
 
 <%= render @pirate_tasks %>
 
 <%end%>
+			<br>
+				<%= button_to 'Leave Hunt', pirate_hunt_path, :method => 'delete', :class => 'btn btn-capstone'%>
+			<%end%>
+       </div>
+	</div>
+</div>
+
