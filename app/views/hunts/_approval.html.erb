@@ -1,6 +1,7 @@
-<li id="pirate_tasks-<%= pirate_tasks.id %>">
-  
-    						<%= image_tag @pirate_task.submission.url %>
-laksdjflkasjdklfajlskdjfklaskdjf
-    
-</li>
+<%= image_tag pirate_task.submission.url %>
+
+<%= form_for pirate_task do |f| %>
+  <%= f.hidden_field :id, :value => pirate_task.id %>
+  <%= f.hidden_field :completed, :value => 'true' %>
+  <%= f.submit "Submit" %>
+<% end %>

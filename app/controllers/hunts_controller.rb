@@ -35,6 +35,7 @@ class HuntsController < ApplicationController
   def show
     @hunt = Hunt.find(params[:id])
     @tasks = @hunt.tasks
+	@pirate_tasks = @hunt.pirate_tasks.where(completed: false)
   end
 
   def edit #if 'edit hunt' page is a thing
