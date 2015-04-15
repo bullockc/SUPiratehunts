@@ -15,6 +15,7 @@ class Task < ActiveRecord::Base #Singular because it is a class
 
         validates :points, presence: true
 	validates :prompt, presence: true
+	validates :correct_answer, presence: true
 
   # Create all PirateTasks for existing PirateHunts related
   # to this Task

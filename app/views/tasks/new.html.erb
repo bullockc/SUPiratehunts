@@ -25,18 +25,19 @@
 		    <div class="opaque-forms" style="font-size:50%">
 			  <%= f.hidden_field :hunt_id, :value => @huntID %>
 
-			  <%= f.label :prompt, "Task Prompt (What will be displayed)"%>
+			  <%= f.label :prompt, "*Task Prompt (What will be displayed)"%>
 			  <%= f.text_field :prompt %>
 
 			  <%= f.label :clue, "Add a Clue (Optional)" %>
 			  <%= f.text_field :clue %>
 			  
-			  <%= f.label :correct_answer, "Correct Answer" %>
+			  <%= f.label :correct_answer, "*Correct Answer" %>
 			  <%= f.text_field :correct_answer %>
 
-			  <%= f.label :points, "Point Value (0-100)" %>
+			  <%= f.label :points, "*Point Value (0-100)" %>
 			  <%= f.number_field(:points,in: 5..100, step: 5) %>
 
+			  <%= "*=Required" %><br>
 			  <%= f.hidden_field :task_type, :value => "0"%>
 			  <!-- initialized to a static value, representative of a given hunt type. Can be changed later -->
 		  </div>  
@@ -54,16 +55,19 @@
 					<div class="opaque-forms" style="font-size:50%">
 					  <%= f.hidden_field :hunt_id, :value => @huntID %>
 
-					  <%= f.label :prompt, "Task Prompt (What will be displayed)"%>
+					  <%= f.label :prompt, "*Task Prompt (What will be displayed)"%>
 					  <%= f.text_field :prompt %>
 
 					  <%= f.label :clue, "Add a Clue (Optional)" %>
 					  <%= f.text_field :clue %>
 
-					  <%= f.label :points, "Point Value (0-100)" %>
+					  <%= f.label :points, "*Point Value (0-100)" %>
 					  <%= f.number_field(:points,in: 5..100, step: 5) %>
-
+					  
+					  <%= "*=Required" %><br>
 					  <%= f.hidden_field :task_type, :value => "1"%>
+					  
+					  <%= f.hidden_field :correct_answer, :value => "lolcat"%>
 					  <!-- initialized to a static value, representative of a given hunt type. Can be changed later -->
 				  </div>  
 				<%= f.submit "Create", class: "btn btn-capstone btn-block" %>
