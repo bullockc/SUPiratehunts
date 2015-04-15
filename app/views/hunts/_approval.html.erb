@@ -1,7 +1,9 @@
+
+
 <%= image_tag pirate_task.submission.url %>
 
 <%= form_for pirate_task do |f| %>
-  <%= f.hidden_field :id, :value => pirate_task.id %>
+  <%= f.hidden_field :id, :value => pirate_task.hunt_id %>
   <%= f.hidden_field :completed, :value => 'true' %>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Approve this photo" %>
 <% end %>

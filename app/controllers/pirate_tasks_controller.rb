@@ -46,7 +46,11 @@ class PirateTasksController < ApplicationController
             @message = "Answer approved, no updates can be made"
         end
     end
-    return redirect_to({:action => 'show', :id => @pirate_task.id}, notice: @message)
+	if @pirate_task.user_id == current_user.id
+		return redirect_to({:action => 'show', :id => @pirate_task.id}, notice: @message)
+	else
+		return redirect_to({:controller => 'hunts', :action => 'show', :id => @pirate_task.id}, notice: @message)
+	end	
   end
   
 #  def adminUpdate
