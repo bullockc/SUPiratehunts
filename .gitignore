@@ -27,6 +27,9 @@ VagrantFile
 # Ignore uploaded avatars
 public/system/
 
+# Ignore compiled assets
+public/assets/
+
 *.rb
 
 *.yml

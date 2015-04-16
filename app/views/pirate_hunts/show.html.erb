@@ -1,3 +1,4 @@
+
 <head>
 <link rel="stylesheet" type="text/css" href="app\assets\stylesheets\universal.css.scss">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,10 +19,16 @@
 			The hunt begins on <%= @pirate_hunt.hunt.start_date.to_s(:long)%> at <%=@pirate_hunt.hunt.start_time%> and <br> ends on 			<%= @pirate_hunt.hunt.end_date.to_s(:long)%> at <%=@pirate_hunt.hunt.end_time%>
 
 			<%if @pirate_hunt.user_id == current_user.id%>
+            			<%if @pirate_hunt.hunt.active == true%>
+
 			<%= render @pirate_tasks %>
 			<br>
 				<%= button_to 'Leave Hunt', pirate_hunt_path, :method => 'delete', :class => 'btn btn-capstone'%>
 			<%end%>
+            
+
+			<%end%>
+            
        </div>
 	</div>
 </div>

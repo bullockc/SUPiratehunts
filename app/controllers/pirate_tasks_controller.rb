@@ -31,13 +31,49 @@ class PirateTasksController < ApplicationController
    @pirate_task = PirateTask.find(params[:id])
    @pirate_task.update_attributes(pirate_task_params)
       @message = "Answer incorrect, try again"
-   if @pirate_task.qa_submission == @pirate_task.task.correct_answer  
-     @pirate_task.update_attributes(completed: true)
-     @message = "Submission correct! Task completed."
-   end
-    return redirect_to(:action => 'show', :id => @pirate_task.id, notice: @message)
-      
+   if @pirate_task.task.task_type == 0     
+       if @pirate_task.qa_submission == @pirate_task.task.correct_answer  
+         @pirate_task.update_attributes(completed: true)
+         @message = "Submission correct! Task completed."
+       end
+    end
+    if @pirate_task.task.task_type == 1
+        if @pirate_task.completed == false
+           @pirate_task.update_attributes(pirate_task_params)
+            @message = "Submission processed, waiting for approval"
+        end
+        if @pirate_task.completed == true
+            @message = "Answer approved, no updates can be made"
+        end
+    end
+	if @pirate_task.user_id == current_user.id
+		return redirect_to({:action => 'show', :id => @pirate_task.id}, notice: @message)
+	else
+		return redirect_to({:controller => 'hunts', :action => 'show', :id => @pirate_task.id}, notice: @message)
+	end	
   end
+  
+#  def adminUpdate
+#   @pirate_task = PirateTask.find(params[:id])
+#   @pirate_task.update_attributes(pirate_task_params)
+#      @message = "Answer incorrect, try again"
+#   if @pirate_task.task.task_type == 0     
+#       if @pirate_task.qa_submission == @pirate_task.task.correct_answer  
+#        @pirate_task.update_attributes(completed: true)
+#         @message = "Submission correct! Task completed."
+#       end
+#    end
+#    if @pirate_task.task.task_type == 1
+#        if @pirate_task.completed == false
+#           @pirate_task.update_attributes(pirate_task_params)
+#            @message = "Submission processed, waiting for approval"
+#        end
+#        if @pirate_task.completed == true
+#            @message = "Answer approved, no updates can be made"
+#        end
+#    end
+#    return redirect_to({:action => 'show', :id => @hunt.id}, notice: @message)
+# end
     
 
   def delete

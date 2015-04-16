@@ -8,6 +8,8 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1 text-center">
 
+            <%= link_to '« Back to the Hunt', pirate_hunt_path(@pirate_task.pirate_hunt_id), :class => 'btn btn-capstone btn-block'%>
+            <br>
 		<%if @pirate_task.user_id == current_user.id%>
 
 		   Prompt: <%= @pirate_task.task.prompt %> <br>
@@ -47,7 +49,10 @@
 
 		<%end%>
 
+         
+            
 		</div>
+        
 	</div>
 </div>
 
