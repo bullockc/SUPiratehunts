@@ -10,10 +10,20 @@
 
 			<%if @pirate_hunt.user_id == current_user.id%>
 			<%if @pirate_hunt.hunt.active == true%>
+		<%unless @photo_tasks.empty?%>
+			<div class="flexslider">
+			  <ul class="slides">
+			  	<%@photo_tasks.each do |task|%>
+			  	 	<li>
+			      	<%= image_tag task.submission.url%>
+			    	</li>
+			  	<%end%>
+			  </ul>
+			</div>
+		<%end%>
+			<%= render @pirate_tasks %>
 
-<%= render @pirate_tasks %>
-
-<%end%>
+			<%end%>
 			<br>
 				<%= button_to 'Leave Hunt', pirate_hunt_path, :method => 'delete', :class => 'btn btn-capstone'%>
 			<%end%>
