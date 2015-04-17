@@ -49,7 +49,7 @@ class PirateTasksController < ApplicationController
 	if @pirate_task.user_id == current_user.id
 		return redirect_to({:action => 'show', :id => @pirate_task.id}, notice: @message)
 	else
-		return redirect_to({:controller => 'hunts', :action => 'show', :id => @pirate_task.id}, notice: @message)
+		return redirect_to({:controller => 'hunts', :action => 'show', :id => @pirate_task.hunt_id}, notice: @message)
 	end	
   end
   

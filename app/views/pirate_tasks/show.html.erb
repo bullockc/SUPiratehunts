@@ -35,6 +35,7 @@
 						<%= f.file_field :submission %>
 					  </div>
 					<div class="actions">
+						<%= f.hidden_field :answer_uploaded, :value => true%>   
 						<%= f.submit %>
 					  </div>
 				<% end %> <!-- ends form-->
