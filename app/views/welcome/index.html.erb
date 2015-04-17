@@ -1,5 +1,37 @@
-﻿<head>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+     /*
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    } */
+
+	/*
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    } */
+</style>
 </head>
 
 <!-- Marketing messaging and featurettes 
@@ -8,13 +40,43 @@
 
 <% provide(:title, 'Home') %>
 <div class="container">
-	<div class="row">
-		<div class ="col-md-4 text-center">
-			<p>Created Hunts: </p>
-			<ol class="hunts"><%= render @created_hunts %></ol>
-            <p>Joined Hunts: </p>
-			<%#calls pirate_hunt partial %>
-			<ol class="hunts"><%= render @joined_hunts %></ol>
+	<div class="row>
+		<div class ="col-md-10 .col-md-offset-1 text-center">
+		<!-- ========================================== -->
+	         <div class="panel-group" id="accordion">
+					<div class="huntsHeader">
+					<p>Hunts</p>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+								<h4 class="panel-title">
+								<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+								Created Hunts </a>
+                                </h4>
+                            </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ol class="hunts"><%= render @created_hunts %></ol>
+                </div>
+            </div>
+        </div>
+		<!-- ===========================================--> 
+	    <!-- =========================================== -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Joined Hunts</a>
+							</h4>
+						</div>
+						<div id="collapseTen" class="panel-collapse collapse">
+							<div class="panel-body">
+							   <%#calls pirate_hunt partial %>
+							   <ol class="hunts"><%= render @joined_hunts %></ol>
+							</div>
+						</div>
+					</div>
+		<!-- =========================================== -->
+	
 		</div>
 	</div>
 </div>	
