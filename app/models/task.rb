@@ -7,6 +7,7 @@
 class Task < ActiveRecord::Base #Singular because it is a class
 	#I think 'index:true' syntax only applies if you declare the association in the migration file
 	belongs_to :hunt #, index :true
+	has_many :pirate_tasks
 	#no longer relevant because we decided to have one tasks model
 	#with fields for each type of answer.
 	#has_many :photos, :class_name=> 'Photo'

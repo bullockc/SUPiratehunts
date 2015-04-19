@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'demo/pageOne' => 'demo#pageOne'  #must include all views in demo here like this one
 
   get 'help' => 'help#index'    #The help/index page gets rerouted to just /help
-
+  
   # Additional routes for a controller, if any, should be placed
   # above their 'resources'
   # myHunts route kept to keep hunts#index view from erroring
@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   resources :pirate_hunts
   resources :pirate_tasks
+  #put 'pirate_tasks/:id/adminUpdate' => 'pirate_tasks#adminUpdate'
+
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

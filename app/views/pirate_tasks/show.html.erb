@@ -7,9 +7,10 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1 text-center">
-		
-		<!-- tried to make a button to lead users back to the hunt after a task is completed, can't figure out the path-->
-		<%#= button_to 'Return to Hunt', hunt_path, :method => 'get', :class => 'btn btn-capstone btn-block'%>
+
+
+            <%= link_to '« Back to the Hunt', pirate_hunt_path(@pirate_task.pirate_hunt_id), :class => 'btn btn-capstone btn-block'%>
+            <br>
 		
 		<%if @pirate_task.user_id == current_user.id%>
 
@@ -65,7 +66,10 @@
 
 		<%end%>
 
+         
+            
 		</div>
+        
 	</div>
 </div>
 

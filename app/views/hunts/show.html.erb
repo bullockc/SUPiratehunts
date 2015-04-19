@@ -63,9 +63,12 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> at <%=@hunt.start_time%> a
 <br>
 <%# Do we need to add some sort of check that makes the creator publish the hunt before%
 	making it Active?%>
-<%if @hunt.active == false && @hunt.user_id == current_user.id%>
+<%if @hunt.active == false && @hunt.user_id == current_user.id && @hunt.published == true%>
 	<%= button_to 'Activate Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:active => 'true'}}, :method => :put, :class => 'btn btn-capstone btn-block' %>
 <%end%>
+
+<h1>Images for Approval</h1>
+<%= render(partial: "approval", collection: @pirate_tasks, as: "pirate_task") || "There's nothing to be displayed" %>
 
 
 			</div>
