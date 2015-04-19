@@ -8,6 +8,12 @@ class Hunt < ActiveRecord::Base #Singular because it is a class
   belongs_to :user#, :class_name=> 'Pirate' #This is for the author
   has_many :pirate_hunts, :dependent => :destroy
 
+  validates :title, presence: true
+  validates :start_time, presence: true
+  validates :start_date, presence: true
+  validates :end_time, presence: true
+  validates :end_date, presence: true
+
   # Have a user join a hunt. Will return the PirateHunt (if any) and a symbol:
   #  :success if successfully joined the hunt
   #  :already_joined if the user had already joined the hunt
