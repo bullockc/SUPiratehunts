@@ -1,5 +1,5 @@
 	
-	<%= image_tag pirate_task.submission.url %>
+	<%= image_tag pirate_task.submission.url(:medium) %>
 
 	<%= form_for pirate_task do |f| %>
 		<%= f.hidden_field :id, :value => pirate_task.hunt_id %>

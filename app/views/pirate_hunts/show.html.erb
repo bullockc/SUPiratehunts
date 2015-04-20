@@ -21,7 +21,7 @@
 			  			<ul class="slides">
 			  			<%@photo_tasks.each do |task|%>
 			  	 			<li>
-			      			<%= image_tag task.submission.url%>
+			      			<%= image_tag task.submission.url(:medium)%>
 			    			</li>
 			  			<%end%>
 			  			</ul>
