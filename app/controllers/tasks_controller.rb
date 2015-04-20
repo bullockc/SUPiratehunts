@@ -19,8 +19,8 @@ class TasksController < ApplicationController
       redirect_to(hunt_path(@huntID))
       flash.now[:notice] = "Task Added to Hunt"
     else
-      render('new') #also maybe changes?
       flash.now[:alert] = "One or More Required Fields Left Blank"
+      render('new') #also maybe changes?
     end
   end
 
