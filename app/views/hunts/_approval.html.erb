@@ -6,4 +6,7 @@
 		<%= f.hidden_field :completed, :value => 'true' %>
 		<%= f.submit "Approve this photo" %>
 	<% end %>
-	
+
+<%= form_for pirate_task, url: reject_pirate_task_path(pirate_task.id), method: :post do |f| %>
+  <%= f.submit 'Reject this photo' %>
+<% end %>
