@@ -5,7 +5,5 @@ class DemoController < ActionController::Base
   def index
   end
     
-  def pageOne
-  end
     
 end
