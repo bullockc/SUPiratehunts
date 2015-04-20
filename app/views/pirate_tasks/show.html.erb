@@ -38,12 +38,14 @@
                         <%= f.hidden_field :answer_uploaded, :value => true%>    
 					  </div>
 					<div class="actions">
+						<%= f.hidden_field :answer_uploaded, :value => true%>   
 						<%= f.submit %>
 					  </div>
 				<% end %> <!-- ends form-->
 
 
-						<%= image_tag @pirate_task.submission.url %>
+
+						<%= image_tag @pirate_task.submission.url %>-->
 
 			<%end%>
 
