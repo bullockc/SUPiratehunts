@@ -49,7 +49,7 @@ class PirateTasksController < ApplicationController
 	if @pirate_task.user_id == current_user.id
 		return redirect_to({:action => 'show', :id => @pirate_task.id}, notice: @message)
 	else
-		return redirect_to({:controller => 'hunts', :action => 'show', :id => @pirate_task.id}, notice: @message)
+		return redirect_to({:controller => 'hunts', :action => 'show', :id => @pirate_task.hunt_id}, notice: @message)
 	end	
   end
   
@@ -82,6 +82,17 @@ class PirateTasksController < ApplicationController
   def destroy
     PirateTask.find(params[:id]).destroy
     redirect_to :action => 'index'
+  end
+
+  # Used when rejecting photo tasks
+  def reject
+    ptask = PirateTask.find(params[:id])
+    hunt_creator = ptask.hunt.user # Should this be pirate_hunt? But "Images for Approval" on Hunt page
+    if current_user.id == hunt_creator.id
+      ptask.submission.clear # Queue the attachment to be deleted
+      ptask.update_attributes(completed: false, answer_uploaded: false)
+      redirect_to ptask.hunt, notice: 'Answer rejected'
+    end
   end
 
   private
