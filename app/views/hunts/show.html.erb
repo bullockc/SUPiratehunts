@@ -67,9 +67,12 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> at <%=@hunt.start_time%> a
 	<%= button_to 'Activate Hunt', {:controller => 'hunts', :action => 'update', :hunt => {:active => 'true'}}, :method => :put, :class => 'btn btn-capstone btn-block' %>
 <%end%>
 
-<h1>Images for Approval</h1>
+<%if @hunt.active == true %>
 
-<%= render(partial: "approval", collection: @pirate_tasks, as: "pirate_task") || "There's nothing to be displayed" %>
+	<h1>Images for Approval</h1>
+
+	<%= render(partial: "approval", collection: @pirate_tasks, as: "pirate_task") || "There's nothing to be displayed" %>
+<%end%>
 
 			</div>
 		<div>
