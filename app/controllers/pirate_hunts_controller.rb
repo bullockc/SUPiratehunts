@@ -18,8 +18,22 @@ class PirateHuntsController < ApplicationController
   end
 
   def show
-  	@pirate_hunt = PirateHunt.find(params[:id])
-    @pirate_tasks = @pirate_hunt.pirate_tasks
+    @pirate_hunt = PirateHunt.find(params[:id])
+    if(@pirate_hunt.user_id != current_user.id)
+      redirect_to(root_path, alert: "You are not authorized to view this page")
+    else
+      @pirate_tasks = @pirate_hunt.pirate_tasks
+      #there is definitely a better way to do this... --kks
+      tasks = Task.where(task_type: '1', hunt_id: @pirate_hunt.hunt)
+      @photo_tasks = Array.new
+      tasks.each do |task|
+        task.pirate_tasks.each do |ptask|
+          if(ptask.completed)
+            @photo_tasks.push(ptask)
+          end
+        end
+      end
+    end
   end
 
   def edit
