@@ -9,18 +9,25 @@
 <div class="text-center">
  <%= image_tag("pencil-paintbrush.svg", :class => "img-circle") %>
 </div>
-<h2>Create New Task</h2>
+<h3>Create New Task</h3>
 
+<div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Answers are case sensitive! You may want to use your clue to help participants use the right case. 
+        </div>
 
-
-<div class="row" style="font-size:300%">
- <div class="col-md-6 col-md-offset-3 text-center">
+<div class="container">
+<div class="row" style="font-size:200%">
+<div class="col-md-10 col-md-offset-1 text-center">
+  
 
    <ul class="nav nav-tabs">
 		<li class="active"><a data-toggle="tab" href="#QA">QA</a></li>
 		<li><a data-toggle="tab" href="#photo">Photo</a></li>
   </ul>
 
+  
+  
 
   <div class="tab-content">
     <div id="QA" class="tab-pane fade in active">
@@ -35,11 +42,11 @@
 			  <%= f.label :clue, "Add a Clue (Optional)" %>
 			  <%= f.text_field :clue %>
 			  
-			  <%= f.label :correct_answer, "*Correct Answer" %>
+			  <%= f.label :correct_answer, "*Correct Answer (case sensitive)" %>
 			  <%= f.text_field :correct_answer %>
 
 			  <%= f.label :points, "*Point Value (0-100)" %>
-			  <%= f.number_field(:points,in: 5..100, step: 5) %>
+			  <%= f.number_field(:points,in: 1..100, step: 1) %>
 
 			  <%= "*=Required" %><br>
 			  <%= f.hidden_field :task_type, :value => "0"%>
@@ -66,7 +73,7 @@
 					  <%= f.text_field :clue %>
 
 					  <%= f.label :points, "*Point Value (0-100)" %>
-					  <%= f.number_field(:points,in: 5..100, step: 5) %>
+					  <%= f.number_field(:points,in: 1..100, step: 1) %>
 					  
 					  <%= "*=Required" %><br>
 					  <%= f.hidden_field :task_type, :value => "1"%>
@@ -81,4 +88,4 @@
 </div>
 </div>
 </div>
-
+</div> 

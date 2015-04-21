@@ -21,13 +21,16 @@
 		   <% unless @pirate_task.task.clue.blank? %>
 			Clue: <%= @pirate_task.task.clue %>
 			<%end%>
+			<div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Answers are case sensitive! 
+ </div>
 
 			<%if @pirate_task.task.task_type == 0 %>
 
 				<%if @pirate_task.completed == false%>
 
 					<%= form_for @pirate_task, url: {action: "update" } do |f| %>
-						
 						
 						<%= f.text_field :qa_submission %>
 						<%= f.hidden_field :answer_uploaded, :value => true%>
