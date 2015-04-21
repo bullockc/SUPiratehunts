@@ -69,7 +69,7 @@ The hunt begins on <%= @hunt.start_date.to_s(:long)%> at <%=@hunt.start_time%> a
 
 <%if @hunt.active == true %>
 
-	<h1>Images for Approval</h1>
+	<h3>Images for Approval</h3>
 
 	<%= render(partial: "approval", collection: @pirate_tasks, as: "pirate_task") || "There's nothing to be displayed" %>
 <%end%>
