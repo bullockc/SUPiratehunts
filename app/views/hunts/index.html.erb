@@ -1,11 +1,28 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=0">
+</head>
+<body>
 
-<h1>Hunt List</h1>
-<ol class="hunts"><%= render partial: "browse", collection: @hunts, as: 'hunt' %></ol>
-<br>
 
-<div class="text-center">
-<%= link_to 'Create a Hunt', new_hunt_path, :class => 'btn btn-capstone btn-block'%> 
+<div class="bs-docs-header" id="content" tabindex="-1">
+	
+		<h1>Hunt List</h1>
+	
 </div>
 
+<div class="container"> 
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1 text-center">
+			<ol class="hunts"><%= render partial: "browse", collection: @hunts, as: 'hunt' %></ol>
+			<br>
 
+			<div class="text-center">
+			<%= link_to 'Create a Hunt', new_hunt_path, :class => 'btn btn-capstone btn-block'%> 
+			</div>
+		</div>
+	</div>
+</div>	
+</body>
+</html>
 

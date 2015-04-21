@@ -18,8 +18,9 @@ class HuntsController < ApplicationController
       
     if @hunt.save
       redirect_to(hunt_path(@hunt.id), notice: 'Hunt successfully created') #redirects to the show for that individual hunt that was just created
+      flash.now[:notice] = "Hunt Successfully Created"
     else
-      flash[:alert] = "One or More Required Fields Left Blank"
+      flash.now[:alert] = "One or More Required Fields Left Blank"
       render('new') #also maybe changes?
     end
   end
