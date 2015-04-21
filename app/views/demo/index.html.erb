@@ -17,34 +17,98 @@
 		<div class="col-md-10 col-md-offset-1 text-center">
 			<!-- Paragraph about creating new hunts  -->
 			<p>
-			This demo will show you how to create hunts, add tasks to hunts, and other functionalities of Pirate Hunt. 
+			This tutorial will show you how to create hunts, add tasks to hunts, and other functionalities of Pirate Hunt. 
 			To get started, you will create a hunt. From the home page, click on the "Hunts" button; this will take you to the 
 			hunts page. From there, find the "Create New Hunt" button at the top of the page. On this page, you will name your hunt, 
-			determine whether it is active (want a definition of this), or whether it is public or private (should these be radio 
-			 buttons?), and choose a start and end date for the hunt. Additionally you will specify a starting location, and a 
-			 description of your scavenger hunt. Once finished, click the  "Create Hunt" button.
-			 </p>
+			determine whether it is active and choose a start and end date for the hunt. Additionally you will specify a starting 					location, and a description of your scavenger hunt. Once finished, click the  "Create Hunt"button.
+			</p>		 
 			 
-			 <!-- Paragraph about creating tasks for hunts  -->
-			 <p>
-			 Next you will create tasks for your hunt. From this page, the specific page for your hunt, there is a button near the
-			 bottom with the words "Create New Task." All good scavenger hunts have many tasks to be completed, so start with 
-			 creating one task. 
-			 <!-- [THIS WILL BE CHANGED ONCE THE TASK PAGES ARE UPDATED] -->
-			 Enter in the clue for your task and assign a point value, then click create task! 
-			 <!-- all spectulation from here on -->
-			 After creating a task, you will be returned to the page for that particular hunt. From here, you can continue to create
-			 tasks for your hunt, and stop whenever you have the desired number of tasks. On the hunt page, there will also be a
-			 list of all the tasks for this hunt displayed.
-			 
-			 
-			 </p>
-			
-				<div class="text-center">
-				<!--the below path will change to the account creation path -->
-				<%= link_to 'Create Account', demo_pageOne_path, :class => 'btn btn-capstone btn-block'%>
-				</div>
-	
+<h3>How to Create an Account</h3>
+<p>
+To use the application, you must create an account. After opening the application, you will be directed to the sign in page. Click on the sign up button located at the top of the page. Enter a name to be displayed to all application users in the display name field. Enter your email address in the email field (note that only one account may be associated with an email address). Enter your password consisting of at least eight characters in the password field. Re-Enter this password in the password confirmation field. When ready, submit your new account information by clicking the sign up button at the bottom of the page. If you have entered any fields incorrectly, you will be redirected to the same sign up page. The errors to be fixed will be displayed at the top of the page. If you have completed all fields correctly, you will be directed to a confirmation page.
+
+<br><br>
+
+NOTE: It is important that you use a valid email address. If you forget your password, an email will be sent to the email address associated with your account with. You will be given a link to a page to change your password. If you forget your password, you will only be given the option to reset your password.You can reset your password by selecting the "Forgot Password" button. You will always have the option of creating a new account.
+</p>
+
+<h3>How to Log In
+<p>
+To log into your account, click the login button located at the top of the page. Enter your email address in the email field and your password in the password field. If you would like the browser to remember your login information for future use of the application, click the remember me box located below the password field. After you have entered in your account information, click "login". If you have entered any fields incorrectly, you will be redirected to the same login page and allowed to correct your mistake. The error "Invalid email or password" will be displayed at the top of the page. If you have completed all fields correctly, you will be directed to the application home page.
+</p>
+
+<h3>How to Join a Hunt</h3>
+<p>
+After you have created an account, you will have the options to either view your hunts, join a hunt, or create a hunt. To join a hunt, click on the "Browse Hunts" button near the top of the home page. You will then be presented with a list of published hunts, meaning they are joinable. Note that each hunt in this list will have the name of the user who authored it. So, if you are looking for a specific hunt created by a friend, this is an extra piece of information to know besides just knowing the title of the hunt. To join one of the listed hunts, simply select the hunt that you wish to join and click on the "join hunt" button. Once you press the "join" button, you will be added to that hunt. The hunt will then be added to your "my hunts" page as a hunt that you have joined. Once the author of the hunt activates the hunt you have joined, you will then be able to participate in your selected hunt.
+</p>
+
+<h3>How to Create a Hunt</h3>
+<p>
+From the home page, click on the "Make your own" button near the middle of the page. On this page, you will name the hunt, choose a start and end date for the hunt, specify a starting location, and create a description of your hunt.
+</p>
+
+<p><u>Hunt Features:</u><br>
+Title: the name of the hunt. This name will be visible to users.<br>
+
+Start/End Date: the times and dates that a hunt is playable. During the defined window, tasks can be completed by a user who has joined the hunt. Beginning at the Start Date, completed tasks will grant points to the user. At the End Date, the hunt will end and no points will be granted to the user.<br><br>
+
+Starting Location (optional): the place where the hunt will begin. This is typically a central meeting place for all participants to receive instructions or other information before beginning the hunt.<br>
+
+Description (optional): additional information about the hunt.</p>
+
+<p>
+Once finished, click the "Create Hunt" button. Your hunt will now be displayed under "Created Hunts".
+</p>
+
+<h3>How to Publish a Hunt</h3>
+<p>
+After you have created a hunt, you will have the option to publish that hunt. Publishing your hunt allows your hunt to be viewable by any user of the application. To publish a hunt, go to your home page and click on the button "Created Hunts". Clicking on this button will open a list directly below that button and display the hunts that you have created. In the list, select the hunt you wish to publish by clicking on the title of  that hunt. After this, you will be taken to the hunt page of that hunt. Once on this page, simply click on the button "Publish Hunt".<br><br> 
+NOTE: You do not have to publish your hunt for your hunt to be playable. If you do not publish your hunt, it will not be viewable or joinable by other users. Until it is published, the hunt that you created will not be displayed on the browse hunts page.
+</p>
+
+<h3>How to Activate a Hunt</h3>
+<p>
+After you have created a hunt, you will have the option to activate your hunt. Activating your hunt allows your hunt to be playable by all joined users. To activate a hunt, go to your home page and click on the button "Created Hunts". Clicking on this button will open a list directly below that button and display the hunts that you have created. In the list, select the hunt you wish to activate by clicking on the title of  that hunt. After this, you will be taken to the hunt page of that hunt. Once on this page, simply click on the button "Activate Hunt".<br><br>
+
+NOTE: Activating the hunt prohibits the author from adding new tasks to the hunt. If the hunt returns to Inactive, the hunt may then be edited.
+</p>
+
+<h3>How to Create a Task</h3>
+<p>
+After creating your hunt, click on the "Create Task" button on the hunt page. You will be given the option of creating a QA (Question and Answer) or photo task. For QA tasks, you may prompt the user to go to a location to answer a certain question. For photo tasks, you may prompt the user to go to a location and submit evidence by providing a photo.<br><br>
+
+<u>Task Features for QA:</u><br>
+Task Prompt: what you would like the user to do and the question you would like the user to answer.<br>
+Clue (Optional): additional information to aid the user in completing their task and suggestions about the format of the answer (all lowercase or uppercase, numeric, alphabetic or alphanumeric)<br>
+Point Value: how many points a user will be given for a correct answer (values range in increments of 5 from 0-100)<br>
+Correct Answer: the accepted answer to the question asked in the task prompt (NOTE: this is case sensitive)<br><br>
+
+<u>Task Features for Photos:</u><br>
+Task Prompt: what you would like the user to do and the question you would like the user to answer.<br>
+Clue (Optional): additional information to aid the user in completing their task and suggestions about the format of the answer (all lowercase or uppercase, numeric, alphabetic or alphanumeric)<br>
+Point Value: how many points a user will be given for a correct answer (values range in increments of 5 from 0-100)<br><br>
+
+When finished, click the "Create" button at the bottom of the page. You will be directed back to the page for your created hunt and see your new created task.<br><br>
+
+NOTE: The clue field should be used to aid a user in both finding the correct answer and formatting their answer. For example, a user may be asked "What anniversary did Southwestern University celebrate this past year?". A clue should tell the user to answer numerically so that they may answer with "175" rather than "one hundred seventy five".<br><br>
+
+NOTE: Because the hunt administrator enters in one answer as the "correct answer" for a QA task, only one answer will be accepted from the user as the "correct answer". For example, the response "4" may be correct for a task while the response "four" may be incorrect for a task though they both represent numbers.
+</p>
+
+<h3>How to Complete a Question and answer Task</h3>
+<p>
+After you have joined an active hunt, you will be allowed to complete tasks. You may be prompted to complete the QA (Question and Answer) task. After selecting the QA task, the screen will display a question related to Southwestern University culture and the number of points the task is worth. Below the question will be an answer field. To complete this task, click on the empty answer field. When you think you know the correct answer, type your response into the empty answer field.You will now be allowed to submit your answer. 
+After you click the "submit" button, the application will match your submitted answer to the accepted correct answer. If the application reads a match, you will see the "correct" notification displayed on the next screen and subsequently awarded the points allocated for that task. If your submitted answer does not match the accepted correct answer, you will see the "incorrect" notification displayed on the next screen, and you will be awarded no points. However, you may return to the same task page and provide another response.<br><br>
+
+NOTE: The answer field is case sensitive. For example, a question for the QA task might be "Where is the math and computer science lounge located?" The response "mood bridwell" would be accepted as a correct answer while the response "Mood Bridwell" would be accepted as an incorrect answer. If your answer is in a particularly specific notation, use the clue field to notify the players of this. This is a planned improvement for future releases of the app.
+</p>
+
+<h3>How to Complete a Photo Task</h3>
+<p>
+After you have joined an active hunt, you will be allowed to complete tasks. You may be prompted to complete the Photo task. After selecting the Photo task, you will see a prompt, clue (if the creator added one) and a point value for the task. A default photo will be shown at the bottom of the page. To upload a photo, click the "Choose File" button at the top of the page. A window displaying the files on your system will appear. Navigate through your file system to find the photo that you would like the upload. Select the photo and then click the "Open" button. The new window will close and you will be directed back to the original photo task page. Click the "Update Pirate task" button. The page will refresh and you will see the confirmation "Submission processed, waiting for approval" and your uploaded photo. You will be able to complete more tasks by clicking the "Back to the Hunt" button.
+You can submit multiple photos for a photo task by completing the same process, but only one photo will count as your submission. The last picture uploaded will be submitted as your submission for the photo task though all photos will be added to your photo gallery. The administrator or author of the hunt will manually verify the photos by approving them. Once they have been approved, your points will be granted.
+</p>
+
 		</div>
 	</div>
 </div>
