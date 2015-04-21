@@ -1,4 +1,6 @@
 <!-- No permissions as far as active/published/public defined -->
+<!-- All alerts are located in the pirate_tasks controller -->
+
 
 <head> <!-- this allows alerts to be visible on the pirate_task/show page-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,8 +10,10 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1 text-center">
 
+
             <%= link_to '« Back to the Hunt', pirate_hunt_path(@pirate_task.pirate_hunt_id), :class => 'btn btn-capstone btn-block'%>
             <br>
+		
 		<%if @pirate_task.user_id == current_user.id%>
 
 		   Prompt: <%= @pirate_task.task.prompt %> <br>
@@ -17,14 +21,19 @@
 		   <% unless @pirate_task.task.clue.blank? %>
 			Clue: <%= @pirate_task.task.clue %>
 			<%end%>
+			<div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Answers are case sensitive! 
+ </div>
 
 			<%if @pirate_task.task.task_type == 0 %>
 
 				<%if @pirate_task.completed == false%>
 
 					<%= form_for @pirate_task, url: {action: "update" } do |f| %>
+						
 						<%= f.text_field :qa_submission %>
-						<%= f.hidden_field :answer_uploaded, :value => true%>    
+						<%= f.hidden_field :answer_uploaded, :value => true%>
 						<%= f.submit "Submit QA Answer", :class => "btn-capstone"%>
 					<% end %>
 				<%end%>

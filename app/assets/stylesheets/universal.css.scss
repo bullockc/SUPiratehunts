@@ -1,3 +1,4 @@
+
 /* 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
@@ -53,6 +54,7 @@ this needs word because the text also becomes opaque, I played with this a littl
 
 html, body {
 	height: 100%;
+  width: 100%;
 }
 
 .wrapper {
@@ -234,11 +236,6 @@ body{
 }
 
 
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  border-top: 1px solid #000;
-}
 
 
 /* RESPONSIVE CSS
@@ -252,6 +249,64 @@ body{
     padding-right: 0;
   }
 }
+
+
+/* HEADER
+-------------------------------------------------- */
+
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .huntsHeader {
+        font-size: 45px;
+        margin: 20px;
+    }
+	
+	.panel-default >.panel-heading {
+    background-color: #0052A3; 
+	color: #fff;
+	text-align: center; 
+    
+}
+/* BANNER HEADER
+--------------------------- */
+@media (min-width: 768px) {
+.bs-docs-header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 20px;
+  text-align: center;
+  width: 100%; 
+}
+}
+.bs-docs-header {
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: #000000
+}
+.bs-docs-header, .bs-docs-masthead {
+  position: relative;
+  color: #000000;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  background-color: #0052A3;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#0052A3),to(#004282));
+  background-image: -webkit-linear-gradient(top,#0052A3 0,#004282 100%);
+  background-image: -o-linear-gradient(top,#0052A3 0,#004282 100%);
+  background-image: linear-gradient(to bottom,#0052A3 0,#004282 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0052A3', endColorstr='#004282', GradientType=0);
+  background-repeat: repeat-x;
+}
+.bs-docs-header h1 {
+color: #fff; 
+font-size: 30px; 
+}
+
+
+
+
 
 
 
