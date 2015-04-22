@@ -43,17 +43,17 @@
 				<!-- This is only a thing when there is a photo question -->
 				<%= form_for @pirate_task, html: { multipart: true} do |f| %>
 					  <div class="field">
-						<%= f.file_field :submission %>
+						<%= f.file_field :submission%>
                         <%= f.hidden_field :answer_uploaded, :value => true%>    
 					  </div>
 					<div class="actions">
 						<%= f.hidden_field :answer_uploaded, :value => true%>   
-						<%= f.submit %>
+						<%= f.submit "Upload Submission", class: "btn btn-capstone btn-block" %>
 					  </div>
 				<% end %> <!-- ends form-->
 
 
-
+                        <br>
 						<%= image_tag @pirate_task.submission.url(:medium) %>
 
 			<%end%>

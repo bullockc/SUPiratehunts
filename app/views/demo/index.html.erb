@@ -55,8 +55,15 @@ To join a hunt, click on the "Browse Hunts" button or icon near the top of the h
 
 <h3>How to Create a Hunt</h3>
 <p>
-From the home page, click on the "Make your own" button near the middle of the page. On this page, you will name the hunt, choose a start and end date for the hunt, specify a starting location, and create a description of your hunt.
-</p>
+From the home page, click on the "Make your own" button, or the paintbrush icon near the middle of the page.
+<br><%= link_to image_tag("paintbrush.svg", :class => "img-circle"), new_hunt_path %><br>
+ On this page, you will name the hunt, choose a start and end date for the hunt, specify a starting location, and create a description of your hunt.
+
+ <br><%= image_tag("S/CreateAHunt2.png", :alt => "Missing", :height => "60%",  :width => "60%") %><br>
+ 
+ </p>
+
+
 
 <p><u>Hunt Features:</u><br>
 Title (required): the name of the hunt. This name will be visible to users.<br>
@@ -68,13 +75,14 @@ Starting Location (optional): the place where the hunt will begin. This is typic
 Description (optional): additional information about the hunt.</p>
 
 <p>
-Once finished, click the "Create Hunt" button. Your hunt will now be displayed under "Created Hunts".
+Once finished, click the "Create Hunt" button. Your hunt will now be displayed under "Created Hunts" on the main page. 
+<br><%= image_tag("S/CreatedHuntsList.png", :alt => "Missing", :height => "60%",  :width => "60%") %>
 </p>
 
 <h3>How to Publish a Hunt</h3>
 <p>
 After you have created a hunt, you will have the option to publish that hunt. Publishing your hunt allows your hunt to be viewable by any user of the application. To publish a hunt, go to your home page and click on the button "Created Hunts". Clicking on this button will open a list directly below that button and display the hunts that you have created. In the list, select the hunt you wish to publish by clicking on the title of  that hunt. After this, you will be taken to the hunt page of that hunt. Once on this page, simply click on the button "Publish Hunt".<br><br> 
-NOTE: You do not have to publish your hunt for your hunt to be playable. If you do not publish your hunt, it will not be viewable or joinable by other users. Until it is published, the hunt that you created will not be displayed on the browse hunts page.
+NOTE: You have to publish your hunt for your hunt to be playable. If you do not publish your hunt, it will not be viewable or joinable by other users. Until it is published, the hunt that you created will not be displayed on the browse hunts page.
 </p>
 
 <h3>How to Activate a Hunt</h3>
@@ -86,7 +94,9 @@ NOTE: Activating the hunt prohibits the author from adding new tasks to the hunt
 
 <h3>How to Create a Task</h3>
 <p>
-After creating your hunt, click on the "Create Task" button on the hunt page. You will be given the option of creating a QA (Question and Answer) or photo task. For QA tasks, you may prompt the user to go to a location to answer a certain question. For photo tasks, you may prompt the user to go to a location and submit evidence by providing a photo.<br><br>
+After creating your hunt, click on the "Create Task" button on the hunt page. 
+<br><%= image_tag("S/CreateATaskSpliced.png", :alt => "Missing", :height => "95%",  :width => "60%") %><br>
+You will be given the option of creating a QA (Question and Answer) or photo task. For QA tasks, you may prompt the user to go to a location to answer a certain question. For photo tasks, you may prompt the user to go to a location and submit evidence by providing a photo.<br><br>
 
 <u>Task Features for QA:</u><br>
 Task Prompt: what you would like the user to do and the question you would like the user to answer.<br>
@@ -106,10 +116,19 @@ NOTE: The clue field should be used to aid a user in both finding the correct an
 NOTE: Because the hunt administrator enters in one answer as the "correct answer" for a QA task, only one answer will be accepted from the user as the "correct answer". For example, the response "4" may be correct for a task while the response "four" may be incorrect for a task though they both represent numbers.
 </p>
 
-<h3>How to Complete a Question and answer Task</h3>
+<h3>How to Complete a Question and Answer Task</h3>
 <p>
-After you have joined an active hunt, you will be allowed to complete tasks. You may be prompted to complete the QA (Question and Answer) task. After selecting the QA task, the screen will display a question related to Southwestern University culture and the number of points the task is worth. Below the question will be an answer field. To complete this task, click on the empty answer field. When you think you know the correct answer, type your response into the empty answer field.You will now be allowed to submit your answer. 
-After you click the "submit" button, the application will match your submitted answer to the accepted correct answer. If the application reads a match, you will see the "correct" notification displayed on the next screen and subsequently awarded the points allocated for that task. If your submitted answer does not match the accepted correct answer, you will see the "incorrect" notification displayed on the next screen, and you will be awarded no points. However, you may return to the same task page and provide another response.<br><br>
+After you have joined an active hunt, you will be allowed to complete tasks by clicking one of the blue tasks on the hunt page. 
+<br><%= image_tag("S/CorrectTask.png", :alt => "Missing", :height => "60%",  :width => "60%") %><br>
+After selecting the QA task, the screen will display a prompt or question and the number of points the task is worth. Below the question will be an answer field. To complete this task, click on the empty answer field. When you think you know the correct answer, type your response into the empty answer field.You will now be allowed to submit your answer. 
+After you click the "submit" button, the application will match your submitted answer to the accepted correct answer. If the application reads a match, you will see the "correct" notification displayed and will be awarded the points for the task. 
+<br><%= image_tag("S/IncorrectTask.png", :alt => "Missing", :height => "60%",  :width => "60%") %><br>
+If your submitted answer does not match the accepted correct answer, you will see the "incorrect" notification displayed, and you will be awarded no points. However, you may return to the same task page and provide another response.<br>
+
+<p>The hunt page is updated to reflect tasks you have completed, and those you have not. Completed tasks are block and followed by "(Completed)", while tasks that have not been completed
+are blue. 
+<br><%= image_tag("S/HuntWIthCompletedTask.png", :alt => "Missing", :height => "60%",  :width => "60%") %><br>
+</p>
 
 NOTE: The answer field is case sensitive. For example, a question for the QA task might be "Where is the math and computer science lounge located?" The response "mood bridwell" would be accepted as a correct answer while the response "Mood Bridwell" would be accepted as an incorrect answer. If your answer is in a particularly specific notation, use the clue field to notify the players of this. This is a planned improvement for future releases of the app.
 </p>
