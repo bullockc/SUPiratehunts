@@ -1,8 +1,10 @@
 <%if pirate_task.task.task_type == 1 %>
 	
-	<b>
+	
 	<%= pirate_task.task.prompt %>
-	</b>
+	<br>
+	<%= pirate_task.user.display_name %>
+	
 	<br>
 	
 	<%= image_tag pirate_task.submission.url(:medium) %>
