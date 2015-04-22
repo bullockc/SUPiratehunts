@@ -25,6 +25,21 @@ class PirateTask < ActiveRecord::Base #Singular because it is a class
 #  validates_attachment_file_name :submission, :matches => [/png\Z/, /jpe?g\Z/]
 #  # Explicitly do not validate
 #  do_not_validate_attachment_file_type :submission
+
+  def check_answer
+    if self.task.task_type == 0
+      if self.qa_submission == self.task.correct_answer
+        self.update_attributes(:completed => true)
+        return self, :correct
+      else
+        return self, :incorrect
+      end
+    else #pirate_task.task_type == 1
+      if self.answer_uploaded == true
+        return self, :waiting
+      end
+    end
+  end
     
 end
 

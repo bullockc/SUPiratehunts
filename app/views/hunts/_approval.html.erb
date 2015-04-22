@@ -2,7 +2,7 @@
 	
 	<%= image_tag pirate_task.submission.url %> <!-- pirate_task.submission.url(:medium) does not work!!!!-->
 
-	<%= form_for pirate_task do |f| %>
+	<%= form_for pirate_task, url: approve_pirate_task_path(pirate_task.id), method: :post do |f| %>
 		<%= f.hidden_field :id, :value => pirate_task.hunt_id %>
 		<%= f.hidden_field :completed, :value => 'true' %>
 		<%= f.submit "Approve this photo" %>

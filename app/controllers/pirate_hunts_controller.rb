@@ -53,7 +53,7 @@ class PirateHuntsController < ApplicationController
 
   def destroy
     PirateHunt.find(params[:id]).destroy
-    redirect_to :action => 'index'
+    redirect_to(root_path, notice: "You have successfully left this hunt")
   end
   
   private
