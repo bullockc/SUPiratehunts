@@ -1,6 +1,12 @@
 <html>
 <head> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style
+p {
+text-align: left; 
+}
+</style>
+
 </head>
 <body>
 
@@ -14,32 +20,37 @@
 
 <div class="container"> 
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1 text-center">
+		<div class=" col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 ">
 			<!-- Paragraph about creating new hunts  -->
 			<p>
 			This tutorial will show you how to create hunts, add tasks to hunts, and other functionalities of Pirate Hunt. 
-			To get started, you will create a hunt. From the home page, click on the "Hunts" button; this will take you to the 
-			hunts page. From there, find the "Create New Hunt" button at the top of the page. On this page, you will name your hunt, 
-			determine whether it is active and choose a start and end date for the hunt. Additionally you will specify a starting 					location, and a description of your scavenger hunt. Once finished, click the  "Create Hunt"button.
 			</p>		 
 			 
 <h3>How to Create an Account</h3>
 <p>
-To use the application, you must create an account. After opening the application, you will be directed to the sign in page. Click on the sign up button located at the top of the page. Enter a name to be displayed to all application users in the display name field. Enter your email address in the email field (note that only one account may be associated with an email address). Enter your password consisting of at least eight characters in the password field. Re-Enter this password in the password confirmation field. When ready, submit your new account information by clicking the sign up button at the bottom of the page. If you have entered any fields incorrectly, you will be redirected to the same sign up page. The errors to be fixed will be displayed at the top of the page. If you have completed all fields correctly, you will be directed to a confirmation page.
+To use the application, you must create an account. After opening the application, you will be directed to the sign in page. Click on the sign up button located at the top of the page. 
+<br><%= image_tag("S/SignUp.png", :alt => "Missing", :height => "50%",  :width => "60%") %><br>
+Enter a name to be displayed to all application users in the display name field. Enter your email address in the email field (note that only one account may be associated with an email address). Enter your password consisting of at least eight characters in the password field. Re-Enter this password in the password confirmation field. When ready, submit your new account information by clicking the sign up button at the bottom of the page. If you have entered any fields incorrectly, you will be redirected to the same sign up page. The errors to be fixed will be displayed at the top of the page. If you have completed all fields correctly, you will be directed to a confirmation page.
 
-<br><br>
+<br>
 
-NOTE: It is important that you use a valid email address. If you forget your password, an email will be sent to the email address associated with your account with. You will be given a link to a page to change your password. If you forget your password, you will only be given the option to reset your password.You can reset your password by selecting the "Forgot Password" button. You will always have the option of creating a new account.
+NOTE: It is important that you use a valid email address. If you forget your password, an email will be sent to the email address associated with your account. You will be given a link to a page to change your password. If you forget your password, you will only be given the option to reset your password.You can reset your password by selecting the "Forgot Password" button. You will always have the option of creating a new account.
 </p>
 
 <h3>How to Log In
 <p>
-To log into your account, click the login button located at the top of the page. Enter your email address in the email field and your password in the password field. If you would like the browser to remember your login information for future use of the application, click the remember me box located below the password field. After you have entered in your account information, click "login". If you have entered any fields incorrectly, you will be redirected to the same login page and allowed to correct your mistake. The error "Invalid email or password" will be displayed at the top of the page. If you have completed all fields correctly, you will be directed to the application home page.
+To log into your account, click the login button located at the top of the page. 
+<br><%= image_tag("S/Login.png", :alt => "Missing", :height => "60%",  :width => "60%") %><br>
+Enter your email address (complete with @domain.com) and your password. Click the remember me box located below the password field if you would like the browser to keep you logged in. After you have entered in your account information, click "login". If you have entered any fields incorrectly, you will be redirected to the same login page and allowed to correct your mistake. The error "Invalid email or password" will be displayed at the top of the page. If you have completed all fields correctly, you will be directed to the application home page.
 </p>
 
 <h3>How to Join a Hunt</h3>
 <p>
-After you have created an account, you will have the options to either view your hunts, join a hunt, or create a hunt. To join a hunt, click on the "Browse Hunts" button near the top of the home page. You will then be presented with a list of published hunts, meaning they are joinable. Note that each hunt in this list will have the name of the user who authored it. So, if you are looking for a specific hunt created by a friend, this is an extra piece of information to know besides just knowing the title of the hunt. To join one of the listed hunts, simply select the hunt that you wish to join and click on the "join hunt" button. Once you press the "join" button, you will be added to that hunt. The hunt will then be added to your "my hunts" page as a hunt that you have joined. Once the author of the hunt activates the hunt you have joined, you will then be able to participate in your selected hunt.
+To join a hunt, click on the "Browse Hunts" button or icon near the top of the home page. 
+<br><%= link_to image_tag("browse-hunts.svg", :class => "img-circle"), hunts_path %><br>
+ You will then be presented with a list of published hunts, meaning they are joinable. 
+ <br><%= image_tag("S/AllHuntsList.png", :alt => "Missing", :height => "60%",  :width => "60%") %><br>
+ Note that each hunt in this list will have the name of the user who authored it. So, if you are looking for a specific hunt created by a friend, this may be useful. To join one of the listed hunts, simply select the hunt that you wish to join and click on the "join hunt" button. Once you press the "join" button, you will be added to that hunt. The hunt will then be added to your list of joined hunts on the main page. Once the author of the hunt activates the hunt you have joined, you will then be able to participate in your selected hunt.
 </p>
 
 <h3>How to Create a Hunt</h3>
@@ -48,9 +59,9 @@ From the home page, click on the "Make your own" button near the middle of the p
 </p>
 
 <p><u>Hunt Features:</u><br>
-Title: the name of the hunt. This name will be visible to users.<br>
+Title (required): the name of the hunt. This name will be visible to users.<br>
 
-Start/End Date: the times and dates that a hunt is playable. During the defined window, tasks can be completed by a user who has joined the hunt. Beginning at the Start Date, completed tasks will grant points to the user. At the End Date, the hunt will end and no points will be granted to the user.<br><br>
+Start/End Date (required): the times and dates that a hunt is playable. During the defined window, tasks can be completed by a user who has joined the hunt. Beginning at the Start Date, completed tasks will grant points to the user. At the End Date, the hunt will end and no points will be granted to the user.<br><br>
 
 Starting Location (optional): the place where the hunt will begin. This is typically a central meeting place for all participants to receive instructions or other information before beginning the hunt.<br>
 
