@@ -1,6 +1,11 @@
 <%if pirate_task.task.task_type == 1 %>
 	
-	<%= image_tag pirate_task.submission.url %> <!-- pirate_task.submission.url(:medium) does not work!!!!-->
+	<b>
+	<%= pirate_task.task.prompt %>
+	</b>
+	<br>
+	
+	<%= image_tag pirate_task.submission.url(:medium) %>
 
 	<%= form_for pirate_task, url: approve_pirate_task_path(pirate_task.id), method: :post do |f| %>
 		<%= f.hidden_field :id, :value => pirate_task.hunt_id %>
