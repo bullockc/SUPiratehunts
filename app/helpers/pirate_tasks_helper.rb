@@ -5,4 +5,9 @@ module PirateTasksHelper
     if not task.is_a?(Integer) then task = task.id end
     "/pirate_tasks/#{task}/reject"
   end
+
+  def approve_pirate_task_path(task)
+  	if not task.is_a?(Integer) then task = task.id end
+  	"/pirate_tasks/#{task}/approve"
+  end
 end

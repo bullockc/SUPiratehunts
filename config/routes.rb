@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :pirate_hunts
   resources :pirate_tasks
   post 'pirate_tasks/:id/reject' => 'pirate_tasks#reject'
+  post 'pirate_tasks/:id/approve' => 'pirate_tasks#approve'
   #put 'pirate_tasks/:id/adminUpdate' => 'pirate_tasks#adminUpdate'
 
 
