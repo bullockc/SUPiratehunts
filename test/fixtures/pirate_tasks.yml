@@ -4,42 +4,19 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
 one:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Team_Database
   answer_uploaded: true
   completed: true
+  user_id: 1234
+  task_id: 1235
+  hunt_id: 1236
 
 two:
   answer_uploaded: false
   completed: false
-=======
-<<<<<<< HEAD
->>>>>>> Team_Database
-=======
->>>>>>> Team_Database
-      answer_uploaded: true
-      completed: true
-two:
-      answer_uploaded: false
-      completed: false
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  answer_uploaded: true
-  completed: true
+  user_id: 1334
+  task_id: 1335
+  hunt_id: 1336
+  
 
-two:
-  answer_uploaded: false
-  completed: false
->>>>>>> Team_Database
-=======
->>>>>>> master
->>>>>>> Team_Database
-=======
->>>>>>> master
->>>>>>> Team_Database
