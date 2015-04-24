@@ -6,8 +6,10 @@
 #
 one: 
   completed: true
-  hunt: '#15231242'
+  user_id: 1244
+  hunt_id: '#15231242'
 
 two:
   completed: false
-  hunt: '#24782345'
+  user_id: 1245
+  hunt_id: '#24782345'

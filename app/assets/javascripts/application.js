@@ -12,6 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.flexslider
+//removed b/c it was preventing flexslider from loading on the first page load
+// require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: false,
+    minItems: 3,
+    itemWidth: 200,
+    itemMargin: 5,
+    randomize: true
+  });
+});

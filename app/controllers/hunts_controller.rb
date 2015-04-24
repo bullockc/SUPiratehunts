@@ -18,7 +18,9 @@ class HuntsController < ApplicationController
       
     if @hunt.save
       redirect_to(hunt_path(@hunt.id), notice: 'Hunt successfully created') #redirects to the show for that individual hunt that was just created
+      flash.now[:notice] = "Hunt Successfully Created"
     else
+      flash.now[:alert] = "One or More Required Fields Left Blank"
       render('new') #also maybe changes?
     end
   end
@@ -35,7 +37,7 @@ class HuntsController < ApplicationController
   def show
     @hunt = Hunt.find(params[:id])
     @tasks = @hunt.tasks
-	@pirate_tasks = @hunt.pirate_tasks.where(completed: false)
+	 @pirate_tasks = @hunt.pirate_tasks.where(completed: false, answer_uploaded: true)
   end
 
   def edit #if 'edit hunt' page is a thing
