@@ -26,55 +26,30 @@ class PirateTasksController < ApplicationController
     @pirate_task = PirateTask.find(params[:id])
   end
     
-      #Doesn't do photos correctly yet, will need to accept them always
   def update
-   @pirate_task = PirateTask.find(params[:id])
-   @pirate_task.update_attributes(pirate_task_params)
-      @message = "Answer incorrect, try again"
-   if @pirate_task.task.task_type == 0     
-       if @pirate_task.qa_submission == @pirate_task.task.correct_answer  
-         @pirate_task.update_attributes(completed: true)
-         @message = "Submission correct! Task completed."
-       end
+    @pirate_task = PirateTask.find(params[:id])
+    if @pirate_task.completed == false
+      @pirate_task.update_attributes(pirate_task_params)
+      @pirate_task, status = @pirate_task.check_answer
+      if status == :correct
+        redirect_to({:action => 'show', :id => @pirate_task.id},notice: "Submission correct! Task completed")
+      elsif status == :incorrect
+        redirect_to({:action => 'show', :id => @pirate_task.id}, alert:"Answer incorrect, try again")
+      elsif status == :waiting
+        redirect_to({:action => 'show', :id => @pirate_task.id}, notice: "Answer uploaded, waiting for approval")
+      end
+    else
+      redirect_to(pirate_task_path(@pirate_task.id), alert: "You have already completed this task")
     end
-    if @pirate_task.task.task_type == 1
-        if @pirate_task.completed == false
-           @pirate_task.update_attributes(pirate_task_params)
-            @message = "Submission processed, waiting for approval"
-        end
-        if @pirate_task.completed == true
-            @message = "Answer approved, no updates can be made"
-        end
-    end
-	if @pirate_task.user_id == current_user.id
-		return redirect_to({:action => 'show', :id => @pirate_task.id}, notice: @message)
-	else
-		return redirect_to({:controller => 'hunts', :action => 'show', :id => @pirate_task.id}, notice: @message)
-	end	
   end
-  
-#  def adminUpdate
-#   @pirate_task = PirateTask.find(params[:id])
-#   @pirate_task.update_attributes(pirate_task_params)
-#      @message = "Answer incorrect, try again"
-#   if @pirate_task.task.task_type == 0     
-#       if @pirate_task.qa_submission == @pirate_task.task.correct_answer  
-#        @pirate_task.update_attributes(completed: true)
-#         @message = "Submission correct! Task completed."
-#       end
-#    end
-#    if @pirate_task.task.task_type == 1
-#        if @pirate_task.completed == false
-#           @pirate_task.update_attributes(pirate_task_params)
-#            @message = "Submission processed, waiting for approval"
-#        end
-#        if @pirate_task.completed == true
-#            @message = "Answer approved, no updates can be made"
-#        end
-#    end
-#    return redirect_to({:action => 'show', :id => @hunt.id}, notice: @message)
-# end
-    
+
+  def approve
+    @pirate_task = PirateTask.find(params[:id])
+    @pirate_task.update_attributes(pirate_task_params)
+    if @pirate_task.hunt.user_id == current_user.id
+      redirect_to(hunt_path(@pirate_task.hunt_id), notice: "Photo approved")
+    end
+  end  
 
   def delete
   end
@@ -82,6 +57,17 @@ class PirateTasksController < ApplicationController
   def destroy
     PirateTask.find(params[:id]).destroy
     redirect_to :action => 'index'
+  end
+
+  # Used when rejecting photo tasks
+  def reject
+    ptask = PirateTask.find(params[:id])
+    hunt_creator = ptask.hunt.user # Should this be pirate_hunt? But "Images for Approval" on Hunt page
+    if current_user.id == hunt_creator.id
+      ptask.submission.clear # Queue the attachment to be deleted
+      ptask.update_attributes(completed: false, answer_uploaded: false)
+      redirect_to ptask.hunt, alert: 'Answer rejected'
+    end
   end
 
   private
@@ -92,6 +78,3 @@ class PirateTasksController < ApplicationController
   end
   
 end
-
-
- 

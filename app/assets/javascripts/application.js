@@ -12,6 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.flexslider
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: false,
+    minItems: 3,
+    itemWidth: 200,
+    itemMargin: 5,
+    randomize: true
+  });
+});

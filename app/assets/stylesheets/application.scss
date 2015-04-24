@@ -12,5 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require flexslider.css
  */
+
+ .flexslider {
+ }
+
+ .flexslider .slides img {
+ 	padding: 2px;
+ }
  
