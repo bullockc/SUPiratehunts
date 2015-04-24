@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.flexslider
-//= require turbolinks
+//removed b/c it was preventing flexslider from loading on the first page load
+// require turbolinks
 //= require bootstrap
 //= require_tree .
 
